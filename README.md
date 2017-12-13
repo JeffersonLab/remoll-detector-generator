@@ -11,6 +11,9 @@ perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
 To view geometry:
 
 ./remoll
+
 /remoll/setgeofile geometry_test/detector.gdml
+
 /run/initialize
+
 /control/execute vis/Qt.mac
