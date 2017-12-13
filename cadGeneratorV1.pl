@@ -74,11 +74,11 @@ print "ring $index[$j]\n";
 
 for($k=0;$k<$numDet[$j];$k++){
 
-if($index[$j]==5.0){
+if($j==4){
 $thetaDet[$k]=2*pi*(transt($k)+2)/84;
-}elsif($index[$j]==5.1){
+}elsif($j==5){
 $thetaDet[$k]= 2*pi*(opent($k)+2)/84;
-}elsif($index[$j]==5.2){
+}elsif($j==6){
 $thetaDet[$k]= 2*pi*(closedt($k)+2)/84;
 }else{
 $thetaDet[$k]= 2*pi*$k/28;
@@ -94,7 +94,7 @@ $zDet[$k]=$zstagger[$j];
 
 $rollDet[$k]=$roll[$j]+90;
 
-print def "${index[$j]*10000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
+print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
 
 
 

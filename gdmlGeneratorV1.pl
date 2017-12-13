@@ -278,7 +278,7 @@ print def "<volume name=\"quartzRecVol_$index[$j]\">
 	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j],"\"/>  
 </volume>\n";
 
-$k=$index[$j]+100;
+$k=$index[$j]+50;
 
 print def "<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
@@ -301,7 +301,7 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
 </volume>\n";
 
-$k=$index[$j]+2*100;
+$k=$index[$j]+50;
  
 print def "<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
@@ -318,7 +318,7 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
 </volume>\n";
 
 
-$k=$index[$j]+3*100;
+$k=$index[$j]+50;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
