@@ -27,6 +27,7 @@ if ($#ARGV > -1){
 ##-----------------------Start reading CSV file containing parameter values.---------------------------------##
 open($data, '<', $opt_F);                                         # Open csv file.
 
+@numDet=(28,28,28,28,42,21,21,28);                                # Unelegant but needed placeholder for now.
 $i=0;
 
 while($line= <$data>){                                            # Read each line till the end of the file.
@@ -65,20 +66,20 @@ $i=$i+1;
 ##----------------------------End reading CSV file containing parameter values.------------------------------------------##
 
 
-##----------------------------Start writing parameter.csv for gdmlGenerator (In progress. Need to fix the bug regarding azimuthal position of detectors.)----------------------------------------------##
+##----------------------------Start writing parameter.csv for gdmlGenerator (Code works but lacks clarity. Need to check one to one correspondence between CAD and gdml azimuthal positioning.)----------------------------------------------##
 open(def, ">", "parameter.csv") or die "cannot open > parameter.csv: $!";
 
 for($j=0; $j<$i; $j++){
 print "ring $index[$j]\n";
 
-for($k=0;$k<28;$k++){
+for($k=0;$k<$numDet[$j];$k++){
 
 if($index[$j]==5.0){
-$thetaDet[$k]=2*pi*transt($k)/84;
+$thetaDet[$k]=2*pi*(transt($k)+2)/84;
 }elsif($index[$j]==5.1){
-$thetaDet[$k]= 2*pi*opent($k)/84;
+$thetaDet[$k]= 2*pi*(opent($k)+2)/84;
 }elsif($index[$j]==5.2){
-$thetaDet[$k]= 2*pi*closedt($k)/84;
+$thetaDet[$k]= 2*pi*(closedt($k)+2)/84;
 }else{
 $thetaDet[$k]= 2*pi*$k/28;
 }
@@ -91,9 +92,9 @@ $zDet[$k]=$z[$j];
 $zDet[$k]=$zstagger[$j];
 }
 
-$rollDet[$k]=$roll[$j]-90;
+$rollDet[$k]=$roll[$j]+90;
 
-print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.7, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
+print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
 
 
 
@@ -120,7 +121,7 @@ print def "\"D1\"=
 \"q5transL\"= $dz[4]mm
 \"q5openL\"= $dz[5]mm
 \"q5closedL\"= $dz[6]mm
-\"q6L\"= $dx[7]mm
+\"q6L\"= $dz[7]mm
 \"q1r\"= $r[0]mm
 \"q2r\"= $r[1]mm
 \"q3r\"= $r[2]mm
@@ -413,25 +414,25 @@ sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s };
 sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
 sub transt { 
 my $k=shift; 
-if($k%3==0){$k=$k*3;
-}elsif($k%3==1){$k=($k-1)*3+1;
-}else{ $k=($k-2)*3+2;
+if($k%3==0){$k=$k*2;
+}elsif($k%3==1){$k=($k-1)*2+1;
+}else{ $k=($k-2)*2+2;
 }
 return $k;
 }
 sub opent { 
 my $k=shift; 
-if($k%3==0){$k=$k*3+3;
-}elsif($k%3==1){$k=($k-1)*3+4;
-}else{ $k=($k-2)*3+5;
+if($k%3==0){$k=$k*4+3;
+}elsif($k%3==1){$k=($k-1)*4+4;
+}else{ $k=($k-2)*4+5;
 }
 return $k;
 }
 sub closedt { 
 my $k=shift; 
-if($k%3==0){$k=$k*3+6;
-}elsif($k%3==1){$k=($k-1)*3+7;
-}else{ $k=($k-2)*3+8;
+if($k%3==0){$k=$k*4+9;
+}elsif($k%3==1){$k=($k-1)*4+10;
+}else{ $k=($k-2)*4+11;
 }
 return $k;
 }
