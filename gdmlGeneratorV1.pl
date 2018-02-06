@@ -9,7 +9,7 @@ use File::Basename;
 use Math::Trig;
 use Getopt::Std;
 
-# Version 1 = PMT housing outside light guide. Still need to assign sensitive detector values to individual component of detectors.
+# Version 1 = PMT housing outside light guide. 
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
@@ -276,7 +276,7 @@ print def "<volume name=\"quartzRecVol_$index[$j]\">
 $k=$index[$j]+50;
 
 print def "<volume name=\"refVol_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Air\"/>
          <solidref ref=\"refSol1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -285,13 +285,13 @@ print def "<volume name=\"refVol_$index[$j]\">
 
 
 print def "<volume name=\"refVolSkin_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Aluminium\"/>
          <solidref ref=\"refSolSkin1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
 </volume>\n";
 
 print def "<volume name=\"reflectorVol_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Aluminium\"/>
          <solidref ref=\"reflectorSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
 </volume>\n";
@@ -299,7 +299,7 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
 $k=$index[$j]+50;
  
 print def "<volume name=\"lgVol_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Air\"/>
          <solidref ref=\"lgSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -307,7 +307,7 @@ print def "<volume name=\"lgVol_$index[$j]\">
 </volume>\n";
 
 print def "<volume name=\"lgVolSkin_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Aluminium\"/>
          <solidref ref=\"lgSolSkin_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
 </volume>\n";
@@ -323,7 +323,7 @@ print def "<volume name=\"pmtVol_$index[$j]\">
 </volume>\n";
 
 print def "<volume name=\"pmtSkinVol_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSkinSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"grey\"/> 
 </volume>\n";
