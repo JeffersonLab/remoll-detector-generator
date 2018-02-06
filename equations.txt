@@ -7,7 +7,7 @@
 "q5transL"= 115mm
 "q5openL"= 105mm
 "q5closedL"= 140mm
-"q6L"= 10mm
+"q6L"= 100mm
 "q1r"= 710mm
 "q2r"= 755mm
 "q3r"= 817.5mm
