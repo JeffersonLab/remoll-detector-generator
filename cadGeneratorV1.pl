@@ -75,11 +75,11 @@ print "ring $index[$j]\n";
 for($k=0;$k<$numDet[$j];$k++){
 
 if($j==4){
-$thetaDet[$k]=2*pi*(transt($k)+2)/84;
+$thetaDet[$k]=2*pi*(transt($k)-3)/84;
 }elsif($j==5){
-$thetaDet[$k]= 2*pi*(opent($k)+2)/84;
+$thetaDet[$k]= 2*pi*(opent($k)-3)/84;
 }elsif($j==6){
-$thetaDet[$k]= 2*pi*(closedt($k)+2)/84;
+$thetaDet[$k]= 2*pi*(closedt($k)-3)/84;
 }else{
 $thetaDet[$k]= 2*pi*$k/28;
 }
