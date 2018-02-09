@@ -41,7 +41,7 @@ $r[$i]=trim($fields[1]);                                          # Radial posit
 $dz[$i]=trim($fields[2]);                                         # Length.
 $overlap[$i]=trim($fields[3]);                                    # 0=minimum overlap, 1=maximum overlap.
 $dx[$i]=trim($fields[4]);                                         # Thickness along beam direction.
-if($index[$i]>=50 && $index[$i]<60){
+if($index[$i]>=5.0 && $index[$i]<6.0){
 $dy[$i]=  2*pi*($r[$i]-($dz[$i]*(0.5-$overlap[$i])))/(4*7*3)      # Calculating azimuthal width of detectors in moller ring.
 }else{
 $dy[$i]=  2*pi*($r[$i]-($dz[$i]*(0.5-$overlap[$i])))/(4*7)        # Calculating azimuthal width of detectors in all other rings. 
