@@ -10784,7 +10784,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5001" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5001" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5001">
     <first ref="quartzRecSol_5001"/>
     <second ref="refLogicSol_5001"/>
@@ -10800,7 +10800,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5001">
     <first ref="quartzLogicSol2_5001"/>
     <second ref="pmtLogicSol_5001"/>
-   <position name="pmtLogicSolPos_5001" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5001" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5001" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5001" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -10848,7 +10848,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5001" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5001" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5001" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5001">
 	<first ref="pmtLogicSol_5001"/> 
@@ -10880,7 +10880,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5002" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5002" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5002">
     <first ref="quartzRecSol_5002"/>
     <second ref="refLogicSol_5002"/>
@@ -10896,7 +10896,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5002">
     <first ref="quartzLogicSol2_5002"/>
     <second ref="pmtLogicSol_5002"/>
-   <position name="pmtLogicSolPos_5002" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5002" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5002" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5002" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -10944,7 +10944,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5002" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5002" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5002" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5002">
 	<first ref="pmtLogicSol_5002"/> 
@@ -10976,7 +10976,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5003" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5003" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5003">
     <first ref="quartzRecSol_5003"/>
     <second ref="refLogicSol_5003"/>
@@ -10992,7 +10992,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5003">
     <first ref="quartzLogicSol2_5003"/>
     <second ref="pmtLogicSol_5003"/>
-   <position name="pmtLogicSolPos_5003" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5003" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5003" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5003" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11040,7 +11040,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5003" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5003" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5003" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5003">
 	<first ref="pmtLogicSol_5003"/> 
@@ -11072,7 +11072,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5004" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5004" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5004">
     <first ref="quartzRecSol_5004"/>
     <second ref="refLogicSol_5004"/>
@@ -11088,7 +11088,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5004">
     <first ref="quartzLogicSol2_5004"/>
     <second ref="pmtLogicSol_5004"/>
-   <position name="pmtLogicSolPos_5004" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5004" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5004" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5004" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11136,7 +11136,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5004" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5004" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5004" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5004">
 	<first ref="pmtLogicSol_5004"/> 
@@ -11168,7 +11168,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5005" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5005" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5005">
     <first ref="quartzRecSol_5005"/>
     <second ref="refLogicSol_5005"/>
@@ -11184,7 +11184,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5005">
     <first ref="quartzLogicSol2_5005"/>
     <second ref="pmtLogicSol_5005"/>
-   <position name="pmtLogicSolPos_5005" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5005" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5005" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5005" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11232,7 +11232,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5005" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5005" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5005" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5005">
 	<first ref="pmtLogicSol_5005"/> 
@@ -11264,7 +11264,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5006" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5006" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5006">
     <first ref="quartzRecSol_5006"/>
     <second ref="refLogicSol_5006"/>
@@ -11280,7 +11280,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5006">
     <first ref="quartzLogicSol2_5006"/>
     <second ref="pmtLogicSol_5006"/>
-   <position name="pmtLogicSolPos_5006" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5006" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5006" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5006" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11328,7 +11328,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5006" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5006" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5006" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5006">
 	<first ref="pmtLogicSol_5006"/> 
@@ -11360,7 +11360,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5007" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5007" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5007">
     <first ref="quartzRecSol_5007"/>
     <second ref="refLogicSol_5007"/>
@@ -11376,7 +11376,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5007">
     <first ref="quartzLogicSol2_5007"/>
     <second ref="pmtLogicSol_5007"/>
-   <position name="pmtLogicSolPos_5007" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5007" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5007" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5007" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11424,7 +11424,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5007" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5007" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5007" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5007">
 	<first ref="pmtLogicSol_5007"/> 
@@ -11456,7 +11456,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5008" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5008" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5008">
     <first ref="quartzRecSol_5008"/>
     <second ref="refLogicSol_5008"/>
@@ -11472,7 +11472,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5008">
     <first ref="quartzLogicSol2_5008"/>
     <second ref="pmtLogicSol_5008"/>
-   <position name="pmtLogicSolPos_5008" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5008" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5008" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5008" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11520,7 +11520,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5008" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5008" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5008" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5008">
 	<first ref="pmtLogicSol_5008"/> 
@@ -11552,7 +11552,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5009" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5009" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5009">
     <first ref="quartzRecSol_5009"/>
     <second ref="refLogicSol_5009"/>
@@ -11568,7 +11568,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5009">
     <first ref="quartzLogicSol2_5009"/>
     <second ref="pmtLogicSol_5009"/>
-   <position name="pmtLogicSolPos_5009" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5009" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5009" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5009" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11616,7 +11616,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5009" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5009" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5009" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5009">
 	<first ref="pmtLogicSol_5009"/> 
@@ -11648,7 +11648,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5010" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5010" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5010">
     <first ref="quartzRecSol_5010"/>
     <second ref="refLogicSol_5010"/>
@@ -11664,7 +11664,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5010">
     <first ref="quartzLogicSol2_5010"/>
     <second ref="pmtLogicSol_5010"/>
-   <position name="pmtLogicSolPos_5010" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5010" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5010" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5010" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11712,7 +11712,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5010" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5010" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5010" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5010">
 	<first ref="pmtLogicSol_5010"/> 
@@ -11744,7 +11744,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5011" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5011" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5011">
     <first ref="quartzRecSol_5011"/>
     <second ref="refLogicSol_5011"/>
@@ -11760,7 +11760,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5011">
     <first ref="quartzLogicSol2_5011"/>
     <second ref="pmtLogicSol_5011"/>
-   <position name="pmtLogicSolPos_5011" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5011" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5011" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5011" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11808,7 +11808,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5011" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5011" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5011" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5011">
 	<first ref="pmtLogicSol_5011"/> 
@@ -11840,7 +11840,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5012" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5012" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5012">
     <first ref="quartzRecSol_5012"/>
     <second ref="refLogicSol_5012"/>
@@ -11856,7 +11856,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5012">
     <first ref="quartzLogicSol2_5012"/>
     <second ref="pmtLogicSol_5012"/>
-   <position name="pmtLogicSolPos_5012" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5012" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5012" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5012" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -11904,7 +11904,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5012" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5012" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5012" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5012">
 	<first ref="pmtLogicSol_5012"/> 
@@ -11936,7 +11936,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5013" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5013" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5013">
     <first ref="quartzRecSol_5013"/>
     <second ref="refLogicSol_5013"/>
@@ -11952,7 +11952,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5013">
     <first ref="quartzLogicSol2_5013"/>
     <second ref="pmtLogicSol_5013"/>
-   <position name="pmtLogicSolPos_5013" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5013" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5013" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5013" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12000,7 +12000,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5013" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5013" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5013" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5013">
 	<first ref="pmtLogicSol_5013"/> 
@@ -12032,7 +12032,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5014" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5014" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5014">
     <first ref="quartzRecSol_5014"/>
     <second ref="refLogicSol_5014"/>
@@ -12048,7 +12048,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5014">
     <first ref="quartzLogicSol2_5014"/>
     <second ref="pmtLogicSol_5014"/>
-   <position name="pmtLogicSolPos_5014" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5014" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5014" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5014" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12096,7 +12096,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5014" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5014" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5014" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5014">
 	<first ref="pmtLogicSol_5014"/> 
@@ -12128,7 +12128,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5015" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5015" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5015">
     <first ref="quartzRecSol_5015"/>
     <second ref="refLogicSol_5015"/>
@@ -12144,7 +12144,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5015">
     <first ref="quartzLogicSol2_5015"/>
     <second ref="pmtLogicSol_5015"/>
-   <position name="pmtLogicSolPos_5015" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5015" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5015" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5015" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12192,7 +12192,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5015" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5015" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5015" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5015">
 	<first ref="pmtLogicSol_5015"/> 
@@ -12224,7 +12224,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5016" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5016" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5016">
     <first ref="quartzRecSol_5016"/>
     <second ref="refLogicSol_5016"/>
@@ -12240,7 +12240,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5016">
     <first ref="quartzLogicSol2_5016"/>
     <second ref="pmtLogicSol_5016"/>
-   <position name="pmtLogicSolPos_5016" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5016" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5016" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5016" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12288,7 +12288,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5016" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5016" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5016" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5016">
 	<first ref="pmtLogicSol_5016"/> 
@@ -12320,7 +12320,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5017" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5017" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5017">
     <first ref="quartzRecSol_5017"/>
     <second ref="refLogicSol_5017"/>
@@ -12336,7 +12336,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5017">
     <first ref="quartzLogicSol2_5017"/>
     <second ref="pmtLogicSol_5017"/>
-   <position name="pmtLogicSolPos_5017" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5017" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5017" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5017" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12384,7 +12384,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5017" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5017" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5017" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5017">
 	<first ref="pmtLogicSol_5017"/> 
@@ -12416,7 +12416,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5018" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5018" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5018">
     <first ref="quartzRecSol_5018"/>
     <second ref="refLogicSol_5018"/>
@@ -12432,7 +12432,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5018">
     <first ref="quartzLogicSol2_5018"/>
     <second ref="pmtLogicSol_5018"/>
-   <position name="pmtLogicSolPos_5018" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5018" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5018" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5018" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12480,7 +12480,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5018" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5018" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5018" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5018">
 	<first ref="pmtLogicSol_5018"/> 
@@ -12512,7 +12512,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5019" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5019" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5019">
     <first ref="quartzRecSol_5019"/>
     <second ref="refLogicSol_5019"/>
@@ -12528,7 +12528,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5019">
     <first ref="quartzLogicSol2_5019"/>
     <second ref="pmtLogicSol_5019"/>
-   <position name="pmtLogicSolPos_5019" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5019" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5019" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5019" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12576,7 +12576,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5019" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5019" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5019" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5019">
 	<first ref="pmtLogicSol_5019"/> 
@@ -12608,7 +12608,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5020" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5020" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5020">
     <first ref="quartzRecSol_5020"/>
     <second ref="refLogicSol_5020"/>
@@ -12624,7 +12624,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5020">
     <first ref="quartzLogicSol2_5020"/>
     <second ref="pmtLogicSol_5020"/>
-   <position name="pmtLogicSolPos_5020" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5020" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5020" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5020" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12672,7 +12672,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5020" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5020" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5020" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5020">
 	<first ref="pmtLogicSol_5020"/> 
@@ -12704,7 +12704,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5021" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5021" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5021">
     <first ref="quartzRecSol_5021"/>
     <second ref="refLogicSol_5021"/>
@@ -12720,7 +12720,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5021">
     <first ref="quartzLogicSol2_5021"/>
     <second ref="pmtLogicSol_5021"/>
-   <position name="pmtLogicSolPos_5021" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5021" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5021" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5021" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12768,7 +12768,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5021" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5021" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5021" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5021">
 	<first ref="pmtLogicSol_5021"/> 
@@ -12800,7 +12800,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5022" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5022" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5022">
     <first ref="quartzRecSol_5022"/>
     <second ref="refLogicSol_5022"/>
@@ -12816,7 +12816,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5022">
     <first ref="quartzLogicSol2_5022"/>
     <second ref="pmtLogicSol_5022"/>
-   <position name="pmtLogicSolPos_5022" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5022" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5022" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5022" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12864,7 +12864,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5022" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5022" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5022" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5022">
 	<first ref="pmtLogicSol_5022"/> 
@@ -12896,7 +12896,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5023" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5023" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5023">
     <first ref="quartzRecSol_5023"/>
     <second ref="refLogicSol_5023"/>
@@ -12912,7 +12912,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5023">
     <first ref="quartzLogicSol2_5023"/>
     <second ref="pmtLogicSol_5023"/>
-   <position name="pmtLogicSolPos_5023" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5023" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5023" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5023" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -12960,7 +12960,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5023" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5023" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5023" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5023">
 	<first ref="pmtLogicSol_5023"/> 
@@ -12992,7 +12992,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5024" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5024" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5024">
     <first ref="quartzRecSol_5024"/>
     <second ref="refLogicSol_5024"/>
@@ -13008,7 +13008,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5024">
     <first ref="quartzLogicSol2_5024"/>
     <second ref="pmtLogicSol_5024"/>
-   <position name="pmtLogicSolPos_5024" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5024" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5024" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5024" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13056,7 +13056,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5024" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5024" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5024" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5024">
 	<first ref="pmtLogicSol_5024"/> 
@@ -13088,7 +13088,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5025" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5025" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5025">
     <first ref="quartzRecSol_5025"/>
     <second ref="refLogicSol_5025"/>
@@ -13104,7 +13104,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5025">
     <first ref="quartzLogicSol2_5025"/>
     <second ref="pmtLogicSol_5025"/>
-   <position name="pmtLogicSolPos_5025" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5025" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5025" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5025" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13152,7 +13152,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5025" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5025" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5025" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5025">
 	<first ref="pmtLogicSol_5025"/> 
@@ -13184,7 +13184,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5026" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5026" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5026">
     <first ref="quartzRecSol_5026"/>
     <second ref="refLogicSol_5026"/>
@@ -13200,7 +13200,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5026">
     <first ref="quartzLogicSol2_5026"/>
     <second ref="pmtLogicSol_5026"/>
-   <position name="pmtLogicSolPos_5026" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5026" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5026" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5026" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13248,7 +13248,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5026" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5026" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5026" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5026">
 	<first ref="pmtLogicSol_5026"/> 
@@ -13280,7 +13280,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5027" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5027" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5027">
     <first ref="quartzRecSol_5027"/>
     <second ref="refLogicSol_5027"/>
@@ -13296,7 +13296,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5027">
     <first ref="quartzLogicSol2_5027"/>
     <second ref="pmtLogicSol_5027"/>
-   <position name="pmtLogicSolPos_5027" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5027" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5027" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5027" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13344,7 +13344,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5027" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5027" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5027" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5027">
 	<first ref="pmtLogicSol_5027"/> 
@@ -13376,7 +13376,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5028" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5028" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5028">
     <first ref="quartzRecSol_5028"/>
     <second ref="refLogicSol_5028"/>
@@ -13392,7 +13392,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5028">
     <first ref="quartzLogicSol2_5028"/>
     <second ref="pmtLogicSol_5028"/>
-   <position name="pmtLogicSolPos_5028" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5028" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5028" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5028" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13440,7 +13440,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5028" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5028" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5028" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5028">
 	<first ref="pmtLogicSol_5028"/> 
@@ -13472,7 +13472,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5029" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5029" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5029">
     <first ref="quartzRecSol_5029"/>
     <second ref="refLogicSol_5029"/>
@@ -13488,7 +13488,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5029">
     <first ref="quartzLogicSol2_5029"/>
     <second ref="pmtLogicSol_5029"/>
-   <position name="pmtLogicSolPos_5029" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5029" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5029" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5029" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13536,7 +13536,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5029" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5029" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5029" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5029">
 	<first ref="pmtLogicSol_5029"/> 
@@ -13568,7 +13568,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5030" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5030" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5030">
     <first ref="quartzRecSol_5030"/>
     <second ref="refLogicSol_5030"/>
@@ -13584,7 +13584,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5030">
     <first ref="quartzLogicSol2_5030"/>
     <second ref="pmtLogicSol_5030"/>
-   <position name="pmtLogicSolPos_5030" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5030" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5030" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5030" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13632,7 +13632,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5030" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5030" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5030" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5030">
 	<first ref="pmtLogicSol_5030"/> 
@@ -13664,7 +13664,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5031" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5031" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5031">
     <first ref="quartzRecSol_5031"/>
     <second ref="refLogicSol_5031"/>
@@ -13680,7 +13680,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5031">
     <first ref="quartzLogicSol2_5031"/>
     <second ref="pmtLogicSol_5031"/>
-   <position name="pmtLogicSolPos_5031" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5031" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5031" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5031" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13728,7 +13728,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5031" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5031" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5031" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5031">
 	<first ref="pmtLogicSol_5031"/> 
@@ -13760,7 +13760,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5032" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5032" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5032">
     <first ref="quartzRecSol_5032"/>
     <second ref="refLogicSol_5032"/>
@@ -13776,7 +13776,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5032">
     <first ref="quartzLogicSol2_5032"/>
     <second ref="pmtLogicSol_5032"/>
-   <position name="pmtLogicSolPos_5032" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5032" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5032" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5032" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13824,7 +13824,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5032" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5032" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5032" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5032">
 	<first ref="pmtLogicSol_5032"/> 
@@ -13856,7 +13856,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5033" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5033" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5033">
     <first ref="quartzRecSol_5033"/>
     <second ref="refLogicSol_5033"/>
@@ -13872,7 +13872,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5033">
     <first ref="quartzLogicSol2_5033"/>
     <second ref="pmtLogicSol_5033"/>
-   <position name="pmtLogicSolPos_5033" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5033" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5033" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5033" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -13920,7 +13920,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5033" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5033" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5033" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5033">
 	<first ref="pmtLogicSol_5033"/> 
@@ -13952,7 +13952,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5034" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5034" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5034">
     <first ref="quartzRecSol_5034"/>
     <second ref="refLogicSol_5034"/>
@@ -13968,7 +13968,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5034">
     <first ref="quartzLogicSol2_5034"/>
     <second ref="pmtLogicSol_5034"/>
-   <position name="pmtLogicSolPos_5034" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5034" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5034" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5034" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14016,7 +14016,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5034" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5034" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5034" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5034">
 	<first ref="pmtLogicSol_5034"/> 
@@ -14048,7 +14048,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5035" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5035" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5035">
     <first ref="quartzRecSol_5035"/>
     <second ref="refLogicSol_5035"/>
@@ -14064,7 +14064,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5035">
     <first ref="quartzLogicSol2_5035"/>
     <second ref="pmtLogicSol_5035"/>
-   <position name="pmtLogicSolPos_5035" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5035" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5035" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5035" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14112,7 +14112,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5035" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5035" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5035" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5035">
 	<first ref="pmtLogicSol_5035"/> 
@@ -14144,7 +14144,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5036" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5036" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5036">
     <first ref="quartzRecSol_5036"/>
     <second ref="refLogicSol_5036"/>
@@ -14160,7 +14160,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5036">
     <first ref="quartzLogicSol2_5036"/>
     <second ref="pmtLogicSol_5036"/>
-   <position name="pmtLogicSolPos_5036" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5036" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5036" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5036" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14208,7 +14208,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5036" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5036" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5036" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5036">
 	<first ref="pmtLogicSol_5036"/> 
@@ -14240,7 +14240,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5037" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5037" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5037">
     <first ref="quartzRecSol_5037"/>
     <second ref="refLogicSol_5037"/>
@@ -14256,7 +14256,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5037">
     <first ref="quartzLogicSol2_5037"/>
     <second ref="pmtLogicSol_5037"/>
-   <position name="pmtLogicSolPos_5037" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5037" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5037" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5037" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14304,7 +14304,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5037" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5037" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5037" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5037">
 	<first ref="pmtLogicSol_5037"/> 
@@ -14336,7 +14336,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5038" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5038" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5038">
     <first ref="quartzRecSol_5038"/>
     <second ref="refLogicSol_5038"/>
@@ -14352,7 +14352,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5038">
     <first ref="quartzLogicSol2_5038"/>
     <second ref="pmtLogicSol_5038"/>
-   <position name="pmtLogicSolPos_5038" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5038" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5038" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5038" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14400,7 +14400,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5038" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5038" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5038" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5038">
 	<first ref="pmtLogicSol_5038"/> 
@@ -14432,7 +14432,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5039" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5039" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5039">
     <first ref="quartzRecSol_5039"/>
     <second ref="refLogicSol_5039"/>
@@ -14448,7 +14448,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5039">
     <first ref="quartzLogicSol2_5039"/>
     <second ref="pmtLogicSol_5039"/>
-   <position name="pmtLogicSolPos_5039" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5039" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5039" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5039" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14496,7 +14496,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5039" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5039" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5039" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5039">
 	<first ref="pmtLogicSol_5039"/> 
@@ -14528,7 +14528,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5040" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5040" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5040">
     <first ref="quartzRecSol_5040"/>
     <second ref="refLogicSol_5040"/>
@@ -14544,7 +14544,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5040">
     <first ref="quartzLogicSol2_5040"/>
     <second ref="pmtLogicSol_5040"/>
-   <position name="pmtLogicSolPos_5040" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5040" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5040" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5040" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14592,7 +14592,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5040" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5040" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5040" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5040">
 	<first ref="pmtLogicSol_5040"/> 
@@ -14624,7 +14624,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5041" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5041" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5041">
     <first ref="quartzRecSol_5041"/>
     <second ref="refLogicSol_5041"/>
@@ -14640,7 +14640,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5041">
     <first ref="quartzLogicSol2_5041"/>
     <second ref="pmtLogicSol_5041"/>
-   <position name="pmtLogicSolPos_5041" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5041" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5041" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5041" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14688,7 +14688,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5041" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5041" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5041" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5041">
 	<first ref="pmtLogicSol_5041"/> 
@@ -14720,7 +14720,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="43.2049059834408" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5042" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5042" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5042">
     <first ref="quartzRecSol_5042"/>
     <second ref="refLogicSol_5042"/>
@@ -14736,7 +14736,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5042">
     <first ref="quartzLogicSol2_5042"/>
     <second ref="pmtLogicSol_5042"/>
-   <position name="pmtLogicSolPos_5042" unit="mm" x="-59.1113292077095" y="0" z="313.098499289409"/>
+   <position name="pmtLogicSolPos_5042" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
     <rotation name="pmtLogicSolRot_5042" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5042" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14784,7 +14784,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5042" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5042" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5042" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5042">
 	<first ref="pmtLogicSol_5042"/> 
@@ -14816,7 +14816,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5101" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5101" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5101">
     <first ref="quartzRecSol_5101"/>
     <second ref="refLogicSol_5101"/>
@@ -14832,7 +14832,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5101">
     <first ref="quartzLogicSol2_5101"/>
     <second ref="pmtLogicSol_5101"/>
-   <position name="pmtLogicSolPos_5101" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5101" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5101" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5101" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14880,7 +14880,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5101" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5101" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5101" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5101">
 	<first ref="pmtLogicSol_5101"/> 
@@ -14912,7 +14912,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5102" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5102" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5102">
     <first ref="quartzRecSol_5102"/>
     <second ref="refLogicSol_5102"/>
@@ -14928,7 +14928,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5102">
     <first ref="quartzLogicSol2_5102"/>
     <second ref="pmtLogicSol_5102"/>
-   <position name="pmtLogicSolPos_5102" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5102" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5102" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5102" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -14976,7 +14976,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5102" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5102" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5102" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5102">
 	<first ref="pmtLogicSol_5102"/> 
@@ -15008,7 +15008,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5103" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5103" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5103">
     <first ref="quartzRecSol_5103"/>
     <second ref="refLogicSol_5103"/>
@@ -15024,7 +15024,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5103">
     <first ref="quartzLogicSol2_5103"/>
     <second ref="pmtLogicSol_5103"/>
-   <position name="pmtLogicSolPos_5103" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5103" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5103" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5103" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15072,7 +15072,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5103" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5103" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5103" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5103">
 	<first ref="pmtLogicSol_5103"/> 
@@ -15104,7 +15104,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5104" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5104" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5104">
     <first ref="quartzRecSol_5104"/>
     <second ref="refLogicSol_5104"/>
@@ -15120,7 +15120,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5104">
     <first ref="quartzLogicSol2_5104"/>
     <second ref="pmtLogicSol_5104"/>
-   <position name="pmtLogicSolPos_5104" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5104" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5104" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5104" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15168,7 +15168,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5104" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5104" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5104" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5104">
 	<first ref="pmtLogicSol_5104"/> 
@@ -15200,7 +15200,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5105" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5105" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5105">
     <first ref="quartzRecSol_5105"/>
     <second ref="refLogicSol_5105"/>
@@ -15216,7 +15216,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5105">
     <first ref="quartzLogicSol2_5105"/>
     <second ref="pmtLogicSol_5105"/>
-   <position name="pmtLogicSolPos_5105" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5105" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5105" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5105" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15264,7 +15264,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5105" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5105" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5105" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5105">
 	<first ref="pmtLogicSol_5105"/> 
@@ -15296,7 +15296,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5106" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5106" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5106">
     <first ref="quartzRecSol_5106"/>
     <second ref="refLogicSol_5106"/>
@@ -15312,7 +15312,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5106">
     <first ref="quartzLogicSol2_5106"/>
     <second ref="pmtLogicSol_5106"/>
-   <position name="pmtLogicSolPos_5106" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5106" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5106" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5106" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15360,7 +15360,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5106" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5106" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5106" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5106">
 	<first ref="pmtLogicSol_5106"/> 
@@ -15392,7 +15392,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5107" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5107" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5107">
     <first ref="quartzRecSol_5107"/>
     <second ref="refLogicSol_5107"/>
@@ -15408,7 +15408,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5107">
     <first ref="quartzLogicSol2_5107"/>
     <second ref="pmtLogicSol_5107"/>
-   <position name="pmtLogicSolPos_5107" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5107" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5107" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5107" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15456,7 +15456,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5107" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5107" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5107" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5107">
 	<first ref="pmtLogicSol_5107"/> 
@@ -15488,7 +15488,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5108" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5108" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5108">
     <first ref="quartzRecSol_5108"/>
     <second ref="refLogicSol_5108"/>
@@ -15504,7 +15504,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5108">
     <first ref="quartzLogicSol2_5108"/>
     <second ref="pmtLogicSol_5108"/>
-   <position name="pmtLogicSolPos_5108" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5108" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5108" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5108" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15552,7 +15552,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5108" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5108" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5108" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5108">
 	<first ref="pmtLogicSol_5108"/> 
@@ -15584,7 +15584,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5109" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5109" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5109">
     <first ref="quartzRecSol_5109"/>
     <second ref="refLogicSol_5109"/>
@@ -15600,7 +15600,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5109">
     <first ref="quartzLogicSol2_5109"/>
     <second ref="pmtLogicSol_5109"/>
-   <position name="pmtLogicSolPos_5109" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5109" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5109" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5109" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15648,7 +15648,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5109" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5109" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5109" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5109">
 	<first ref="pmtLogicSol_5109"/> 
@@ -15680,7 +15680,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5110" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5110" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5110">
     <first ref="quartzRecSol_5110"/>
     <second ref="refLogicSol_5110"/>
@@ -15696,7 +15696,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5110">
     <first ref="quartzLogicSol2_5110"/>
     <second ref="pmtLogicSol_5110"/>
-   <position name="pmtLogicSolPos_5110" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5110" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5110" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5110" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15744,7 +15744,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5110" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5110" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5110" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5110">
 	<first ref="pmtLogicSol_5110"/> 
@@ -15776,7 +15776,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5111" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5111" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5111">
     <first ref="quartzRecSol_5111"/>
     <second ref="refLogicSol_5111"/>
@@ -15792,7 +15792,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5111">
     <first ref="quartzLogicSol2_5111"/>
     <second ref="pmtLogicSol_5111"/>
-   <position name="pmtLogicSolPos_5111" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5111" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5111" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5111" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15840,7 +15840,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5111" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5111" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5111" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5111">
 	<first ref="pmtLogicSol_5111"/> 
@@ -15872,7 +15872,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5112" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5112" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5112">
     <first ref="quartzRecSol_5112"/>
     <second ref="refLogicSol_5112"/>
@@ -15888,7 +15888,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5112">
     <first ref="quartzLogicSol2_5112"/>
     <second ref="pmtLogicSol_5112"/>
-   <position name="pmtLogicSolPos_5112" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5112" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5112" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5112" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -15936,7 +15936,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5112" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5112" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5112" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5112">
 	<first ref="pmtLogicSol_5112"/> 
@@ -15968,7 +15968,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5113" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5113" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5113">
     <first ref="quartzRecSol_5113"/>
     <second ref="refLogicSol_5113"/>
@@ -15984,7 +15984,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5113">
     <first ref="quartzLogicSol2_5113"/>
     <second ref="pmtLogicSol_5113"/>
-   <position name="pmtLogicSolPos_5113" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5113" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5113" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5113" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16032,7 +16032,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5113" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5113" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5113" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5113">
 	<first ref="pmtLogicSol_5113"/> 
@@ -16064,7 +16064,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5114" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5114" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5114">
     <first ref="quartzRecSol_5114"/>
     <second ref="refLogicSol_5114"/>
@@ -16080,7 +16080,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5114">
     <first ref="quartzLogicSol2_5114"/>
     <second ref="pmtLogicSol_5114"/>
-   <position name="pmtLogicSolPos_5114" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5114" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5114" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5114" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16128,7 +16128,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5114" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5114" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5114" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5114">
 	<first ref="pmtLogicSol_5114"/> 
@@ -16160,7 +16160,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5115" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5115" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5115">
     <first ref="quartzRecSol_5115"/>
     <second ref="refLogicSol_5115"/>
@@ -16176,7 +16176,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5115">
     <first ref="quartzLogicSol2_5115"/>
     <second ref="pmtLogicSol_5115"/>
-   <position name="pmtLogicSolPos_5115" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5115" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5115" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5115" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16224,7 +16224,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5115" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5115" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5115" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5115">
 	<first ref="pmtLogicSol_5115"/> 
@@ -16256,7 +16256,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5116" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5116" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5116">
     <first ref="quartzRecSol_5116"/>
     <second ref="refLogicSol_5116"/>
@@ -16272,7 +16272,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5116">
     <first ref="quartzLogicSol2_5116"/>
     <second ref="pmtLogicSol_5116"/>
-   <position name="pmtLogicSolPos_5116" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5116" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5116" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5116" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16320,7 +16320,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5116" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5116" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5116" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5116">
 	<first ref="pmtLogicSol_5116"/> 
@@ -16352,7 +16352,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5117" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5117" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5117">
     <first ref="quartzRecSol_5117"/>
     <second ref="refLogicSol_5117"/>
@@ -16368,7 +16368,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5117">
     <first ref="quartzLogicSol2_5117"/>
     <second ref="pmtLogicSol_5117"/>
-   <position name="pmtLogicSolPos_5117" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5117" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5117" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5117" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16416,7 +16416,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5117" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5117" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5117" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5117">
 	<first ref="pmtLogicSol_5117"/> 
@@ -16448,7 +16448,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5118" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5118" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5118">
     <first ref="quartzRecSol_5118"/>
     <second ref="refLogicSol_5118"/>
@@ -16464,7 +16464,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5118">
     <first ref="quartzLogicSol2_5118"/>
     <second ref="pmtLogicSol_5118"/>
-   <position name="pmtLogicSolPos_5118" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5118" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5118" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5118" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16512,7 +16512,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5118" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5118" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5118" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5118">
 	<first ref="pmtLogicSol_5118"/> 
@@ -16544,7 +16544,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5119" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5119" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5119">
     <first ref="quartzRecSol_5119"/>
     <second ref="refLogicSol_5119"/>
@@ -16560,7 +16560,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5119">
     <first ref="quartzLogicSol2_5119"/>
     <second ref="pmtLogicSol_5119"/>
-   <position name="pmtLogicSolPos_5119" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5119" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5119" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5119" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16608,7 +16608,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5119" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5119" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5119" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5119">
 	<first ref="pmtLogicSol_5119"/> 
@@ -16640,7 +16640,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5120" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5120" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5120">
     <first ref="quartzRecSol_5120"/>
     <second ref="refLogicSol_5120"/>
@@ -16656,7 +16656,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5120">
     <first ref="quartzLogicSol2_5120"/>
     <second ref="pmtLogicSol_5120"/>
-   <position name="pmtLogicSolPos_5120" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5120" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5120" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5120" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16704,7 +16704,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5120" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5120" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5120" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5120">
 	<first ref="pmtLogicSol_5120"/> 
@@ -16736,7 +16736,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-41.895909044445" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="41.895909044445" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5121" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5121" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5121">
     <first ref="quartzRecSol_5121"/>
     <second ref="refLogicSol_5121"/>
@@ -16752,7 +16752,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5121">
     <first ref="quartzLogicSol2_5121"/>
     <second ref="pmtLogicSol_5121"/>
-   <position name="pmtLogicSolPos_5121" unit="mm" x="-59.1113292077095" y="0" z="308.098499289409"/>
+   <position name="pmtLogicSolPos_5121" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
     <rotation name="pmtLogicSolRot_5121" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5121" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16800,7 +16800,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5121" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5121" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5121" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5121">
 	<first ref="pmtLogicSol_5121"/> 
@@ -16832,7 +16832,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5201" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5201" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5201">
     <first ref="quartzRecSol_5201"/>
     <second ref="refLogicSol_5201"/>
@@ -16848,7 +16848,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5201">
     <first ref="quartzLogicSol2_5201"/>
     <second ref="pmtLogicSol_5201"/>
-   <position name="pmtLogicSolPos_5201" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5201" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5201" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5201" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16896,7 +16896,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5201" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5201" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5201" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5201">
 	<first ref="pmtLogicSol_5201"/> 
@@ -16928,7 +16928,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5202" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5202" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5202">
     <first ref="quartzRecSol_5202"/>
     <second ref="refLogicSol_5202"/>
@@ -16944,7 +16944,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5202">
     <first ref="quartzLogicSol2_5202"/>
     <second ref="pmtLogicSol_5202"/>
-   <position name="pmtLogicSolPos_5202" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5202" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5202" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5202" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -16992,7 +16992,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5202" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5202" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5202" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5202">
 	<first ref="pmtLogicSol_5202"/> 
@@ -17024,7 +17024,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5203" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5203" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5203">
     <first ref="quartzRecSol_5203"/>
     <second ref="refLogicSol_5203"/>
@@ -17040,7 +17040,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5203">
     <first ref="quartzLogicSol2_5203"/>
     <second ref="pmtLogicSol_5203"/>
-   <position name="pmtLogicSolPos_5203" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5203" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5203" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5203" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17088,7 +17088,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5203" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5203" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5203" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5203">
 	<first ref="pmtLogicSol_5203"/> 
@@ -17120,7 +17120,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5204" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5204" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5204">
     <first ref="quartzRecSol_5204"/>
     <second ref="refLogicSol_5204"/>
@@ -17136,7 +17136,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5204">
     <first ref="quartzLogicSol2_5204"/>
     <second ref="pmtLogicSol_5204"/>
-   <position name="pmtLogicSolPos_5204" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5204" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5204" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5204" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17184,7 +17184,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5204" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5204" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5204" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5204">
 	<first ref="pmtLogicSol_5204"/> 
@@ -17216,7 +17216,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5205" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5205" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5205">
     <first ref="quartzRecSol_5205"/>
     <second ref="refLogicSol_5205"/>
@@ -17232,7 +17232,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5205">
     <first ref="quartzLogicSol2_5205"/>
     <second ref="pmtLogicSol_5205"/>
-   <position name="pmtLogicSolPos_5205" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5205" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5205" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5205" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17280,7 +17280,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5205" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5205" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5205" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5205">
 	<first ref="pmtLogicSol_5205"/> 
@@ -17312,7 +17312,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5206" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5206" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5206">
     <first ref="quartzRecSol_5206"/>
     <second ref="refLogicSol_5206"/>
@@ -17328,7 +17328,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5206">
     <first ref="quartzLogicSol2_5206"/>
     <second ref="pmtLogicSol_5206"/>
-   <position name="pmtLogicSolPos_5206" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5206" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5206" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5206" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17376,7 +17376,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5206" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5206" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5206" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5206">
 	<first ref="pmtLogicSol_5206"/> 
@@ -17408,7 +17408,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5207" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5207" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5207">
     <first ref="quartzRecSol_5207"/>
     <second ref="refLogicSol_5207"/>
@@ -17424,7 +17424,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5207">
     <first ref="quartzLogicSol2_5207"/>
     <second ref="pmtLogicSol_5207"/>
-   <position name="pmtLogicSolPos_5207" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5207" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5207" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5207" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17472,7 +17472,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5207" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5207" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5207" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5207">
 	<first ref="pmtLogicSol_5207"/> 
@@ -17504,7 +17504,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5208" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5208" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5208">
     <first ref="quartzRecSol_5208"/>
     <second ref="refLogicSol_5208"/>
@@ -17520,7 +17520,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5208">
     <first ref="quartzLogicSol2_5208"/>
     <second ref="pmtLogicSol_5208"/>
-   <position name="pmtLogicSolPos_5208" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5208" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5208" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5208" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17568,7 +17568,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5208" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5208" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5208" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5208">
 	<first ref="pmtLogicSol_5208"/> 
@@ -17600,7 +17600,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5209" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5209" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5209">
     <first ref="quartzRecSol_5209"/>
     <second ref="refLogicSol_5209"/>
@@ -17616,7 +17616,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5209">
     <first ref="quartzLogicSol2_5209"/>
     <second ref="pmtLogicSol_5209"/>
-   <position name="pmtLogicSolPos_5209" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5209" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5209" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5209" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17664,7 +17664,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5209" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5209" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5209" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5209">
 	<first ref="pmtLogicSol_5209"/> 
@@ -17696,7 +17696,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5210" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5210" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5210">
     <first ref="quartzRecSol_5210"/>
     <second ref="refLogicSol_5210"/>
@@ -17712,7 +17712,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5210">
     <first ref="quartzLogicSol2_5210"/>
     <second ref="pmtLogicSol_5210"/>
-   <position name="pmtLogicSolPos_5210" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5210" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5210" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5210" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17760,7 +17760,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5210" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5210" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5210" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5210">
 	<first ref="pmtLogicSol_5210"/> 
@@ -17792,7 +17792,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5211" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5211" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5211">
     <first ref="quartzRecSol_5211"/>
     <second ref="refLogicSol_5211"/>
@@ -17808,7 +17808,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5211">
     <first ref="quartzLogicSol2_5211"/>
     <second ref="pmtLogicSol_5211"/>
-   <position name="pmtLogicSolPos_5211" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5211" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5211" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5211" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17856,7 +17856,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5211" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5211" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5211" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5211">
 	<first ref="pmtLogicSol_5211"/> 
@@ -17888,7 +17888,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5212" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5212" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5212">
     <first ref="quartzRecSol_5212"/>
     <second ref="refLogicSol_5212"/>
@@ -17904,7 +17904,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5212">
     <first ref="quartzLogicSol2_5212"/>
     <second ref="pmtLogicSol_5212"/>
-   <position name="pmtLogicSolPos_5212" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5212" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5212" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5212" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -17952,7 +17952,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5212" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5212" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5212" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5212">
 	<first ref="pmtLogicSol_5212"/> 
@@ -17984,7 +17984,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5213" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5213" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5213">
     <first ref="quartzRecSol_5213"/>
     <second ref="refLogicSol_5213"/>
@@ -18000,7 +18000,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5213">
     <first ref="quartzLogicSol2_5213"/>
     <second ref="pmtLogicSol_5213"/>
-   <position name="pmtLogicSolPos_5213" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5213" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5213" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5213" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18048,7 +18048,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5213" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5213" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5213" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5213">
 	<first ref="pmtLogicSol_5213"/> 
@@ -18080,7 +18080,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5214" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5214" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5214">
     <first ref="quartzRecSol_5214"/>
     <second ref="refLogicSol_5214"/>
@@ -18096,7 +18096,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5214">
     <first ref="quartzLogicSol2_5214"/>
     <second ref="pmtLogicSol_5214"/>
-   <position name="pmtLogicSolPos_5214" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5214" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5214" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5214" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18144,7 +18144,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5214" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5214" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5214" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5214">
 	<first ref="pmtLogicSol_5214"/> 
@@ -18176,7 +18176,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5215" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5215" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5215">
     <first ref="quartzRecSol_5215"/>
     <second ref="refLogicSol_5215"/>
@@ -18192,7 +18192,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5215">
     <first ref="quartzLogicSol2_5215"/>
     <second ref="pmtLogicSol_5215"/>
-   <position name="pmtLogicSolPos_5215" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5215" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5215" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5215" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18240,7 +18240,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5215" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5215" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5215" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5215">
 	<first ref="pmtLogicSol_5215"/> 
@@ -18272,7 +18272,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5216" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5216" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5216">
     <first ref="quartzRecSol_5216"/>
     <second ref="refLogicSol_5216"/>
@@ -18288,7 +18288,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5216">
     <first ref="quartzLogicSol2_5216"/>
     <second ref="pmtLogicSol_5216"/>
-   <position name="pmtLogicSolPos_5216" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5216" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5216" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5216" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18336,7 +18336,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5216" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5216" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5216" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5216">
 	<first ref="pmtLogicSol_5216"/> 
@@ -18368,7 +18368,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5217" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5217" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5217">
     <first ref="quartzRecSol_5217"/>
     <second ref="refLogicSol_5217"/>
@@ -18384,7 +18384,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5217">
     <first ref="quartzLogicSol2_5217"/>
     <second ref="pmtLogicSol_5217"/>
-   <position name="pmtLogicSolPos_5217" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5217" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5217" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5217" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18432,7 +18432,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5217" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5217" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5217" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5217">
 	<first ref="pmtLogicSol_5217"/> 
@@ -18464,7 +18464,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5218" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5218" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5218">
     <first ref="quartzRecSol_5218"/>
     <second ref="refLogicSol_5218"/>
@@ -18480,7 +18480,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5218">
     <first ref="quartzLogicSol2_5218"/>
     <second ref="pmtLogicSol_5218"/>
-   <position name="pmtLogicSolPos_5218" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5218" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5218" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5218" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18528,7 +18528,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5218" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5218" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5218" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5218">
 	<first ref="pmtLogicSol_5218"/> 
@@ -18560,7 +18560,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5219" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5219" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5219">
     <first ref="quartzRecSol_5219"/>
     <second ref="refLogicSol_5219"/>
@@ -18576,7 +18576,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5219">
     <first ref="quartzLogicSol2_5219"/>
     <second ref="pmtLogicSol_5219"/>
-   <position name="pmtLogicSolPos_5219" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5219" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5219" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5219" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18624,7 +18624,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5219" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5219" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5219" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5219">
 	<first ref="pmtLogicSol_5219"/> 
@@ -18656,7 +18656,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5220" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5220" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5220">
     <first ref="quartzRecSol_5220"/>
     <second ref="refLogicSol_5220"/>
@@ -18672,7 +18672,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5220">
     <first ref="quartzLogicSol2_5220"/>
     <second ref="pmtLogicSol_5220"/>
-   <position name="pmtLogicSolPos_5220" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5220" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5220" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5220" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18720,7 +18720,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5220" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5220" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5220" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5220">
 	<first ref="pmtLogicSol_5220"/> 
@@ -18752,7 +18752,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
  <section zOrder="1" zPosition="-44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1" />
  <section zOrder="2" zPosition="44.1399037970092" xOffset="0" yOffset="0" scalingFactor="1"/>
 </xtru>
-<box name="pmtLogicSol_5221" x="76.581" y="76.581" z="76.2" lunit= "mm" />
+<box name="pmtLogicSol_5221" x="76.581" y="76.581" z="152.4" lunit= "mm" />
 <union name="quartzLogicSol1_5221">
     <first ref="quartzRecSol_5221"/>
     <second ref="refLogicSol_5221"/>
@@ -18768,7 +18768,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol_5221">
     <first ref="quartzLogicSol2_5221"/>
     <second ref="pmtLogicSol_5221"/>
-   <position name="pmtLogicSolPos_5221" unit="mm" x="-59.1113292077095" y="0" z="325.598499289409"/>
+   <position name="pmtLogicSolPos_5221" unit="mm" x="-66.7072475090047" y="0" z="362.933630535463"/>
     <rotation name="pmtLogicSolRot_5221" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <trd name = "lgSol_5221" z="150" y1="82.2798075940184" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
@@ -18816,7 +18816,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 	<rotation name="reflectorSolRot_5221" unit="rad" x="0" y="0" z="0"/>
 </subtraction>
 
-<cone name = "pmtSol_5221" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="76.2"
+<cone name = "pmtSol_5221" rmin1="0" rmax1="38.1" rmin2="0" rmax2="38.1" z="152.4"
 startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <subtraction name ="pmtSkinSol_5221">
 	<first ref="pmtLogicSol_5221"/> 
