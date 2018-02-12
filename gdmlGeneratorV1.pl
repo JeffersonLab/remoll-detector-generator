@@ -232,10 +232,13 @@ print def "<subtraction name =\"pmtSkinSol_$index[$j]\">
 </subtraction>\n\n";
 
 
-
-
-
 }
+
+
+#------------------------------------------------FIXME Define surface solids----------------------------------------------------------------------------------#
+#<opticalsurface name="surf1" model="glisur" finish="polished" type="dielectric_dielectric" value="1.0"/>
+
+
 
 #----------------------------------------------------------------------------------------------------------------------------------#
 
@@ -399,6 +402,17 @@ print def "<physvol name=\"detector_$index[$j]\">
 }
 print def "</volume>";
 
+#------------------------------------------------FIXME Define Materials----------------------------------------------------------------------------------#
+#Skin surfaces are good for entire logical volumes, interacts on the surface, not the bulk
+#<skinsurface name="skinsrf1" surfaceproperty="surf1" >
+#  <volumeref ref="DetectorLogic"/>
+#</skinsurface> 
+#
+#Border surfaces are good between multiple physical volumes (defined within a logical volume)
+#<bordersurface name="bordersrf1" surfaceproperty="surf1" >
+#  <physvolref ref="PhysPv1"/>
+#  <physvolref ref="PhysPv2"/>
+#</bordersurface> 
 
 print def "\n</structure>\n\n";
 
