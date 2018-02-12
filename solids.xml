@@ -10775,7 +10775,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5001" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5001" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5001" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5001" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5001" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -10794,16 +10794,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5001">
     <first ref="quartzLogicSol1_5001"/>
     <second ref="lgLogicSol_5001"/>
-   <position name="lgLogicSolPos_5001" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5001" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5001" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5001">
     <first ref="quartzLogicSol2_5001"/>
     <second ref="pmtLogicSol_5001"/>
-   <position name="pmtLogicSolPos_5001" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5001" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5001" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5001" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5001" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5001">
 	<first ref="lgLogicSol_5001"/> 
 	<second ref="lgSol_5001"/> 
@@ -10871,7 +10871,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5002" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5002" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5002" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5002" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5002" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -10890,16 +10890,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5002">
     <first ref="quartzLogicSol1_5002"/>
     <second ref="lgLogicSol_5002"/>
-   <position name="lgLogicSolPos_5002" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5002" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5002" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5002">
     <first ref="quartzLogicSol2_5002"/>
     <second ref="pmtLogicSol_5002"/>
-   <position name="pmtLogicSolPos_5002" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5002" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5002" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5002" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5002" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5002">
 	<first ref="lgLogicSol_5002"/> 
 	<second ref="lgSol_5002"/> 
@@ -10967,7 +10967,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5003" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5003" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5003" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5003" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5003" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -10986,16 +10986,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5003">
     <first ref="quartzLogicSol1_5003"/>
     <second ref="lgLogicSol_5003"/>
-   <position name="lgLogicSolPos_5003" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5003" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5003" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5003">
     <first ref="quartzLogicSol2_5003"/>
     <second ref="pmtLogicSol_5003"/>
-   <position name="pmtLogicSolPos_5003" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5003" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5003" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5003" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5003" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5003">
 	<first ref="lgLogicSol_5003"/> 
 	<second ref="lgSol_5003"/> 
@@ -11063,7 +11063,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5004" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5004" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5004" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5004" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5004" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11082,16 +11082,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5004">
     <first ref="quartzLogicSol1_5004"/>
     <second ref="lgLogicSol_5004"/>
-   <position name="lgLogicSolPos_5004" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5004" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5004" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5004">
     <first ref="quartzLogicSol2_5004"/>
     <second ref="pmtLogicSol_5004"/>
-   <position name="pmtLogicSolPos_5004" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5004" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5004" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5004" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5004" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5004">
 	<first ref="lgLogicSol_5004"/> 
 	<second ref="lgSol_5004"/> 
@@ -11159,7 +11159,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5005" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5005" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5005" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5005" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5005" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11178,16 +11178,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5005">
     <first ref="quartzLogicSol1_5005"/>
     <second ref="lgLogicSol_5005"/>
-   <position name="lgLogicSolPos_5005" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5005" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5005" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5005">
     <first ref="quartzLogicSol2_5005"/>
     <second ref="pmtLogicSol_5005"/>
-   <position name="pmtLogicSolPos_5005" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5005" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5005" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5005" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5005" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5005">
 	<first ref="lgLogicSol_5005"/> 
 	<second ref="lgSol_5005"/> 
@@ -11255,7 +11255,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5006" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5006" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5006" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5006" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5006" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11274,16 +11274,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5006">
     <first ref="quartzLogicSol1_5006"/>
     <second ref="lgLogicSol_5006"/>
-   <position name="lgLogicSolPos_5006" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5006" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5006" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5006">
     <first ref="quartzLogicSol2_5006"/>
     <second ref="pmtLogicSol_5006"/>
-   <position name="pmtLogicSolPos_5006" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5006" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5006" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5006" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5006" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5006">
 	<first ref="lgLogicSol_5006"/> 
 	<second ref="lgSol_5006"/> 
@@ -11351,7 +11351,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5007" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5007" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5007" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5007" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5007" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11370,16 +11370,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5007">
     <first ref="quartzLogicSol1_5007"/>
     <second ref="lgLogicSol_5007"/>
-   <position name="lgLogicSolPos_5007" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5007" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5007" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5007">
     <first ref="quartzLogicSol2_5007"/>
     <second ref="pmtLogicSol_5007"/>
-   <position name="pmtLogicSolPos_5007" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5007" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5007" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5007" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5007" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5007">
 	<first ref="lgLogicSol_5007"/> 
 	<second ref="lgSol_5007"/> 
@@ -11447,7 +11447,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5008" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5008" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5008" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5008" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5008" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11466,16 +11466,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5008">
     <first ref="quartzLogicSol1_5008"/>
     <second ref="lgLogicSol_5008"/>
-   <position name="lgLogicSolPos_5008" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5008" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5008" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5008">
     <first ref="quartzLogicSol2_5008"/>
     <second ref="pmtLogicSol_5008"/>
-   <position name="pmtLogicSolPos_5008" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5008" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5008" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5008" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5008" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5008">
 	<first ref="lgLogicSol_5008"/> 
 	<second ref="lgSol_5008"/> 
@@ -11543,7 +11543,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5009" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5009" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5009" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5009" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5009" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11562,16 +11562,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5009">
     <first ref="quartzLogicSol1_5009"/>
     <second ref="lgLogicSol_5009"/>
-   <position name="lgLogicSolPos_5009" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5009" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5009" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5009">
     <first ref="quartzLogicSol2_5009"/>
     <second ref="pmtLogicSol_5009"/>
-   <position name="pmtLogicSolPos_5009" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5009" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5009" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5009" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5009" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5009">
 	<first ref="lgLogicSol_5009"/> 
 	<second ref="lgSol_5009"/> 
@@ -11639,7 +11639,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5010" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5010" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5010" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5010" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5010" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11658,16 +11658,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5010">
     <first ref="quartzLogicSol1_5010"/>
     <second ref="lgLogicSol_5010"/>
-   <position name="lgLogicSolPos_5010" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5010" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5010" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5010">
     <first ref="quartzLogicSol2_5010"/>
     <second ref="pmtLogicSol_5010"/>
-   <position name="pmtLogicSolPos_5010" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5010" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5010" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5010" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5010" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5010">
 	<first ref="lgLogicSol_5010"/> 
 	<second ref="lgSol_5010"/> 
@@ -11735,7 +11735,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5011" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5011" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5011" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5011" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5011" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11754,16 +11754,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5011">
     <first ref="quartzLogicSol1_5011"/>
     <second ref="lgLogicSol_5011"/>
-   <position name="lgLogicSolPos_5011" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5011" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5011" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5011">
     <first ref="quartzLogicSol2_5011"/>
     <second ref="pmtLogicSol_5011"/>
-   <position name="pmtLogicSolPos_5011" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5011" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5011" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5011" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5011" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5011">
 	<first ref="lgLogicSol_5011"/> 
 	<second ref="lgSol_5011"/> 
@@ -11831,7 +11831,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5012" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5012" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5012" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5012" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5012" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11850,16 +11850,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5012">
     <first ref="quartzLogicSol1_5012"/>
     <second ref="lgLogicSol_5012"/>
-   <position name="lgLogicSolPos_5012" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5012" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5012" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5012">
     <first ref="quartzLogicSol2_5012"/>
     <second ref="pmtLogicSol_5012"/>
-   <position name="pmtLogicSolPos_5012" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5012" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5012" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5012" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5012" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5012">
 	<first ref="lgLogicSol_5012"/> 
 	<second ref="lgSol_5012"/> 
@@ -11927,7 +11927,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5013" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5013" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5013" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5013" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5013" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -11946,16 +11946,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5013">
     <first ref="quartzLogicSol1_5013"/>
     <second ref="lgLogicSol_5013"/>
-   <position name="lgLogicSolPos_5013" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5013" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5013" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5013">
     <first ref="quartzLogicSol2_5013"/>
     <second ref="pmtLogicSol_5013"/>
-   <position name="pmtLogicSolPos_5013" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5013" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5013" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5013" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5013" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5013">
 	<first ref="lgLogicSol_5013"/> 
 	<second ref="lgSol_5013"/> 
@@ -12023,7 +12023,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5014" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5014" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5014" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5014" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5014" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12042,16 +12042,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5014">
     <first ref="quartzLogicSol1_5014"/>
     <second ref="lgLogicSol_5014"/>
-   <position name="lgLogicSolPos_5014" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5014" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5014" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5014">
     <first ref="quartzLogicSol2_5014"/>
     <second ref="pmtLogicSol_5014"/>
-   <position name="pmtLogicSolPos_5014" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5014" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5014" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5014" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5014" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5014">
 	<first ref="lgLogicSol_5014"/> 
 	<second ref="lgSol_5014"/> 
@@ -12119,7 +12119,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5015" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5015" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5015" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5015" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5015" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12138,16 +12138,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5015">
     <first ref="quartzLogicSol1_5015"/>
     <second ref="lgLogicSol_5015"/>
-   <position name="lgLogicSolPos_5015" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5015" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5015" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5015">
     <first ref="quartzLogicSol2_5015"/>
     <second ref="pmtLogicSol_5015"/>
-   <position name="pmtLogicSolPos_5015" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5015" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5015" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5015" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5015" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5015">
 	<first ref="lgLogicSol_5015"/> 
 	<second ref="lgSol_5015"/> 
@@ -12215,7 +12215,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5016" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5016" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5016" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5016" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5016" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12234,16 +12234,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5016">
     <first ref="quartzLogicSol1_5016"/>
     <second ref="lgLogicSol_5016"/>
-   <position name="lgLogicSolPos_5016" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5016" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5016" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5016">
     <first ref="quartzLogicSol2_5016"/>
     <second ref="pmtLogicSol_5016"/>
-   <position name="pmtLogicSolPos_5016" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5016" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5016" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5016" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5016" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5016">
 	<first ref="lgLogicSol_5016"/> 
 	<second ref="lgSol_5016"/> 
@@ -12311,7 +12311,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5017" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5017" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5017" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5017" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5017" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12330,16 +12330,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5017">
     <first ref="quartzLogicSol1_5017"/>
     <second ref="lgLogicSol_5017"/>
-   <position name="lgLogicSolPos_5017" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5017" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5017" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5017">
     <first ref="quartzLogicSol2_5017"/>
     <second ref="pmtLogicSol_5017"/>
-   <position name="pmtLogicSolPos_5017" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5017" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5017" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5017" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5017" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5017">
 	<first ref="lgLogicSol_5017"/> 
 	<second ref="lgSol_5017"/> 
@@ -12407,7 +12407,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5018" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5018" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5018" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5018" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5018" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12426,16 +12426,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5018">
     <first ref="quartzLogicSol1_5018"/>
     <second ref="lgLogicSol_5018"/>
-   <position name="lgLogicSolPos_5018" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5018" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5018" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5018">
     <first ref="quartzLogicSol2_5018"/>
     <second ref="pmtLogicSol_5018"/>
-   <position name="pmtLogicSolPos_5018" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5018" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5018" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5018" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5018" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5018">
 	<first ref="lgLogicSol_5018"/> 
 	<second ref="lgSol_5018"/> 
@@ -12503,7 +12503,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5019" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5019" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5019" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5019" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5019" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12522,16 +12522,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5019">
     <first ref="quartzLogicSol1_5019"/>
     <second ref="lgLogicSol_5019"/>
-   <position name="lgLogicSolPos_5019" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5019" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5019" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5019">
     <first ref="quartzLogicSol2_5019"/>
     <second ref="pmtLogicSol_5019"/>
-   <position name="pmtLogicSolPos_5019" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5019" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5019" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5019" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5019" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5019">
 	<first ref="lgLogicSol_5019"/> 
 	<second ref="lgSol_5019"/> 
@@ -12599,7 +12599,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5020" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5020" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5020" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5020" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5020" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12618,16 +12618,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5020">
     <first ref="quartzLogicSol1_5020"/>
     <second ref="lgLogicSol_5020"/>
-   <position name="lgLogicSolPos_5020" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5020" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5020" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5020">
     <first ref="quartzLogicSol2_5020"/>
     <second ref="pmtLogicSol_5020"/>
-   <position name="pmtLogicSolPos_5020" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5020" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5020" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5020" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5020" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5020">
 	<first ref="lgLogicSol_5020"/> 
 	<second ref="lgSol_5020"/> 
@@ -12695,7 +12695,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5021" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5021" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5021" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5021" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5021" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12714,16 +12714,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5021">
     <first ref="quartzLogicSol1_5021"/>
     <second ref="lgLogicSol_5021"/>
-   <position name="lgLogicSolPos_5021" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5021" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5021" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5021">
     <first ref="quartzLogicSol2_5021"/>
     <second ref="pmtLogicSol_5021"/>
-   <position name="pmtLogicSolPos_5021" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5021" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5021" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5021" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5021" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5021">
 	<first ref="lgLogicSol_5021"/> 
 	<second ref="lgSol_5021"/> 
@@ -12791,7 +12791,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5022" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5022" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5022" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5022" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5022" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12810,16 +12810,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5022">
     <first ref="quartzLogicSol1_5022"/>
     <second ref="lgLogicSol_5022"/>
-   <position name="lgLogicSolPos_5022" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5022" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5022" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5022">
     <first ref="quartzLogicSol2_5022"/>
     <second ref="pmtLogicSol_5022"/>
-   <position name="pmtLogicSolPos_5022" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5022" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5022" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5022" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5022" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5022">
 	<first ref="lgLogicSol_5022"/> 
 	<second ref="lgSol_5022"/> 
@@ -12887,7 +12887,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5023" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5023" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5023" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5023" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5023" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -12906,16 +12906,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5023">
     <first ref="quartzLogicSol1_5023"/>
     <second ref="lgLogicSol_5023"/>
-   <position name="lgLogicSolPos_5023" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5023" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5023" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5023">
     <first ref="quartzLogicSol2_5023"/>
     <second ref="pmtLogicSol_5023"/>
-   <position name="pmtLogicSolPos_5023" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5023" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5023" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5023" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5023" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5023">
 	<first ref="lgLogicSol_5023"/> 
 	<second ref="lgSol_5023"/> 
@@ -12983,7 +12983,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5024" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5024" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5024" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5024" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5024" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13002,16 +13002,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5024">
     <first ref="quartzLogicSol1_5024"/>
     <second ref="lgLogicSol_5024"/>
-   <position name="lgLogicSolPos_5024" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5024" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5024" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5024">
     <first ref="quartzLogicSol2_5024"/>
     <second ref="pmtLogicSol_5024"/>
-   <position name="pmtLogicSolPos_5024" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5024" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5024" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5024" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5024" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5024">
 	<first ref="lgLogicSol_5024"/> 
 	<second ref="lgSol_5024"/> 
@@ -13079,7 +13079,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5025" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5025" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5025" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5025" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5025" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13098,16 +13098,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5025">
     <first ref="quartzLogicSol1_5025"/>
     <second ref="lgLogicSol_5025"/>
-   <position name="lgLogicSolPos_5025" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5025" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5025" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5025">
     <first ref="quartzLogicSol2_5025"/>
     <second ref="pmtLogicSol_5025"/>
-   <position name="pmtLogicSolPos_5025" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5025" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5025" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5025" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5025" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5025">
 	<first ref="lgLogicSol_5025"/> 
 	<second ref="lgSol_5025"/> 
@@ -13175,7 +13175,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5026" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5026" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5026" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5026" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5026" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13194,16 +13194,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5026">
     <first ref="quartzLogicSol1_5026"/>
     <second ref="lgLogicSol_5026"/>
-   <position name="lgLogicSolPos_5026" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5026" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5026" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5026">
     <first ref="quartzLogicSol2_5026"/>
     <second ref="pmtLogicSol_5026"/>
-   <position name="pmtLogicSolPos_5026" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5026" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5026" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5026" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5026" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5026">
 	<first ref="lgLogicSol_5026"/> 
 	<second ref="lgSol_5026"/> 
@@ -13271,7 +13271,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5027" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5027" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5027" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5027" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5027" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13290,16 +13290,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5027">
     <first ref="quartzLogicSol1_5027"/>
     <second ref="lgLogicSol_5027"/>
-   <position name="lgLogicSolPos_5027" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5027" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5027" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5027">
     <first ref="quartzLogicSol2_5027"/>
     <second ref="pmtLogicSol_5027"/>
-   <position name="pmtLogicSolPos_5027" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5027" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5027" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5027" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5027" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5027">
 	<first ref="lgLogicSol_5027"/> 
 	<second ref="lgSol_5027"/> 
@@ -13367,7 +13367,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5028" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5028" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5028" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5028" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5028" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13386,16 +13386,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5028">
     <first ref="quartzLogicSol1_5028"/>
     <second ref="lgLogicSol_5028"/>
-   <position name="lgLogicSolPos_5028" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5028" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5028" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5028">
     <first ref="quartzLogicSol2_5028"/>
     <second ref="pmtLogicSol_5028"/>
-   <position name="pmtLogicSolPos_5028" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5028" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5028" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5028" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5028" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5028">
 	<first ref="lgLogicSol_5028"/> 
 	<second ref="lgSol_5028"/> 
@@ -13463,7 +13463,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5029" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5029" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5029" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5029" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5029" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13482,16 +13482,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5029">
     <first ref="quartzLogicSol1_5029"/>
     <second ref="lgLogicSol_5029"/>
-   <position name="lgLogicSolPos_5029" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5029" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5029" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5029">
     <first ref="quartzLogicSol2_5029"/>
     <second ref="pmtLogicSol_5029"/>
-   <position name="pmtLogicSolPos_5029" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5029" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5029" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5029" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5029" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5029">
 	<first ref="lgLogicSol_5029"/> 
 	<second ref="lgSol_5029"/> 
@@ -13559,7 +13559,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5030" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5030" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5030" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5030" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5030" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13578,16 +13578,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5030">
     <first ref="quartzLogicSol1_5030"/>
     <second ref="lgLogicSol_5030"/>
-   <position name="lgLogicSolPos_5030" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5030" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5030" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5030">
     <first ref="quartzLogicSol2_5030"/>
     <second ref="pmtLogicSol_5030"/>
-   <position name="pmtLogicSolPos_5030" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5030" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5030" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5030" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5030" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5030">
 	<first ref="lgLogicSol_5030"/> 
 	<second ref="lgSol_5030"/> 
@@ -13655,7 +13655,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5031" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5031" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5031" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5031" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5031" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13674,16 +13674,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5031">
     <first ref="quartzLogicSol1_5031"/>
     <second ref="lgLogicSol_5031"/>
-   <position name="lgLogicSolPos_5031" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5031" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5031" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5031">
     <first ref="quartzLogicSol2_5031"/>
     <second ref="pmtLogicSol_5031"/>
-   <position name="pmtLogicSolPos_5031" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5031" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5031" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5031" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5031" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5031">
 	<first ref="lgLogicSol_5031"/> 
 	<second ref="lgSol_5031"/> 
@@ -13751,7 +13751,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5032" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5032" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5032" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5032" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5032" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13770,16 +13770,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5032">
     <first ref="quartzLogicSol1_5032"/>
     <second ref="lgLogicSol_5032"/>
-   <position name="lgLogicSolPos_5032" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5032" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5032" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5032">
     <first ref="quartzLogicSol2_5032"/>
     <second ref="pmtLogicSol_5032"/>
-   <position name="pmtLogicSolPos_5032" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5032" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5032" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5032" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5032" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5032">
 	<first ref="lgLogicSol_5032"/> 
 	<second ref="lgSol_5032"/> 
@@ -13847,7 +13847,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5033" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5033" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5033" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5033" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5033" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13866,16 +13866,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5033">
     <first ref="quartzLogicSol1_5033"/>
     <second ref="lgLogicSol_5033"/>
-   <position name="lgLogicSolPos_5033" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5033" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5033" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5033">
     <first ref="quartzLogicSol2_5033"/>
     <second ref="pmtLogicSol_5033"/>
-   <position name="pmtLogicSolPos_5033" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5033" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5033" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5033" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5033" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5033">
 	<first ref="lgLogicSol_5033"/> 
 	<second ref="lgSol_5033"/> 
@@ -13943,7 +13943,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5034" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5034" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5034" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5034" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5034" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -13962,16 +13962,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5034">
     <first ref="quartzLogicSol1_5034"/>
     <second ref="lgLogicSol_5034"/>
-   <position name="lgLogicSolPos_5034" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5034" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5034" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5034">
     <first ref="quartzLogicSol2_5034"/>
     <second ref="pmtLogicSol_5034"/>
-   <position name="pmtLogicSolPos_5034" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5034" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5034" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5034" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5034" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5034">
 	<first ref="lgLogicSol_5034"/> 
 	<second ref="lgSol_5034"/> 
@@ -14039,7 +14039,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5035" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5035" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5035" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5035" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5035" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14058,16 +14058,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5035">
     <first ref="quartzLogicSol1_5035"/>
     <second ref="lgLogicSol_5035"/>
-   <position name="lgLogicSolPos_5035" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5035" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5035" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5035">
     <first ref="quartzLogicSol2_5035"/>
     <second ref="pmtLogicSol_5035"/>
-   <position name="pmtLogicSolPos_5035" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5035" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5035" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5035" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5035" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5035">
 	<first ref="lgLogicSol_5035"/> 
 	<second ref="lgSol_5035"/> 
@@ -14135,7 +14135,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5036" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5036" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5036" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5036" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5036" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14154,16 +14154,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5036">
     <first ref="quartzLogicSol1_5036"/>
     <second ref="lgLogicSol_5036"/>
-   <position name="lgLogicSolPos_5036" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5036" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5036" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5036">
     <first ref="quartzLogicSol2_5036"/>
     <second ref="pmtLogicSol_5036"/>
-   <position name="pmtLogicSolPos_5036" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5036" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5036" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5036" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5036" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5036">
 	<first ref="lgLogicSol_5036"/> 
 	<second ref="lgSol_5036"/> 
@@ -14231,7 +14231,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5037" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5037" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5037" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5037" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5037" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14250,16 +14250,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5037">
     <first ref="quartzLogicSol1_5037"/>
     <second ref="lgLogicSol_5037"/>
-   <position name="lgLogicSolPos_5037" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5037" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5037" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5037">
     <first ref="quartzLogicSol2_5037"/>
     <second ref="pmtLogicSol_5037"/>
-   <position name="pmtLogicSolPos_5037" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5037" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5037" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5037" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5037" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5037">
 	<first ref="lgLogicSol_5037"/> 
 	<second ref="lgSol_5037"/> 
@@ -14327,7 +14327,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5038" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5038" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5038" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5038" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5038" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14346,16 +14346,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5038">
     <first ref="quartzLogicSol1_5038"/>
     <second ref="lgLogicSol_5038"/>
-   <position name="lgLogicSolPos_5038" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5038" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5038" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5038">
     <first ref="quartzLogicSol2_5038"/>
     <second ref="pmtLogicSol_5038"/>
-   <position name="pmtLogicSolPos_5038" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5038" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5038" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5038" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5038" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5038">
 	<first ref="lgLogicSol_5038"/> 
 	<second ref="lgSol_5038"/> 
@@ -14423,7 +14423,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5039" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5039" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5039" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5039" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5039" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14442,16 +14442,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5039">
     <first ref="quartzLogicSol1_5039"/>
     <second ref="lgLogicSol_5039"/>
-   <position name="lgLogicSolPos_5039" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5039" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5039" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5039">
     <first ref="quartzLogicSol2_5039"/>
     <second ref="pmtLogicSol_5039"/>
-   <position name="pmtLogicSolPos_5039" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5039" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5039" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5039" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5039" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5039">
 	<first ref="lgLogicSol_5039"/> 
 	<second ref="lgSol_5039"/> 
@@ -14519,7 +14519,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5040" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5040" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5040" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5040" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5040" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14538,16 +14538,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5040">
     <first ref="quartzLogicSol1_5040"/>
     <second ref="lgLogicSol_5040"/>
-   <position name="lgLogicSolPos_5040" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5040" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5040" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5040">
     <first ref="quartzLogicSol2_5040"/>
     <second ref="pmtLogicSol_5040"/>
-   <position name="pmtLogicSolPos_5040" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5040" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5040" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5040" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5040" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5040">
 	<first ref="lgLogicSol_5040"/> 
 	<second ref="lgSol_5040"/> 
@@ -14615,7 +14615,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5041" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5041" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5041" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5041" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5041" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14634,16 +14634,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5041">
     <first ref="quartzLogicSol1_5041"/>
     <second ref="lgLogicSol_5041"/>
-   <position name="lgLogicSolPos_5041" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5041" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5041" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5041">
     <first ref="quartzLogicSol2_5041"/>
     <second ref="pmtLogicSol_5041"/>
-   <position name="pmtLogicSolPos_5041" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5041" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5041" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5041" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5041" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5041">
 	<first ref="lgLogicSol_5041"/> 
 	<second ref="lgSol_5041"/> 
@@ -14711,7 +14711,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5042" unit="mm" x="0" y="0" z="62.4999983660258"/>
     <rotation name="quartzCutSolRot_5042" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5042" z="150" y1="86.4117662887441" x1="93.5459628457629" y2="82.5829543218625" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5042" z="210" y1="86.4108091493966" x1="93.538149608249" y2="82.581997182515" x2="82.589149608249" lunit= "mm"/>
 <xtru name = "refLogicSol_5042" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14730,16 +14730,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5042">
     <first ref="quartzLogicSol1_5042"/>
     <second ref="lgLogicSol_5042"/>
-   <position name="lgLogicSolPos_5042" unit="mm" x="-36.5628158251244" y="0" z="202.269015196794"/>
+   <position name="lgLogicSolPos_5042" unit="mm" x="-42.5438538576404" y="0" z="231.666756335418"/>
     <rotation name="lgLogicSolRot_5042" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5042">
     <first ref="quartzLogicSol2_5042"/>
     <second ref="pmtLogicSol_5042"/>
-   <position name="pmtLogicSolPos_5042" unit="mm" x="-66.7072475090047" y="0" z="350.433630535463"/>
+   <position name="pmtLogicSolPos_5042" unit="mm" x="-78.6693235740365" y="0" z="409.229112812713"/>
     <rotation name="pmtLogicSolRot_5042" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5042" z="150" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5042" z="210" y1="80.4098119668816" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5042">
 	<first ref="lgLogicSol_5042"/> 
 	<second ref="lgSol_5042"/> 
@@ -14807,7 +14807,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5101" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5101" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5101" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5101" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5101" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14826,16 +14826,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5101">
     <first ref="quartzLogicSol1_5101"/>
     <second ref="lgLogicSol_5101"/>
-   <position name="lgLogicSolPos_5101" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5101" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5101" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5101">
     <first ref="quartzLogicSol2_5101"/>
     <second ref="pmtLogicSol_5101"/>
-   <position name="pmtLogicSolPos_5101" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5101" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5101" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5101" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5101" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5101">
 	<first ref="lgLogicSol_5101"/> 
 	<second ref="lgSol_5101"/> 
@@ -14903,7 +14903,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5102" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5102" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5102" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5102" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5102" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -14922,16 +14922,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5102">
     <first ref="quartzLogicSol1_5102"/>
     <second ref="lgLogicSol_5102"/>
-   <position name="lgLogicSolPos_5102" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5102" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5102" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5102">
     <first ref="quartzLogicSol2_5102"/>
     <second ref="pmtLogicSol_5102"/>
-   <position name="pmtLogicSolPos_5102" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5102" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5102" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5102" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5102" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5102">
 	<first ref="lgLogicSol_5102"/> 
 	<second ref="lgSol_5102"/> 
@@ -14999,7 +14999,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5103" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5103" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5103" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5103" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5103" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15018,16 +15018,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5103">
     <first ref="quartzLogicSol1_5103"/>
     <second ref="lgLogicSol_5103"/>
-   <position name="lgLogicSolPos_5103" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5103" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5103" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5103">
     <first ref="quartzLogicSol2_5103"/>
     <second ref="pmtLogicSol_5103"/>
-   <position name="pmtLogicSolPos_5103" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5103" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5103" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5103" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5103" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5103">
 	<first ref="lgLogicSol_5103"/> 
 	<second ref="lgSol_5103"/> 
@@ -15095,7 +15095,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5104" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5104" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5104" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5104" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5104" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15114,16 +15114,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5104">
     <first ref="quartzLogicSol1_5104"/>
     <second ref="lgLogicSol_5104"/>
-   <position name="lgLogicSolPos_5104" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5104" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5104" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5104">
     <first ref="quartzLogicSol2_5104"/>
     <second ref="pmtLogicSol_5104"/>
-   <position name="pmtLogicSolPos_5104" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5104" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5104" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5104" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5104" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5104">
 	<first ref="lgLogicSol_5104"/> 
 	<second ref="lgSol_5104"/> 
@@ -15191,7 +15191,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5105" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5105" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5105" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5105" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5105" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15210,16 +15210,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5105">
     <first ref="quartzLogicSol1_5105"/>
     <second ref="lgLogicSol_5105"/>
-   <position name="lgLogicSolPos_5105" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5105" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5105" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5105">
     <first ref="quartzLogicSol2_5105"/>
     <second ref="pmtLogicSol_5105"/>
-   <position name="pmtLogicSolPos_5105" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5105" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5105" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5105" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5105" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5105">
 	<first ref="lgLogicSol_5105"/> 
 	<second ref="lgSol_5105"/> 
@@ -15287,7 +15287,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5106" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5106" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5106" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5106" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5106" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15306,16 +15306,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5106">
     <first ref="quartzLogicSol1_5106"/>
     <second ref="lgLogicSol_5106"/>
-   <position name="lgLogicSolPos_5106" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5106" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5106" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5106">
     <first ref="quartzLogicSol2_5106"/>
     <second ref="pmtLogicSol_5106"/>
-   <position name="pmtLogicSolPos_5106" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5106" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5106" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5106" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5106" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5106">
 	<first ref="lgLogicSol_5106"/> 
 	<second ref="lgSol_5106"/> 
@@ -15383,7 +15383,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5107" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5107" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5107" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5107" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5107" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15402,16 +15402,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5107">
     <first ref="quartzLogicSol1_5107"/>
     <second ref="lgLogicSol_5107"/>
-   <position name="lgLogicSolPos_5107" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5107" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5107" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5107">
     <first ref="quartzLogicSol2_5107"/>
     <second ref="pmtLogicSol_5107"/>
-   <position name="pmtLogicSolPos_5107" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5107" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5107" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5107" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5107" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5107">
 	<first ref="lgLogicSol_5107"/> 
 	<second ref="lgSol_5107"/> 
@@ -15479,7 +15479,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5108" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5108" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5108" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5108" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5108" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15498,16 +15498,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5108">
     <first ref="quartzLogicSol1_5108"/>
     <second ref="lgLogicSol_5108"/>
-   <position name="lgLogicSolPos_5108" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5108" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5108" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5108">
     <first ref="quartzLogicSol2_5108"/>
     <second ref="pmtLogicSol_5108"/>
-   <position name="pmtLogicSolPos_5108" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5108" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5108" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5108" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5108" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5108">
 	<first ref="lgLogicSol_5108"/> 
 	<second ref="lgSol_5108"/> 
@@ -15575,7 +15575,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5109" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5109" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5109" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5109" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5109" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15594,16 +15594,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5109">
     <first ref="quartzLogicSol1_5109"/>
     <second ref="lgLogicSol_5109"/>
-   <position name="lgLogicSolPos_5109" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5109" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5109" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5109">
     <first ref="quartzLogicSol2_5109"/>
     <second ref="pmtLogicSol_5109"/>
-   <position name="pmtLogicSolPos_5109" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5109" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5109" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5109" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5109" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5109">
 	<first ref="lgLogicSol_5109"/> 
 	<second ref="lgSol_5109"/> 
@@ -15671,7 +15671,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5110" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5110" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5110" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5110" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5110" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15690,16 +15690,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5110">
     <first ref="quartzLogicSol1_5110"/>
     <second ref="lgLogicSol_5110"/>
-   <position name="lgLogicSolPos_5110" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5110" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5110" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5110">
     <first ref="quartzLogicSol2_5110"/>
     <second ref="pmtLogicSol_5110"/>
-   <position name="pmtLogicSolPos_5110" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5110" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5110" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5110" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5110" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5110">
 	<first ref="lgLogicSol_5110"/> 
 	<second ref="lgSol_5110"/> 
@@ -15767,7 +15767,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5111" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5111" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5111" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5111" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5111" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15786,16 +15786,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5111">
     <first ref="quartzLogicSol1_5111"/>
     <second ref="lgLogicSol_5111"/>
-   <position name="lgLogicSolPos_5111" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5111" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5111" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5111">
     <first ref="quartzLogicSol2_5111"/>
     <second ref="pmtLogicSol_5111"/>
-   <position name="pmtLogicSolPos_5111" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5111" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5111" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5111" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5111" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5111">
 	<first ref="lgLogicSol_5111"/> 
 	<second ref="lgSol_5111"/> 
@@ -15863,7 +15863,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5112" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5112" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5112" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5112" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5112" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15882,16 +15882,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5112">
     <first ref="quartzLogicSol1_5112"/>
     <second ref="lgLogicSol_5112"/>
-   <position name="lgLogicSolPos_5112" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5112" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5112" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5112">
     <first ref="quartzLogicSol2_5112"/>
     <second ref="pmtLogicSol_5112"/>
-   <position name="pmtLogicSolPos_5112" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5112" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5112" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5112" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5112" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5112">
 	<first ref="lgLogicSol_5112"/> 
 	<second ref="lgSol_5112"/> 
@@ -15959,7 +15959,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5113" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5113" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5113" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5113" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5113" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -15978,16 +15978,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5113">
     <first ref="quartzLogicSol1_5113"/>
     <second ref="lgLogicSol_5113"/>
-   <position name="lgLogicSolPos_5113" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5113" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5113" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5113">
     <first ref="quartzLogicSol2_5113"/>
     <second ref="pmtLogicSol_5113"/>
-   <position name="pmtLogicSolPos_5113" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5113" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5113" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5113" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5113" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5113">
 	<first ref="lgLogicSol_5113"/> 
 	<second ref="lgSol_5113"/> 
@@ -16055,7 +16055,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5114" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5114" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5114" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5114" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5114" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16074,16 +16074,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5114">
     <first ref="quartzLogicSol1_5114"/>
     <second ref="lgLogicSol_5114"/>
-   <position name="lgLogicSolPos_5114" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5114" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5114" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5114">
     <first ref="quartzLogicSol2_5114"/>
     <second ref="pmtLogicSol_5114"/>
-   <position name="pmtLogicSolPos_5114" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5114" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5114" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5114" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5114" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5114">
 	<first ref="lgLogicSol_5114"/> 
 	<second ref="lgSol_5114"/> 
@@ -16151,7 +16151,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5115" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5115" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5115" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5115" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5115" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16170,16 +16170,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5115">
     <first ref="quartzLogicSol1_5115"/>
     <second ref="lgLogicSol_5115"/>
-   <position name="lgLogicSolPos_5115" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5115" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5115" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5115">
     <first ref="quartzLogicSol2_5115"/>
     <second ref="pmtLogicSol_5115"/>
-   <position name="pmtLogicSolPos_5115" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5115" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5115" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5115" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5115" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5115">
 	<first ref="lgLogicSol_5115"/> 
 	<second ref="lgSol_5115"/> 
@@ -16247,7 +16247,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5116" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5116" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5116" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5116" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5116" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16266,16 +16266,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5116">
     <first ref="quartzLogicSol1_5116"/>
     <second ref="lgLogicSol_5116"/>
-   <position name="lgLogicSolPos_5116" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5116" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5116" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5116">
     <first ref="quartzLogicSol2_5116"/>
     <second ref="pmtLogicSol_5116"/>
-   <position name="pmtLogicSolPos_5116" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5116" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5116" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5116" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5116" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5116">
 	<first ref="lgLogicSol_5116"/> 
 	<second ref="lgSol_5116"/> 
@@ -16343,7 +16343,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5117" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5117" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5117" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5117" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5117" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16362,16 +16362,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5117">
     <first ref="quartzLogicSol1_5117"/>
     <second ref="lgLogicSol_5117"/>
-   <position name="lgLogicSolPos_5117" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5117" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5117" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5117">
     <first ref="quartzLogicSol2_5117"/>
     <second ref="pmtLogicSol_5117"/>
-   <position name="pmtLogicSolPos_5117" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5117" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5117" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5117" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5117" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5117">
 	<first ref="lgLogicSol_5117"/> 
 	<second ref="lgSol_5117"/> 
@@ -16439,7 +16439,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5118" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5118" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5118" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5118" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5118" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16458,16 +16458,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5118">
     <first ref="quartzLogicSol1_5118"/>
     <second ref="lgLogicSol_5118"/>
-   <position name="lgLogicSolPos_5118" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5118" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5118" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5118">
     <first ref="quartzLogicSol2_5118"/>
     <second ref="pmtLogicSol_5118"/>
-   <position name="pmtLogicSolPos_5118" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5118" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5118" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5118" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5118" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5118">
 	<first ref="lgLogicSol_5118"/> 
 	<second ref="lgSol_5118"/> 
@@ -16535,7 +16535,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5119" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5119" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5119" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5119" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5119" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16554,16 +16554,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5119">
     <first ref="quartzLogicSol1_5119"/>
     <second ref="lgLogicSol_5119"/>
-   <position name="lgLogicSolPos_5119" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5119" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5119" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5119">
     <first ref="quartzLogicSol2_5119"/>
     <second ref="pmtLogicSol_5119"/>
-   <position name="pmtLogicSolPos_5119" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5119" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5119" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5119" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5119" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5119">
 	<first ref="lgLogicSol_5119"/> 
 	<second ref="lgSol_5119"/> 
@@ -16631,7 +16631,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5120" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5120" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5120" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5120" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5120" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16650,16 +16650,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5120">
     <first ref="quartzLogicSol1_5120"/>
     <second ref="lgLogicSol_5120"/>
-   <position name="lgLogicSolPos_5120" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5120" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5120" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5120">
     <first ref="quartzLogicSol2_5120"/>
     <second ref="pmtLogicSol_5120"/>
-   <position name="pmtLogicSolPos_5120" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5120" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5120" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5120" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5120" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5120">
 	<first ref="lgLogicSol_5120"/> 
 	<second ref="lgSol_5120"/> 
@@ -16727,7 +16727,7 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
     <position name="quartzCutSolPos_5121" unit="mm" x="0" y="0" z="57.4999983660258"/>
     <rotation name="quartzCutSolRot_5121" unit="rad" x="PI/2" y="0" z="PI"/> 
 </union>
-<trd name = "lgLogicSol_5121" z="150" y1="83.7920135630985" x1="93.5459628457629" y2="82.5811954742084" x2="82.5969628457629" lunit= "mm"/>
+<trd name = "lgLogicSol_5121" z="175" y1="83.7919617032149" x1="93.5417319359521" y2="82.5811436143248" x2="82.5927319359521" lunit= "mm"/>
 <xtru name = "refLogicSol_5121" lunit= "mm" >
  <twoDimVertex x="25.1085688928823" y="40.7797075281135" />
  <twoDimVertex x="-67.4363995554278" y="21.9512208972111" />
@@ -16746,16 +16746,16 @@ startphi="0" deltaphi="2*PI" aunit="rad" lunit= "mm" />
 <union name="quartzLogicSol2_5121">
     <first ref="quartzLogicSol1_5121"/>
     <second ref="lgLogicSol_5121"/>
-   <position name="lgLogicSolPos_5121" unit="mm" x="-36.5628158251244" y="0" z="197.269015196794"/>
+   <position name="lgLogicSolPos_5121" unit="mm" x="-39.0549150053394" y="0" z="209.518074004554"/>
     <rotation name="lgLogicSolRot_5121" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
 <union name="quartzLogicSol_5121">
     <first ref="quartzLogicSol2_5121"/>
     <second ref="pmtLogicSol_5121"/>
-   <position name="pmtLogicSolPos_5121" unit="mm" x="-66.7072475090047" y="0" z="345.433630535463"/>
+   <position name="pmtLogicSolPos_5121" unit="mm" x="-71.6914458694346" y="0" z="369.931748150984"/>
     <rotation name="pmtLogicSolRot_5121" unit="rad" x="0" y="-0.200712863979348" z="0"/> 
 </union>
-<trd name = "lgSol_5121" z="150" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
+<trd name = "lgSol_5121" z="175" y1="77.7918180888901" x1="87.53" y2="76.581" x2="76.581" lunit= "mm"/>
 <subtraction name ="lgSolSkin_5121">
 	<first ref="lgLogicSol_5121"/> 
 	<second ref="lgSol_5121"/> 
