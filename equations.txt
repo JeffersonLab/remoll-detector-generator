@@ -120,8 +120,8 @@
 "lg2L"= 475mm
 "lg3L"= 400mm
 "lg4L"= 312.5mm
-"lg5transL"= 210mm
-"lg5openL"= 175mm
+"lg5transL"= 170mm
+"lg5openL"= 210mm
 "lg5closedL"= 150mm
 "lg6L"= 75mm
 "D1@Sketch1@R1_reflector_side_wall<3>.Part@R1_reflector<1>.Assembly@R1_quartz_lg_reflector_assembly<1>.Assembly" = "refl1L"
