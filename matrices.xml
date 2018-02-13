@@ -1,0 +1,63 @@
+<matrix name="Quartz_RINDEX" coldim="2" values="0.012407001 1.45492811211438
+0.024814002 1.45485726297319"/>
+<matrix name="Quartz_ABSLENGTH" coldim="2" values="0.012407001 25
+0.024814002 25"/>
+<matrix name="AIR_RINDEX" coldim="2" values="0.012407001 1.00027262020641
+0.024814002 1.00027262066689"/>
+<matrix name="FASTCOMPONENT" coldim="2" values="2.*eV 0.5
+6*eV 0.5"/>
+<matrix name="SLOWCOMPONENT" coldim="2" values="2.*eV 0.5
+6*eV 0.5"/>
+<matrix name="AR_RINDEX" coldim="2" values="0.012407001 1.00027723927276
+0.024814002 1.00027723972556"/>
+<matrix name="CO2_RINDEX" coldim="2" values="0.012407001 1.00046631123346
+0.024814002 1.0004664422201"/>
+<matrix name="CO2_ABSLENGTH" coldim="2" values="2.04358*eV 70316.5*m
+2.0664*eV 66796.2*m
+2.09046*eV 63314.0*m
+2.14023*eV 56785.7*m
+2.16601*eV 53726.5*m
+2.20587*eV 49381.2*m
+2.23327*eV 46640.7*m
+2.26137*eV 44020.0*m
+2.31972*eV 39127.2*m
+2.35005*eV 36845.7*m
+2.38116*eV 34671.4*m
+2.41313*eV 32597.4*m
+2.44598*eV 30621.3*m
+2.47968*eV 28743.4*m
+2.53081*eV 26154.3*m
+2.58354*eV 23775.1*m
+2.6194*eV 22306.7*m
+2.69589*eV 19526.3*m
+2.73515*eV 18263.4*m
+2.79685*eV 16473.0*m
+2.86139*eV 14823.5*m
+2.95271*eV 12818.8*m
+3.04884*eV 11053.4*m
+3.12665*eV 9837.32*m
+3.2393*eV 8351.83*m
+3.39218*eV 6747.67*m
+3.52508*eV 5648.87*m
+3.66893*eV 4694.87*m
+3.82396*eV 3876.99*m
+3.99949*eV 3150.27*m
+4.13281*eV 2706.97*m
+4.27679*eV 2310.46*m
+4.48244*eV 1859.36*m
+4.65057*eV 1568.2*m
+4.89476*eV 1237.69*m
+5.02774*eV 1093.38*m
+5.16816*eV 962.586*m
+5.31437*eV 846.065*m
+5.63821*eV 643.562*m
+5.90401*eV 520.072*m
+6.19921*eV 133.014*m"/>
+<matrix name="N2_RINDEX" coldim="2" values="0.012407001 1.00029377139274
+0.024814002 1.00029377186263"/>
+<matrix name="Quartz_Surf_RINDEX" coldim="2" values="2.038*eV 1.46
+4.144*eV 1.46"/>
+<matrix name="Quartz_Surf_SPECLOBE" coldim="2" values="2.038*eV 0.3
+4.144*eV 0.3"/>
+<matrix name="Quartz_Surf_SPECSPIKE" coldim="2" values="2.038*eV 0.2
+4.144*eV 0.2"/>
