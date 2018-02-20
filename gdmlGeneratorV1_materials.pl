@@ -13,11 +13,11 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw(@PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
+use vars qw($k $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags.------------------------------------------##
-getopts('M:D:T:P:');
+getopts('M:D:T:P:U:');
 
 if ($#ARGV > -1){
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
@@ -47,37 +47,37 @@ close $data;
 
 ##------------------Start Reading CSV file containing parameter values for detectors inside mother volume.-------------##
 open($data, '<', $opt_D);               # Open csv file.
-$i=0;
+$k=0;
 while($line= <$data>){                  # Read each line till the end of the file.
 if ($line =~ /^\s*$/) {    		# Check for empty lines.
     print "String contains 0 or more white-space character and nothing else.\n";
 } else {
 chomp $line;
 @fields = split(",", $line);            # Split the line into fields.
-$index[$i]=trim($fields[0]);            # Get rid of initial and trailing white spaces.
-$x[$i]=trim($fields[1]);
-$y[$i]=trim($fields[2]);
-$z[$i]=trim($fields[3]);
-$dx[$i]=trim($fields[4]);
-$dy[$i]=trim($fields[5]);
-$dz[$i]=trim($fields[6]);
-$rx[$i]=trim($fields[7]);
-$ry[$i]=trim($fields[8]);
-$rz[$i]=trim($fields[9]);
-$quartzCutAngle[$i]=trim($fields[10]);
-$refTopOpeningAngle[$i]=trim($fields[11]);
-$dzRef[$i]=trim($fields[12]);
-$dxLg[$i]=trim($fields[13]);
-$dyLg[$i]=trim($fields[14]);
-$dzLg[$i]=trim($fields[15]);
-$lgTiltAngle[$i]=trim($fields[16]);
-$dxPmt[$i]=trim($fields[17]); 		
-$dyPmt[$i]= trim($fields[18]);
-$dzPmt[$i]= trim($fields[19]);
-$drPmt[$i]= trim($fields[20]);
-$dtWall[$i]= trim($fields[21]); 
-$dtReflector[$i]= trim($fields[22]); 
-$i=$i+1;
+$index[$k]=trim($fields[0]);            # Get rid of initial and trailing white spaces.
+$x[$k]=trim($fields[1]);
+$y[$k]=trim($fields[2]);
+$z[$k]=trim($fields[3]);
+$dx[$k]=trim($fields[4]);
+$dy[$k]=trim($fields[5]);
+$dz[$k]=trim($fields[6]);
+$rx[$k]=trim($fields[7]);
+$ry[$k]=trim($fields[8]);
+$rz[$k]=trim($fields[9]);
+$quartzCutAngle[$k]=trim($fields[10]);
+$refTopOpeningAngle[$k]=trim($fields[11]);
+$dzRef[$k]=trim($fields[12]);
+$dxLg[$k]=trim($fields[13]);
+$dyLg[$k]=trim($fields[14]);
+$dzLg[$k]=trim($fields[15]);
+$lgTiltAngle[$k]=trim($fields[16]);
+$dxPmt[$k]=trim($fields[17]); 		
+$dyPmt[$k]= trim($fields[18]);
+$dzPmt[$k]= trim($fields[19]);
+$drPmt[$k]= trim($fields[20]);
+$dtWall[$k]= trim($fields[21]); 
+$dtReflector[$k]= trim($fields[22]); 
+$k=$k+1;
 }
 }
 close $data;
@@ -86,36 +86,53 @@ close $data;
 ##------------------Start Photon Energy File (Brad's Data)-----------------------##
 
 open($data, '<', $opt_P);               # Open space seperated value file.
-$i=0;
+open($uvs, '<', $opt_U);
+$k=0;
 while($line= <$data>){                  # Read each line till the end of the file.
 if ($line =~ /^\s*$/) {    		# Check for empty lines.
     print "String contains 0 or more white-space character and nothing else.\n";
 } else {
 chomp $line;
 @fields = split(" ", $line);            # Split the line into fields.
-$PhotonEnergy[$i]=(300000000.0/(10 ** -9)*trim($fields[0])*(4.135667*(10 ** -15)));            # Get rid of initial and trailing white spaces.
+$PhotonEnergy[$k]=1240.7/trim($fields[0]);#(300000000.0/(pow(10, -9)* file_input ))*(4.135667*pow(10, -15))            # Get rid of initial and trailing white spaces.
+$Efficiency4[$k]=trim($fields[1]);
 ##------------------Do the relevant calculations in the same loop----------------##
-$RefractiveIndex1[$i]= 1.455 -(.005836*$PhotonEnergy[$i])+(.003374*$PhotonEnergy[$i]*$PhotonEnergy[$i]);
-$Absorption1[$i] = exp(4.325)*exp(1.191*$PhotonEnergy[$i])*exp(-.213*$PhotonEnergy[$i]*$PhotonEnergy[$i])*exp(-.04086*$PhotonEnergy[$i]*$PhotonEnergy[$i]*$PhotonEnergy[$i]);
-       if ($Absorption1[$i] > 25) {$Absorption1[$i] = 25;}
-my $wavelength = 1.2398/$PhotonEnergy[$i]; 
+$RefractiveIndex1[$k]= 1.455 -(.005836*$PhotonEnergy[$k])+(.003374*$PhotonEnergy[$k]*$PhotonEnergy[$k]);
+$Absorption1[$k] = exp(4.325)*exp(1.191*$PhotonEnergy[$k])*exp(-.213*$PhotonEnergy[$k]*$PhotonEnergy[$k])*exp(-.04086*$PhotonEnergy[$k]*$PhotonEnergy[$k]*$PhotonEnergy[$k]);
+	   if ($Absorption1[$k] > 25) {$Absorption1[$k] = 25;}
+my $wavelength = 1.2398/$PhotonEnergy[$k]; 
 my $wav = $wavelength ** -2; 
-$RefractiveIndex2[$i]=1+(.05792105/(238.0185-$wav))+(.00167917/(57.362-$wav));
-$RefractiveIndex3[$i]=0;
-$RefractiveIndexAR[$i]=1+(2.50141* (10. ** -3)/(91.012-$wav))+(5.00283*(10. ** -4)/(87.892-$wav))+(5.22343*(10. ** -2)/(214.02-$wav));
-$RefractiveIndexN2[$i]=1+(6.8552*(10. ** -5))+(3.243157*(10. ** -2)/(144-$wav));
-$RefractiveIndexCO2[$i]=1+(6.991*(10. ** -2)/(166.175-$wav))+(1.4472*(10. ** -3)/(79.609-$wav))+(6.42941*(10. ** -5)/(56.3064-$wav))+(5.21306*(10. ** -5)/(46.0196-$wav))+(1.46847*(10.**-6)/(.0584738-$wav));
+$RefractiveIndex2[$k]=1+(.05792105/(238.0185-$wav))+(.00167917/(57.362-$wav));
+$RefractiveIndex3[$k]=0;
+$Reflectivity4[$k]=0;
+$RefractiveIndexAR[$k]=1+(2.50141* (10. ** -3)/(91.012-$wav))+(5.00283*(10. ** -4)/(87.892-$wav))+(5.22343*(10. ** -2)/(214.02-$wav));
+$RefractiveIndexN2[$k]=1+(6.8552*(10. ** -5))+(3.243157*(10. ** -2)/(144-$wav));
+$RefractiveIndexCO2[$k]=1+(6.991*(10. ** -2)/(166.175-$wav))+(1.4472*(10. ** -3)/(79.609-$wav))+(6.42941*(10. ** -5)/(56.3064-$wav))+(5.21306*(10. ** -5)/(46.0196-$wav))+(1.46847*(10.**-6)/(.0584738-$wav));
+
+$Reflect_LG[$k] = .9;
+##-----------------Read from the UVS file----------------------------------------##
+
+do{
+$line= <$uvs>;
+$line =~ s/\h+/ /g;
+@fields = split(" ", $line);
+my $inwav = trim($fields[0]);
+$inref = trim($fields[1]);
+}while(inwav < (1000 * wavelength));
+
+$Reflectivity3[i] = $inref;
 
 
 ##-----------------Add the relevant units as a string to be parsed by GDML-------##
 
-$PhotonEnergy[$i]= $PhotonEnergy[$i] + "*eV";
-$Absorption1[$i]= $Absorption1[$i] + "*m";
+$PhotonEnergy[$k]= $PhotonEnergy[$k] . "*eV";
+$Absorption1[$k]= $Absorption1[$k] . "*m";
 
-$i=$i+1
+$k=$k+1
 }
 }
-
+close $data;
+close $uvs;
 ##--------------------Hard Coded matrices----------------------------------------##
 
 my @Scnt_PP = ("2.*eV", "6*eV");
@@ -126,7 +143,7 @@ my @Ephoton = ("2.038*eV", "4.144*eV");
 my @RefractiveIndex = (1.46, 1.46);
 my @SpecularLobe = (0.3, 0.3);
 my @SpecularSpike = (0.2, 0.2);
-my@Backscatter = (0.2, 0.2);
+my @Backscatter = (0.2, 0.2);
 
 my @PhotonEC = (
 	"2.04358*eV","2.0664*eV","2.09046*eV","2.14023*eV",
@@ -159,100 +176,147 @@ my @CO2_1atm_AbsLen = (
 
 open(def, ">", "matrices.xml") or die "cannot open > matrices.xml: $!";
 print def "<matrix name=\"Quartz_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $RefractiveIndex1[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $RefractiveIndex1[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Quartz_ABSLENGTH\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $Absorption1[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $Absorption1[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"AIR_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $RefractiveIndex2[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $RefractiveIndex2[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"FASTCOMPONENT\" coldim=\"2\" values=\"";
-for $i (0 .. $#Scnt_PP) {
-      print def "$Scnt_PP[$i] $Scnt_FAST[$i]";
-      if ($i == $#Scnt_PP)         
+for $k (0 .. $#Scnt_PP) {
+      print def "$Scnt_PP[$k] $Scnt_FAST[$k]";
+      if ($k == $#Scnt_PP)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"SLOWCOMPONENT\" coldim=\"2\" values=\"";
-for $i (0 .. $#Scnt_PP) {
-      print def "$Scnt_PP[$i] $Scnt_SLOW[$i]";
-      if ($i == $#Scnt_PP)         
+for $k (0 .. $#Scnt_PP) {
+      print def "$Scnt_PP[$k] $Scnt_SLOW[$k]";
+      if ($k == $#Scnt_PP)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"AR_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $RefractiveIndexAR[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $RefractiveIndexAR[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"CO2_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $RefractiveIndexCO2[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $RefractiveIndexCO2[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"CO2_ABSLENGTH\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEC) {
-      print def "$PhotonEC[$i] $CO2_1atm_AbsLen[$i]";
-      if ($i == $#PhotonEC)         
+for $k (0 .. $#PhotonEC) {
+      print def "$PhotonEC[$k] $CO2_1atm_AbsLen[$k]";
+      if ($k == $#PhotonEC)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"N2_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#PhotonEnergy) {
-      print def "$PhotonEnergy[$i] $RefractiveIndexN2[$i]";
-      if ($i == $#PhotonEnergy)         
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $RefractiveIndexN2[$k]";
+      if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Quartz_Surf_RINDEX\" coldim=\"2\" values=\"";
-for $i (0 .. $#Ephoton) {
-      print def "$Ephoton[$i] $RefractiveIndex[$i]";
-      if ($i == $#Ephoton)         
+for $k (0 .. $#Ephoton) {
+      print def "$Ephoton[$k] $RefractiveIndex[$k]";
+      if ($k == $#Ephoton)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Quartz_Surf_SPECLOBE\" coldim=\"2\" values=\"";
-for $i (0 .. $#Ephoton) {
-      print def "$Ephoton[$i] $SpecularLobe[$i]";
-      if ($i == $#Ephoton)         
+for $k (0 .. $#Ephoton) {
+      print def "$Ephoton[$k] $SpecularLobe[$k]";
+      if ($k == $#Ephoton)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Quartz_Surf_SPECSPIKE\" coldim=\"2\" values=\"";
-for $i (0 .. $#Ephoton) {
-      print def "$Ephoton[$i] $SpecularSpike[$i]";
-      if ($i == $#Ephoton)         
+for $k (0 .. $#Ephoton) {
+      print def "$Ephoton[$k] $SpecularSpike[$k]";
+      if ($k == $#Ephoton)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
+print def "<matrix name=\"Quartz_Surf_BACKSCATTER\" coldim=\"2\" values=\"";
+for $k (0 .. $#Ephoton) {
+      print def "$Ephoton[$k] $Backscatter[$k]";
+      if ($k == $#Ephoton)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+print def "<matrix name=\"Aluminium_Surf_Reflectivity\" coldim=\"2\" values=\"";
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $Reflectivity3[$k]";
+      if ($k == $#PhotonEnergy)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+print def "<matrix name=\"Mylar_Surf_Reflectivity\" coldim=\"2\" values=\"";
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $Reflect_LG[$k]";
+      if ($k == $#PhotonEnergy)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+print def "<matrix name=\"Cathode_Surf_Reflectivity\" coldim=\"2\" values=\"";
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $Reflectivity4[$k]";
+      if ($k == $#PhotonEnergy)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+print def "<matrix name=\"Cathode_Surf_Efficiency\" coldim=\"2\" values=\"";
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $Efficiency4[$k]";
+      if ($k == $#PhotonEnergy)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+
+##--------------------1x1 matrix properties--------------------------------------##
+print def "<matrix name=\"Air_Const_Scint\" coldim=\"1\" values=\"25./MeV\"/>";
+print def "<matrix name=\"Ar_Const_Scint\" coldim=\"1\" values=\"510./MeV\"/>";
+print def "<matrix name=\"C02_Const_Scint\" coldim=\"1\" values=\"5./MeV\"/>";
+print def "<matrix name=\"N2_Const_Scint\" coldim=\"1\" values=\"140./MeV\"/>";
+
+print def "<matrix name=\"General_Const_RESOLUTION\" coldim=\"1\" values=\"2.0\"/>";
+print def "<matrix name=\"General_Const_FAST\" coldim=\"1\" values=\"1.*ns\"/>";
+print def "<matrix name=\"General_Const_SLOW\" coldim=\"1\" values=\"10.*ns\"/>";
+print def "<matrix name=\"General_Const_YIELDRATIO\" coldim=\"1\" values=\"1.0\"/>";
+
 close(def) or warn "close failed: $!";
 
 ##-------------------------------------------------------------------------------##
@@ -402,10 +466,23 @@ print def "<subtraction name =\"pmtSkinSol_$index[$j]\">
 }
 
 #-----------------------------------------------FIXME Placeholders from Brad's code-----------------------------------------------------------------------------------#
-print def "<opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\"/>";
-print def "<opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\"/>";
-print def "<opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishlumirrorair\" type=\"dielectric_metal\" value=\"1.0\"/>";
-print def "<opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\"/>";
+print def "<opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\">
+			<property name=\"RINDEX\" ref=\"Quartz_Surf_RINDEX\"/>
+			<property name=\"SPECULARLOBECONSTANT\" ref=\"Quartz_Surf_SPECLOBE\"/>
+			<property name=\"SPECULARSPIKECONSTANT\" ref=\"Quartz_Surf_SPECSPIKE\"/> 
+			<property name=\"BACKSCATTERCONSTANT\" ref=\"Quartz_Surf_BACKSCATTER\"/> 
+		</opticalsurface>";
+	
+print def "<opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+			<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
+</opticalsurface>";
+print def "<opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+			<property name=\"REFLECTIVITY\" ref=\"Mylar_Surf_Reflectivity\"/>
+</opticalsurface>";
+print def "<opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+			<property name=\"REFLECTIVITY\" ref=\"Cathode_Surf_Reflectivity\"/>
+			<property name=\"EFFICIENCY\" ref=\"Cathode_Surf_Efficiency\"/>
+</opticalsurface>";
 
 
 #----------------------------------------------------------------------------------------------------------------------------------#
@@ -419,7 +496,7 @@ close(def) or warn "close failed: $!";
 open(def, ">", "detector${opt_T}.gdml") or die "cannot open > detector${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <!DOCTYPE gdml [
-	<!ENTITY materials SYSTEM \"materialsNew.xml\"> 
+	<!ENTITY materials SYSTEM \"materialsOptical.xml\"> 
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
 	<!ENTITY matrices SYSTEM \"matrices.xml\">
 ]> \n
@@ -446,7 +523,7 @@ print def "<volume name=\"quartzRecVol_$index[$j]\">
 	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j],"\"/>  
 </volume>\n";
 
-print def "<skinsurface name=\"quartzRecVol_$index[$j]\" surfaceproperty=\"Quartz\" >
+print def "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
     <volumeref ref=\"quartzRecVol_$index[$j]\"/>
   </skinsurface> ";
 
@@ -467,7 +544,7 @@ print def "<volume name=\"refVolSkin_$index[$j]\">
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
 </volume>\n";
 
-print def "<skinsurface name=\"refVolSkin_$index[$j]\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"refVolSkin_$index[$j]\"/>
   </skinsurface> ";
 
@@ -477,7 +554,7 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
 </volume>\n";
 
-print def "<skinsurface name=\"reflectorVol_$index[$j]\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"reflectorVol_$index[$j]\"/>
   </skinsurface> ";
 
@@ -498,7 +575,7 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"lgVolSkin_$index[$j]\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"lgVolSkin_$index[$j]\"/>
   </skinsurface> ";
 
@@ -513,7 +590,7 @@ print def "<volume name=\"pmtVol_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtVol_$index[$j]\" surfaceproperty=\"Quartz\" >
+print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
     <volumeref ref=\"pmtVol_$index[$j]\"/>
   </skinsurface> ";
 
@@ -524,7 +601,7 @@ print def "<volume name=\"pmtSkinVol_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtSkinVol_$index[$j]\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
   </skinsurface> ";
 
