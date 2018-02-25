@@ -13,11 +13,11 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw($k $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
+use vars qw($mylar @MylarReflectivity $k $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags.------------------------------------------##
-getopts('M:D:T:P:U:');
+getopts('M:D:T:P:U:R:');
 
 if ($#ARGV > -1){
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
@@ -87,6 +87,7 @@ close $data;
 
 open($data, '<', $opt_P);               # Open space seperated value file.
 open($uvs, '<', $opt_U);
+open($mylar, '<', $opt_R);
 $k=0;
 while($line= <$data>){                  # Read each line till the end of the file.
 if ($line =~ /^\s*$/) {    		# Check for empty lines.
@@ -114,14 +115,29 @@ $Reflect_LG[$k] = .9;
 
 do{
 $line= <$uvs>;
-$line =~ s/\h+/ /g;
+if ($line =~ /^\s*$/) {    		# Check for empty lines.
+    print "String contains 0 or more white-space character and nothing else.\n";
+} else {
 @fields = split(" ", $line);
 my $inwav = trim($fields[0]);
 $inref = trim($fields[1]);
+}
 }while(inwav < (1000 * wavelength));
 
-$Reflectivity3[i] = $inref;
-
+$Reflectivity3[$k] = $inref;
+##-----------------Read from the Mylar file----------------------------------------##
+$line= <$mylar>; # Skip header line
+do{
+$line= <$mylar>;
+if ($line =~ /^\s*$/) {    		# Check for empty lines.
+    print "String contains 0 or more white-space character and nothing else.\n";
+} else {
+@fields = split(" ", $line);
+my $inwav = trim($fields[0]);
+$inref = trim($fields[3]);
+}
+}while(inwav < (1000 * wavelength));
+$MylarReflectivity[$k] = $inref;
 
 ##-----------------Add the relevant units as a string to be parsed by GDML-------##
 
@@ -133,6 +149,7 @@ $k=$k+1
 }
 close $data;
 close $uvs;
+close $mylar;
 ##--------------------Hard Coded matrices----------------------------------------##
 
 my @Scnt_PP = ("2.*eV", "6*eV");
@@ -301,6 +318,13 @@ for $k (0 .. $#PhotonEnergy) {
 print def "<matrix name=\"Cathode_Surf_Efficiency\" coldim=\"2\" values=\"";
 for $k (0 .. $#PhotonEnergy) {
       print def "$PhotonEnergy[$k] $Efficiency4[$k]";
+      if ($k == $#PhotonEnergy)         
+	    {print def "\"/>";}
+      print def "\n"; 
+}
+print def "<matrix name=\"Mylar_Surf_Reflectivity_Alt\" coldim=\"2\" values=\"";
+for $k (0 .. $#PhotonEnergy) {
+      print def "$PhotonEnergy[$k] $MylarReflectivity[$k]";
       if ($k == $#PhotonEnergy)         
 	    {print def "\"/>";}
       print def "\n"; 
@@ -496,7 +520,7 @@ close(def) or warn "close failed: $!";
 open(def, ">", "detector${opt_T}.gdml") or die "cannot open > detector${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <!DOCTYPE gdml [
-	<!ENTITY materials SYSTEM \"materialsOptical.xml\"> 
+	<!ENTITY materials SYSTEM \"materialsNew.xml\"> 
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
 	<!ENTITY matrices SYSTEM \"matrices.xml\">
 ]> \n
