@@ -8,6 +8,9 @@ perl cadGeneratorV1.pl -F cadp.csv
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
 (produces detector.gdml file)
 
+perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS45_total.txt -R MylarRef.txt
+(produces detector.gdml file)
+
 To view geometry:
 
 ```
