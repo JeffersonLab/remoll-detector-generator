@@ -86,7 +86,7 @@ $thetaDet[$k]= 2*pi*$k/28;
 
 print "$thetaDet[$k]\n";
 
-if(j == 4 || $j == 5 || $j == 6){
+if($j == 4 || $j == 5 || $j == 6){
   if($k%3==1){         ## modifying stagger assignment so that the central detector is forward in all open-transition-closed detector triple bunches - 3/2/2018 Cameron
   $zDet[$k]=$z[$j];    ## If you want to make the open, transition or closed (4,5,6) actually have the central detector backward then change the first if statement here.
   }else{

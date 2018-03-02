@@ -27014,17 +27014,17 @@
 </physvol> 
 <physvol name="detector_5001">
 			<volumeref ref="quartzVol_5001"/>
-			<position name="detectorPos_5001" unit="mm" x="-800" y="-299.913389963095" z="972.295329887398"/>
+			<position name="detectorPos_5001" unit="mm" x="-770" y="-299.913389963095" z="972.295329887398"/>
 			<rotation name="detectorRot_5001" unit="rad" x="-0.299199300341885" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5002">
 			<volumeref ref="quartzVol_5002"/>
-			<position name="detectorPos_5002" unit="mm" x="-770" y="-226.41505030055" z="991.989150645006"/>
+			<position name="detectorPos_5002" unit="mm" x="-800" y="-226.41505030055" z="991.989150645006"/>
 			<rotation name="detectorRot_5002" unit="rad" x="-0.224399475256414" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5003">
 			<volumeref ref="quartzVol_5003"/>
-			<position name="detectorPos_5003" unit="mm" x="-800" y="-151.650505834258" z="1006.13536568407"/>
+			<position name="detectorPos_5003" unit="mm" x="-770" y="-151.650505834258" z="1006.13536568407"/>
 			<rotation name="detectorRot_5003" unit="rad" x="-0.149599650170943" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5004">
@@ -27044,17 +27044,17 @@
 </physvol> 
 <physvol name="detector_5007">
 			<volumeref ref="quartzVol_5007"/>
-			<position name="detectorPos_5007" unit="mm" x="-800" y="573.178159079735" z="840.697952866525"/>
+			<position name="detectorPos_5007" unit="mm" x="-770" y="573.178159079735" z="840.697952866525"/>
 			<rotation name="detectorRot_5007" unit="rad" x="0.59839860068377" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5008">
 			<volumeref ref="quartzVol_5008"/>
-			<position name="detectorPos_5008" unit="mm" x="-770" y="634.400873391261" z="795.51353341122"/>
+			<position name="detectorPos_5008" unit="mm" x="-800" y="634.400873391261" z="795.51353341122"/>
 			<rotation name="detectorRot_5008" unit="rad" x="0.673198425769241" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5009">
 			<volumeref ref="quartzVol_5009"/>
-			<position name="detectorPos_5009" unit="mm" x="-800" y="692.07576068191" z="745.880279586848"/>
+			<position name="detectorPos_5009" unit="mm" x="-770" y="692.07576068191" z="745.880279586848"/>
 			<rotation name="detectorRot_5009" unit="rad" x="0.747998250854713" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5010">
@@ -27074,17 +27074,17 @@
 </physvol> 
 <physvol name="detector_5013">
 			<volumeref ref="quartzVol_5013"/>
-			<position name="detectorPos_5013" unit="mm" x="-800" y="1014.65486363185" z="76.0378702241868"/>
+			<position name="detectorPos_5013" unit="mm" x="-770" y="1014.65486363185" z="76.0378702241868"/>
 			<rotation name="detectorRot_5013" unit="rad" x="1.49599650170943" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5014">
 			<volumeref ref="quartzVol_5014"/>
-			<position name="detectorPos_5014" unit="mm" x="-770" y="1017.5" z="6.23039059066216e-14"/>
+			<position name="detectorPos_5014" unit="mm" x="-800" y="1017.5" z="6.23039059066216e-14"/>
 			<rotation name="detectorRot_5014" unit="rad" x="1.5707963267949" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5015">
 			<volumeref ref="quartzVol_5015"/>
-			<position name="detectorPos_5015" unit="mm" x="-800" y="1014.65486363185" z="-76.0378702241865"/>
+			<position name="detectorPos_5015" unit="mm" x="-770" y="1014.65486363185" z="-76.0378702241865"/>
 			<rotation name="detectorRot_5015" unit="rad" x="1.64559615188037" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5016">
@@ -27104,17 +27104,17 @@
 </physvol> 
 <physvol name="detector_5019">
 			<volumeref ref="quartzVol_5019"/>
-			<position name="detectorPos_5019" unit="mm" x="-800" y="692.07576068191" z="-745.880279586848"/>
+			<position name="detectorPos_5019" unit="mm" x="-770" y="692.07576068191" z="-745.880279586848"/>
 			<rotation name="detectorRot_5019" unit="rad" x="2.39359440273508" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5020">
 			<volumeref ref="quartzVol_5020"/>
-			<position name="detectorPos_5020" unit="mm" x="-770" y="634.400873391261" z="-795.51353341122"/>
+			<position name="detectorPos_5020" unit="mm" x="-800" y="634.400873391261" z="-795.51353341122"/>
 			<rotation name="detectorRot_5020" unit="rad" x="2.46839422782055" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5021">
 			<volumeref ref="quartzVol_5021"/>
-			<position name="detectorPos_5021" unit="mm" x="-800" y="573.178159079735" z="-840.697952866525"/>
+			<position name="detectorPos_5021" unit="mm" x="-770" y="573.178159079735" z="-840.697952866525"/>
 			<rotation name="detectorRot_5021" unit="rad" x="2.54319405290602" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5022">
@@ -27134,17 +27134,17 @@
 </physvol> 
 <physvol name="detector_5025">
 			<volumeref ref="quartzVol_5025"/>
-			<position name="detectorPos_5025" unit="mm" x="-800" y="-151.650505834257" z="-1006.13536568407"/>
+			<position name="detectorPos_5025" unit="mm" x="-770" y="-151.650505834257" z="-1006.13536568407"/>
 			<rotation name="detectorRot_5025" unit="rad" x="3.29119230376074" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5026">
 			<volumeref ref="quartzVol_5026"/>
-			<position name="detectorPos_5026" unit="mm" x="-770" y="-226.41505030055" z="-991.989150645006"/>
+			<position name="detectorPos_5026" unit="mm" x="-800" y="-226.41505030055" z="-991.989150645006"/>
 			<rotation name="detectorRot_5026" unit="rad" x="3.36599212884621" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5027">
 			<volumeref ref="quartzVol_5027"/>
-			<position name="detectorPos_5027" unit="mm" x="-800" y="-299.913389963095" z="-972.295329887398"/>
+			<position name="detectorPos_5027" unit="mm" x="-770" y="-299.913389963095" z="-972.295329887398"/>
 			<rotation name="detectorRot_5027" unit="rad" x="3.44079195393168" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5028">
@@ -27164,17 +27164,17 @@
 </physvol> 
 <physvol name="detector_5031">
 			<volumeref ref="quartzVol_5031"/>
-			<position name="detectorPos_5031" unit="mm" x="-800" y="-881.180848350666" z="-508.75"/>
+			<position name="detectorPos_5031" unit="mm" x="-770" y="-881.180848350666" z="-508.75"/>
 			<rotation name="detectorRot_5031" unit="rad" x="4.18879020478639" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5032">
 			<volumeref ref="quartzVol_5032"/>
-			<position name="detectorPos_5032" unit="mm" x="-770" y="-916.735823090711" z="-441.476704552116"/>
+			<position name="detectorPos_5032" unit="mm" x="-800" y="-916.735823090711" z="-441.476704552116"/>
 			<rotation name="detectorRot_5032" unit="rad" x="4.26359002987186" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5033">
 			<volumeref ref="quartzVol_5033"/>
-			<position name="detectorPos_5033" unit="mm" x="-800" y="-947.164039245478" z="-371.734492292807"/>
+			<position name="detectorPos_5033" unit="mm" x="-770" y="-947.164039245478" z="-371.734492292807"/>
 			<rotation name="detectorRot_5033" unit="rad" x="4.33838985495733" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5034">
@@ -27194,17 +27194,17 @@
 </physvol> 
 <physvol name="detector_5037">
 			<volumeref ref="quartzVol_5037"/>
-			<position name="detectorPos_5037" unit="mm" x="-800" y="-947.164039245478" z="371.734492292807"/>
+			<position name="detectorPos_5037" unit="mm" x="-770" y="-947.164039245478" z="371.734492292807"/>
 			<rotation name="detectorRot_5037" unit="rad" x="5.08638810581205" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5038">
 			<volumeref ref="quartzVol_5038"/>
-			<position name="detectorPos_5038" unit="mm" x="-770" y="-916.735823090712" z="441.476704552115"/>
+			<position name="detectorPos_5038" unit="mm" x="-800" y="-916.735823090712" z="441.476704552115"/>
 			<rotation name="detectorRot_5038" unit="rad" x="5.16118793089752" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5039">
 			<volumeref ref="quartzVol_5039"/>
-			<position name="detectorPos_5039" unit="mm" x="-800" y="-881.180848350667" z="508.749999999999"/>
+			<position name="detectorPos_5039" unit="mm" x="-770" y="-881.180848350667" z="508.749999999999"/>
 			<rotation name="detectorRot_5039" unit="rad" x="5.23598775598299" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5040">
@@ -27329,107 +27329,107 @@
 </physvol> 
 <physvol name="detector_5201">
 			<volumeref ref="quartzVol_5201"/>
-			<position name="detectorPos_5201" unit="mm" x="-30" y="376.301255097387" z="958.79996110353"/>
+			<position name="detectorPos_5201" unit="mm" x="-0" y="376.301255097387" z="958.79996110353"/>
 			<rotation name="detectorRot_5201" unit="rad" x="0.373999125427356" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5202">
 			<volumeref ref="quartzVol_5202"/>
-			<position name="detectorPos_5202" unit="mm" x="-0" y="446.900251291085" z="927.997933939492"/>
+			<position name="detectorPos_5202" unit="mm" x="-30" y="446.900251291085" z="927.997933939492"/>
 			<rotation name="detectorRot_5202" unit="rad" x="0.448798950512828" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5203">
 			<volumeref ref="quartzVol_5203"/>
-			<position name="detectorPos_5203" unit="mm" x="-30" y="515" z="892.006165897972"/>
+			<position name="detectorPos_5203" unit="mm" x="-0" y="515" z="892.006165897972"/>
 			<rotation name="detectorRot_5203" unit="rad" x="0.523598775598299" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5204">
 			<volumeref ref="quartzVol_5204"/>
-			<position name="detectorPos_5204" unit="mm" x="-30" y="984.239989959725" z="303.597829643231"/>
+			<position name="detectorPos_5204" unit="mm" x="-0" y="984.239989959725" z="303.597829643231"/>
 			<rotation name="detectorRot_5204" unit="rad" x="1.27159702645301" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5205">
 			<volumeref ref="quartzVol_5205"/>
-			<position name="detectorPos_5205" unit="mm" x="-0" y="1004.17574954728" z="229.196561975004"/>
+			<position name="detectorPos_5205" unit="mm" x="-30" y="1004.17574954728" z="229.196561975004"/>
 			<rotation name="detectorRot_5205" unit="rad" x="1.34639685153848" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5206">
 			<volumeref ref="quartzVol_5206"/>
-			<position name="detectorPos_5206" unit="mm" x="-30" y="1018.49575101188" z="153.51353416146"/>
+			<position name="detectorPos_5206" unit="mm" x="-0" y="1018.49575101188" z="153.51353416146"/>
 			<rotation name="detectorRot_5206" unit="rad" x="1.42119667662395" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5207">
 			<volumeref ref="quartzVol_5207"/>
-			<position name="detectorPos_5207" unit="mm" x="-30" y="851.025937545475" z="-580.219659805531"/>
+			<position name="detectorPos_5207" unit="mm" x="-0" y="851.025937545475" z="-580.219659805531"/>
 			<rotation name="detectorRot_5207" unit="rad" x="2.16919492747867" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5208">
 			<volumeref ref="quartzVol_5208"/>
-			<position name="detectorPos_5208" unit="mm" x="-0" y="805.286426942071" z="-642.194495914496"/>
+			<position name="detectorPos_5208" unit="mm" x="-30" y="805.286426942071" z="-642.194495914496"/>
 			<rotation name="detectorRot_5208" unit="rad" x="2.24399475256414" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5209">
 			<volumeref ref="quartzVol_5209"/>
-			<position name="detectorPos_5209" unit="mm" x="-30" y="755.043427984721" z="-700.577919904047"/>
+			<position name="detectorPos_5209" unit="mm" x="-0" y="755.043427984721" z="-700.577919904047"/>
 			<rotation name="detectorRot_5209" unit="rad" x="2.31879457764961" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5210">
 			<volumeref ref="quartzVol_5210"/>
-			<position name="detectorPos_5210" unit="mm" x="-30" y="76.9719963940174" z="-1027.11991109662"/>
+			<position name="detectorPos_5210" unit="mm" x="-0" y="76.9719963940174" z="-1027.11991109662"/>
 			<rotation name="detectorRot_5210" unit="rad" x="3.06679282850432" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5211">
 			<volumeref ref="quartzVol_5211"/>
-			<position name="detectorPos_5211" unit="mm" x="-0" y="1.26138620312177e-13" z="-1030"/>
+			<position name="detectorPos_5211" unit="mm" x="-30" y="1.26138620312177e-13" z="-1030"/>
 			<rotation name="detectorRot_5211" unit="rad" x="3.14159265358979" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5212">
 			<volumeref ref="quartzVol_5212"/>
-			<position name="detectorPos_5212" unit="mm" x="-30" y="-76.9719963940167" z="-1027.11991109662"/>
+			<position name="detectorPos_5212" unit="mm" x="-0" y="-76.9719963940167" z="-1027.11991109662"/>
 			<rotation name="detectorRot_5212" unit="rad" x="3.21639247867526" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5213">
 			<volumeref ref="quartzVol_5213"/>
-			<position name="detectorPos_5213" unit="mm" x="-30" y="-755.043427984721" z="-700.577919904047"/>
+			<position name="detectorPos_5213" unit="mm" x="-0" y="-755.043427984721" z="-700.577919904047"/>
 			<rotation name="detectorRot_5213" unit="rad" x="3.96439072952998" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5214">
 			<volumeref ref="quartzVol_5214"/>
-			<position name="detectorPos_5214" unit="mm" x="-0" y="-805.286426942071" z="-642.194495914496"/>
+			<position name="detectorPos_5214" unit="mm" x="-30" y="-805.286426942071" z="-642.194495914496"/>
 			<rotation name="detectorRot_5214" unit="rad" x="4.03919055461545" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5215">
 			<volumeref ref="quartzVol_5215"/>
-			<position name="detectorPos_5215" unit="mm" x="-30" y="-851.025937545475" z="-580.219659805531"/>
+			<position name="detectorPos_5215" unit="mm" x="-0" y="-851.025937545475" z="-580.219659805531"/>
 			<rotation name="detectorRot_5215" unit="rad" x="4.11399037970092" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5216">
 			<volumeref ref="quartzVol_5216"/>
-			<position name="detectorPos_5216" unit="mm" x="-30" y="-1018.49575101188" z="153.513534161459"/>
+			<position name="detectorPos_5216" unit="mm" x="-0" y="-1018.49575101188" z="153.513534161459"/>
 			<rotation name="detectorRot_5216" unit="rad" x="4.86198863055563" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5217">
 			<volumeref ref="quartzVol_5217"/>
-			<position name="detectorPos_5217" unit="mm" x="-0" y="-1004.17574954728" z="229.196561975004"/>
+			<position name="detectorPos_5217" unit="mm" x="-30" y="-1004.17574954728" z="229.196561975004"/>
 			<rotation name="detectorRot_5217" unit="rad" x="4.9367884556411" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5218">
 			<volumeref ref="quartzVol_5218"/>
-			<position name="detectorPos_5218" unit="mm" x="-30" y="-984.239989959725" z="303.597829643231"/>
+			<position name="detectorPos_5218" unit="mm" x="-0" y="-984.239989959725" z="303.597829643231"/>
 			<rotation name="detectorRot_5218" unit="rad" x="5.01158828072658" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5219">
 			<volumeref ref="quartzVol_5219"/>
-			<position name="detectorPos_5219" unit="mm" x="-30" y="-515" z="892.006165897972"/>
+			<position name="detectorPos_5219" unit="mm" x="-0" y="-515" z="892.006165897972"/>
 			<rotation name="detectorRot_5219" unit="rad" x="5.75958653158129" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5220">
 			<volumeref ref="quartzVol_5220"/>
-			<position name="detectorPos_5220" unit="mm" x="-0" y="-446.900251291085" z="927.997933939492"/>
+			<position name="detectorPos_5220" unit="mm" x="-30" y="-446.900251291085" z="927.997933939492"/>
 			<rotation name="detectorRot_5220" unit="rad" x="5.83438635666676" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_5221">
 			<volumeref ref="quartzVol_5221"/>
-			<position name="detectorPos_5221" unit="mm" x="-30" y="-376.301255097387" z="958.79996110353"/>
+			<position name="detectorPos_5221" unit="mm" x="-0" y="-376.301255097387" z="958.79996110353"/>
 			<rotation name="detectorRot_5221" unit="rad" x="5.90918618175223" y="0.0436332312998582" z="3.14159265358979"/>
 </physvol> 
 <physvol name="detector_6001">
