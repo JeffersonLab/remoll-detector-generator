@@ -27,7 +27,7 @@ if ($#ARGV > -1){
 ##-----------------------Start reading CSV file containing parameter values.---------------------------------##
 open($data, '<', $opt_F);                                         # Open csv file.
 
-@numDet=(28,28,28,28,42,21,21,28);                                # Unelegant but needed placeholder for now.
+@numDet=(28,28,28,28,21,42,21,28);                                # Unelegant but needed placeholder for now.
 $i=0;
 
 while($line= <$data>){                                            # Read each line till the end of the file.
@@ -75,9 +75,9 @@ print "ring $index[$j]\n";
 for($k=0;$k<$numDet[$j];$k++){
 
 if($j==4){
-$thetaDet[$k]=2*pi*(transt($k)-3-1)/84; ## subtract 1 more to fix phi-offset in ring 5 triply segmented open-transition-closed detector bunches - 3/2/2018 Cameron
+$thetaDet[$k]=2*pi*(opent($k)-3-1)/84; ## subtract 1 more to fix phi-offset in ring 5 triply segmented open-transition-closed detector bunches - 3/2/2018 Cameron
 }elsif($j==5){
-$thetaDet[$k]= 2*pi*(opent($k)-3-1)/84;
+$thetaDet[$k]= 2*pi*(transt($k)-3-1)/84;
 }elsif($j==6){
 $thetaDet[$k]= 2*pi*(closedt($k)-3-1)/84;
 }else{
