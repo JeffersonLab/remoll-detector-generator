@@ -75,23 +75,31 @@ print "ring $index[$j]\n";
 for($k=0;$k<$numDet[$j];$k++){
 
 if($j==4){
-$thetaDet[$k]=2*pi*(transt($k)-3)/84;
+$thetaDet[$k]=2*pi*(transt($k)-3-1)/84; ## subtract 1 more to fix phi-offset in ring 5 triply segmented open-transition-closed detector bunches - 3/2/2018 Cameron
 }elsif($j==5){
-$thetaDet[$k]= 2*pi*(opent($k)-3)/84;
+$thetaDet[$k]= 2*pi*(opent($k)-3-1)/84;
 }elsif($j==6){
-$thetaDet[$k]= 2*pi*(closedt($k)-3)/84;
+$thetaDet[$k]= 2*pi*(closedt($k)-3-1)/84;
 }else{
 $thetaDet[$k]= 2*pi*$k/28;
 }
 
 print "$thetaDet[$k]\n";
 
-if($k%2==0){
-$zDet[$k]=$z[$j];
-}else{
-$zDet[$k]=$zstagger[$j];
+if(j == 4 || $j == 5 || $j == 6){
+  if($k%3==1){         ## modifying stagger assignment so that the central detector is forward in all open-transition-closed detector triple bunches - 3/2/2018 Cameron
+  $zDet[$k]=$z[$j];    ## If you want to make the open, transition or closed (4,5,6) actually have the central detector backward then change the first if statement here.
+  }else{
+  $zDet[$k]=$zstagger[$j];
+  }
 }
-
+else{
+  if($k%2==0){
+  $zDet[$k]=$z[$j];
+  }else{
+  $zDet[$k]=$zstagger[$j];
+  }
+}
 $rollDet[$k]=$roll[$j]+90;
 
 print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
