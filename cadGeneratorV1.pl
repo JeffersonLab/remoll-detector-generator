@@ -104,7 +104,7 @@ else{
 }
 $rollDet[$k]=$roll[$j]+90;
 
-print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], ${thetaDet[$k]*-1}, ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
+print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*-1*pi/180}, ${ddPmt[$j]*25.4*1.005}, ${ddPmt[$j]*25.4*1.005}, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
 ## FIXME add in the PMT thickness and depth parameters here before dtWall parameter into parameters.csv for GDML generation - 3/5/2018 Cameron Clarke
 
 
