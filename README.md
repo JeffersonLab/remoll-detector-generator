@@ -2,13 +2,15 @@
 
 Usage:
 
+cadGeneratorV1.pl and gdmlGeneratorV1_materials.pl execute the suggested commands without any flags using the indicated files as default settings. -T "suff" gives a suffix to all outputs.
+
 perl cadGeneratorV1.pl -F cadp.csv 
 (produces equations.txt file and parameter.csv file)
 
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
 (produces detector.gdml file)
 
-perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS45_total.txt -R MylarRef.txt
+perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS_45total.txt -R MylarRef.txt
 (produces detector.gdml file)
 
 To view geometry:

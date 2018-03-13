@@ -13,10 +13,18 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw($mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
+use vars qw($mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @extraPMTholderWidth @extraPMTholderDepth @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
-##------------------Get the option flags.------------------------------------------##
+##------------------Get the option flags and set defaults---------------------------##
+
+$opt_M = "detectorMotherP.csv"; #Mother Volume csv
+$opt_D = "parameter.csv";		#Detector Volume csv
+$opt_T = "";					
+$opt_P = "qe.txt";				#Photon energy vs property file
+$opt_U = "UVS_45total.txt";		#Wavelength vs reflectivity file
+$opt_R = "MylarRef.txt";		#Mylar Wavelength vs reflectivity file
+
 getopts('M:D:T:P:U:R:');
 
 if ($#ARGV > -1){
@@ -75,6 +83,8 @@ $dxPmt[$i]=trim($fields[17]);
 $dyPmt[$i]= trim($fields[18]);
 $dzPmt[$i]= trim($fields[19]);
 $drPmt[$i]= trim($fields[20]);
+#$extraPMTholderWidth[$i]= trim($fields[21]);
+#$extraPMTholderDepth[$i]= trim($fields[22]);
 $dtWall[$i]= trim($fields[21]); 
 $dtReflector[$i]= trim($fields[22]); 
 $i=$i+1;
@@ -397,7 +407,7 @@ print def "<xtru name = \"refLogicSol_$index[$j]\" lunit= \"mm\" >
  <section zOrder=\"2\" zPosition=\"",$dyLg[$j]*(0.5)+$dtWall[$j],"\" xOffset=\"",0,"\" yOffset=\"0\" scalingFactor=\"",1,"\"/>
 </xtru>\n";
 
-print def "<box name=\"pmtLogicSol_$index[$j]\" x=\"",$dxPmt[$j],"\" y=\"$dyPmt[$j]\" z=\"$dzPmt[$j]\" lunit= \"mm\" />\n";
+print def "<box name=\"pmtLogicSol_$index[$j]\" x=\"",$dxPmt[$j],"\" y=\"$dyPmt[$j]\" z=\"",$dzPmt[$j],"\" lunit= \"mm\" />\n";
 
 print def "<union name=\"quartzLogicSol1_$index[$j]\">
     <first ref=\"quartzRecSol_$index[$j]\"/>
@@ -519,7 +529,7 @@ close(def) or warn "close failed: $!";
 open(def, ">", "detector${opt_T}.gdml") or die "cannot open > detector${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <!DOCTYPE gdml [
-	<!ENTITY materials SYSTEM \"materialsNew.xml\"> 
+	<!ENTITY materials SYSTEM \"materialsOptical.xml\"> 
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
 	<!ENTITY matrices SYSTEM \"matrices.xml\">
 ]> \n
