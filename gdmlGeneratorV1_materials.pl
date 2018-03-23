@@ -13,7 +13,7 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw($mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @extraPMTholderWidth @extraPMTholderDepth @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
+use vars qw($opt_L $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @extraPMTholderWidth @extraPMTholderDepth @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags and set defaults---------------------------##
@@ -24,8 +24,8 @@ $opt_T = "";
 $opt_P = "qe.txt";				#Photon energy vs property file
 $opt_U = "UVS_45total.txt";		#Wavelength vs reflectivity file
 $opt_R = "MylarRef.txt";		#Mylar Wavelength vs reflectivity file
-
-getopts('M:D:T:P:U:R:');
+$opt_L = "";				#If nonempty draw single detector of specified ring 
+getopts('M:D:T:P:U:R:L:');
 
 if ($#ARGV > -1){
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
@@ -59,35 +59,57 @@ $i=0;
 while($line= <$data>){                  # Read each line till the end of the file.
 if ($line =~ /^\s*$/) {    		# Check for empty lines.
     print "String contains 0 or more white-space character and nothing else.\n";
-} else {
-chomp $line;
-@fields = split(",", $line);            # Split the line into fields.
-$index[$i]=trim($fields[0]);            # Get rid of initial and trailing white spaces.
-$x[$i]=trim($fields[1]);
-$y[$i]=trim($fields[2]);
-$z[$i]=trim($fields[3]);
-$dx[$i]=trim($fields[4]);
-$dy[$i]=trim($fields[5]);
-$dz[$i]=trim($fields[6]);
-$rx[$i]=trim($fields[7]);
-$ry[$i]=trim($fields[8]);
-$rz[$i]=trim($fields[9]);
-$quartzCutAngle[$i]=trim($fields[10]);
-$refTopOpeningAngle[$i]=trim($fields[11]);
-$dzRef[$i]=trim($fields[12]);
-$dxLg[$i]=trim($fields[13]);
-$dyLg[$i]=trim($fields[14]);
-$dzLg[$i]=trim($fields[15]);
-$lgTiltAngle[$i]=trim($fields[16]);
-$dxPmt[$i]=trim($fields[17]); 		
-$dyPmt[$i]= trim($fields[18]);
-$dzPmt[$i]= trim($fields[19]);
-$drPmt[$i]= trim($fields[20]);
-#$extraPMTholderWidth[$i]= trim($fields[21]);
-#$extraPMTholderDepth[$i]= trim($fields[22]);
-$dtWall[$i]= trim($fields[21]); 
-$dtReflector[$i]= trim($fields[22]); 
-$i=$i+1;
+} else
+{
+	chomp $line;
+	@fields = split(",", $line);            # Split the line into fields.
+	if ($opt_L != "")
+	{
+		if (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 4) == "5102") 
+		{
+		}
+		elsif (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 4) == "5002") 
+		{	
+		}
+		elsif (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 4) == "5202") 
+		{
+		}
+		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
+ (substr(trim($fields[0]), 2, 2) == "01" || (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 2, 2) == "03") || (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 2, 2) == "28"))) 
+		{	
+		}
+		else
+		{
+			next;
+		}
+	}
+
+	$index[$i]=trim($fields[0]);            # Get rid of initial and trailing white spaces.
+	$x[$i]=trim($fields[1]);
+	$y[$i]=trim($fields[2]);
+	$z[$i]=trim($fields[3]);
+	$dx[$i]=trim($fields[4]);
+	$dy[$i]=trim($fields[5]);
+	$dz[$i]=trim($fields[6]);
+	$rx[$i]=trim($fields[7]);
+	$ry[$i]=trim($fields[8]);
+	$rz[$i]=trim($fields[9]);
+	$quartzCutAngle[$i]=trim($fields[10]);
+	$refTopOpeningAngle[$i]=trim($fields[11]);
+	$dzRef[$i]=trim($fields[12]);
+	$dxLg[$i]=trim($fields[13]);
+	$dyLg[$i]=trim($fields[14]);
+	$dzLg[$i]=trim($fields[15]);
+	$lgTiltAngle[$i]=trim($fields[16]);
+	$dxPmt[$i]=trim($fields[17]); 		
+	$dyPmt[$i]= trim($fields[18]);
+	$dzPmt[$i]= trim($fields[19]);
+	$drPmt[$i]= trim($fields[20]);
+	#$extraPMTholderWidth[$i]= trim($fields[21]);
+	#$extraPMTholderDepth[$i]= trim($fields[22]);
+	$dtWall[$i]= trim($fields[21]); 
+	$dtReflector[$i]= trim($fields[22]); 
+	$i=$i+1;
 }
 }
 close $data;
