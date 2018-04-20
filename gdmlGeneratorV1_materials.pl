@@ -569,20 +569,21 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 
 for $j(0..$i-1){
 
+$k=$index[$j]+0;
 
 print def "<volume name=\"quartzRecVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"quartzSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j],"\"/>  
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 print def "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
     <volumeref ref=\"quartzRecVol_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n ";
 
-$k=$index[$j]+50;
+$k=$index[$j]+10;
 
 print def "<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Air\"/>
@@ -601,7 +602,7 @@ print def "<volume name=\"refVolSkin_$index[$j]\">
 
 print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"refVolSkin_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n";
 
 print def "<volume name=\"reflectorVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -611,9 +612,9 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
 
 print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"reflectorVol_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n ";
 
-$k=$index[$j]+50;
+$k=$index[$j]+20;
  
 print def "<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Air\"/>
@@ -632,10 +633,10 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
 
 print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"lgVolSkin_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n ";
 
 
-$k=$index[$j]+50;
+$k=$index[$j]+30;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
@@ -647,7 +648,7 @@ print def "<volume name=\"pmtVol_$index[$j]\">
 
 print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
     <volumeref ref=\"pmtVol_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n ";
 
 print def "<volume name=\"pmtSkinVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -658,7 +659,7 @@ print def "<volume name=\"pmtSkinVol_$index[$j]\">
 
 print def "<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
-  </skinsurface> ";
+  </skinsurface>\n ";
 
 
 
