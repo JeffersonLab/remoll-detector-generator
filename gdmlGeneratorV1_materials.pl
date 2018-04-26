@@ -20,7 +20,7 @@ use vars qw($opt_L $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inre
 
 $opt_M = "detectorMotherP.csv"; #Mother Volume csv
 $opt_D = "parameter.csv";		#Detector Volume csv
-$opt_T = "";					
+$opt_T = "";					    #Changes suffix 
 $opt_P = "qe.txt";				#Photon energy vs property file
 $opt_U = "UVS_45total.txt";		#Wavelength vs reflectivity file
 $opt_R = "MylarRef.txt";		#Mylar Wavelength vs reflectivity file
