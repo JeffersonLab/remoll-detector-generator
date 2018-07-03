@@ -106,7 +106,7 @@ else{
 $rollDet[$k]=-1*$roll[$j]+90;
 my $dxPmt = $ddPmt[$j]*25.4+$extraPMTholderWidth[$j];
 my $dyPmt = $ddPmt[$j]*25.4+$extraPMTholderDepth[$j];
-print def "${index[$j]*1000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
+print def "${index[$j]*10000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}  \n";
 
 
 }

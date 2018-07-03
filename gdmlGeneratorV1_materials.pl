@@ -583,7 +583,7 @@ print def "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"
     <volumeref ref=\"quartzRecVol_$index[$j]\"/>
   </skinsurface>\n ";
 
-$k=$index[$j]+10;
+$k=$index[$j]+100;
 
 print def "<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Air\"/>
@@ -614,7 +614,7 @@ print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"
     <volumeref ref=\"reflectorVol_$index[$j]\"/>
   </skinsurface>\n ";
 
-$k=$index[$j]+20;
+$k=$index[$j]+200;
  
 print def "<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Air\"/>
@@ -636,7 +636,7 @@ print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Alu
   </skinsurface>\n ";
 
 
-$k=$index[$j]+30;
+$k=$index[$j]+300;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
