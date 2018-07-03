@@ -65,13 +65,13 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 	@fields = split(",", $line);            # Split the line into fields.
 	if ($opt_L != "")
 	{
-		if (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 4) == "51002") 
+		if (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002") 
 		{
 		}
-		elsif (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 4) == "50002") 
+		elsif (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 5) == "50002") 
 		{	
 		}
-		elsif (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 4) == "52002") 
+		elsif (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 5) == "52002") 
 		{
 		}
 		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
