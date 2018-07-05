@@ -65,17 +65,17 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 	@fields = split(",", $line);            # Split the line into fields.
 	if ($opt_L != "")
 	{
-		if (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002") 
+		if (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 5) == "50002") 
 		{
 		}
-		elsif (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 5) == "50002") 
+		elsif (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002") 
 		{	
 		}
 		elsif (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 5) == "52002") 
 		{
 		}
 		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
- (substr(trim($fields[0]), 3, 2) == "01" || (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 3, 2) == "03") || (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "28"))) 
+ (substr(trim($fields[0]), 3, 2) == "01" || (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 3, 2) == "03") || (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "28"))) 
 		{	
 		}
 		else
@@ -223,7 +223,7 @@ my @CO2_1atm_AbsLen = (
 
 ##--------------------Write to matrices.xml file----------------------------------------##
 
-open(def, ">", "matrices.xml") or die "cannot open > matrices.xml: $!";
+open(def, ">", "matrices${opt_T}.xml") or die "cannot open > matrices${opt_T}.xml: $!";
 print def "<matrix name=\"Quartz_RINDEX\" coldim=\"2\" values=\"";
 for $o (0 .. $#PhotonEnergy) {
       print def "$PhotonEnergy[$o] $RefractiveIndex1[$o]";
@@ -510,13 +510,23 @@ print def "<subtraction name =\"refSolSkin1_$index[$j]\">
 
 
 
-print def "<cone name = \"pmtSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"$dzPmt[$j]\"
+print def "<cone name = \"pmtFullSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"$dzPmt[$j]\"
 startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
 print def "<subtraction name =\"pmtSkinSol_$index[$j]\">
 	<first ref=\"pmtLogicSol_$index[$j]\"/> 
-	<second ref=\"pmtSol_$index[$j]\"/> 
+	<second ref=\"pmtFullSol_$index[$j]\"/> 
 	<position unit=\"mm\" name=\"pmtSolPos_$index[$j]\" x=\"0\" y=\"0\" z=\"",0,"\"\/>
         <rotation unit=\"rad\" name=\"pmtSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
+</subtraction>\n\n";
+
+
+print def "<cone name = \"pmtCathodeSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"",$dzPmt[$j]/100.0,"\"
+startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
+print def "<subtraction name =\"pmtSol_$index[$j]\">
+	<first ref=\"pmtFullSol_$index[$j]\"/> 
+	<second ref=\"pmtCathodeSol_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"pmtCathodeSolPos_$index[$j]\" x=\"0\" y=\"0\" z=\"",-1.0*($drPmt[$j]/2.0)+($drPmt[$j]/200.0),"\"/>
+        <rotation unit=\"rad\" name=\"pmtCathodeSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
 </subtraction>\n\n";
 }
 
@@ -551,17 +561,17 @@ close(def) or warn "close failed: $!";
 open(def, ">", "detector${opt_T}.gdml") or die "cannot open > detector${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <!DOCTYPE gdml [
-	<!ENTITY materials SYSTEM \"materialsOptical.xml\"> 
+	<!ENTITY materials${opt_T} SYSTEM \"materialsOptical${opt_T}.xml\"> 
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
-	<!ENTITY matrices SYSTEM \"matrices.xml\">
+	<!ENTITY matrices${opt_T} SYSTEM \"matrices${opt_T}.xml\">
 ]> \n
 <gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">\n
 
 <define>
 <constant name=\"PI\" value=\"1.*pi\"/>
-&matrices;
+&matrices${opt_T};
 </define>
-&materials; 
+&materials${opt_T}; 
 &solids${opt_T};\n
 <structure>\n";
 
@@ -638,7 +648,7 @@ print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Alu
 
 $k=$index[$j]+300;
 print def "<volume name=\"pmtVol_$index[$j]\">
-         <materialref ref=\"Quartz\"/>
+         <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -646,9 +656,24 @@ print def "<volume name=\"pmtVol_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
+print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
     <volumeref ref=\"pmtVol_$index[$j]\"/>
   </skinsurface>\n ";
+
+$k=$index[$j]+400;
+print def "<volume name=\"pmtCathodeVol_$index[$j]\">
+         <materialref ref=\"Photocathode\"/>
+         <solidref ref=\"pmtCathodeSol_$index[$j]\"/> 
+         <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+</volume>\n";
+
+
+print def "<skinsurface name=\"pmtCathodeVol_$index[$j]_skin\" surfaceproperty=\"Cathode\" >
+    <volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
+  </skinsurface>\n ";
+
 
 print def "<volume name=\"pmtSkinVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -704,8 +729,13 @@ print def "<volume name=\"quartzVol_$index[$j]\">
 
       <physvol name=\"pmt_$index[$j]\">
 			<volumeref ref=\"pmtVol_$index[$j]\"/>
-			<position name=\"pmtPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j])*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j])*cos($lgTiltAngle[$j]),"\"/>
+			<position name=\"pmtPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*($dzPmt[$j]+$dzPmt[$j]/50))*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*($dzPmt[$j]+$dzPmt[$j]/50))*cos($lgTiltAngle[$j]),"\"/>
 			<rotation name=\"pmtRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+</physvol> \n
+      <physvol name=\"pmtCathode_$index[$j]\">
+			<volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
+			<position name=\"pmtCathodePos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*cos($lgTiltAngle[$j]),"\"/>
+			<rotation name=\"pmtCathodeRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
 </physvol> \n
       <physvol name=\"pmtSkin_$index[$j]\">
 			<volumeref ref=\"pmtSkinVol_$index[$j]\"/>
@@ -718,6 +748,15 @@ print def "<volume name=\"quartzVol_$index[$j]\">
 
 
 }
+##if ($opt_L != "")
+#{
+#    for $j(0..$i-1){
+#        $x[$j] = 0.0;
+#        $y[$j] = 0.0;
+#        $z[$j] = 0.0;
+#    }
+#}
+
 print def "<volume name=\"logicMotherVol${opt_T}\"> 
 	<materialref ref=\"Air\"/>
 	<solidref ref=\"logicMotherSol${opt_T}\"/>\n";
