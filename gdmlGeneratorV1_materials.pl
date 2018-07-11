@@ -665,7 +665,7 @@ print def "<volume name=\"pmtCathodeVol_$index[$j]\">
          <materialref ref=\"Photocathode\"/>
          <solidref ref=\"pmtCathodeSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"opticalphoton\"/> 
 	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
