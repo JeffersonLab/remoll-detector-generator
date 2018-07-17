@@ -65,17 +65,19 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 	@fields = split(",", $line);            # Split the line into fields.
 	if ($opt_L != "")
 	{
-		if (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 0, 5) == "50002") 
+        if (index($opt_L, "5") >= 0 && (index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 0, 5) == "50002") 
 		{
 		}
-		elsif (index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002") 
+		elsif (index($opt_L, "5") >= 0 && index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002")
 		{	
 		}
-		elsif (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 5) == "52002") 
+		elsif (index($opt_L, "5") >= 0 && index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 5) == "52002")
 		{
 		}
 		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
- (substr(trim($fields[0]), 3, 2) == "01" || (index($opt_L, "open") >= 0 && substr(trim($fields[0]), 3, 2) == "03") || (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "28"))) 
+            ((index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 3, 2) == "28") ||
+            ((index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 3, 2) == "04") || 
+            (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "03"))) 
 		{	
 		}
 		else
@@ -128,7 +130,7 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 chomp $line;
 @fields = split(" ", $line);            # Split the line into fields.
 $PhotonEnergy[$o]=1240.7/trim($fields[0]);#(300000000.0/(pow(10, -9)* file_input ))*(4.135667*pow(10, -15))            # Get rid of initial and trailing white spaces.
-$Efficiency4[$o]=trim($fields[1]);
+$Efficiency4[$o]=trim($fields[1])/100;
 ##------------------Do the relevant calculations in the same loop----------------##
 $RefractiveIndex1[$o]= 1.455 -(.005836*$PhotonEnergy[$o])+(.003374*$PhotonEnergy[$o]*$PhotonEnergy[$o]);
 $Absorption1[$o] = exp(4.325)*exp(1.191*$PhotonEnergy[$o])*exp(-.213*$PhotonEnergy[$o]*$PhotonEnergy[$o])*exp(-.04086*$PhotonEnergy[$o]*$PhotonEnergy[$o]*$PhotonEnergy[$o]);
@@ -561,7 +563,7 @@ close(def) or warn "close failed: $!";
 open(def, ">", "detector${opt_T}.gdml") or die "cannot open > detector${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <!DOCTYPE gdml [
-	<!ENTITY materials${opt_T} SYSTEM \"materialsOptical${opt_T}.xml\"> 
+	<!ENTITY materials SYSTEM \"materialsOptical.xml\"> 
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
 	<!ENTITY matrices${opt_T} SYSTEM \"matrices${opt_T}.xml\">
 ]> \n
@@ -571,7 +573,7 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <constant name=\"PI\" value=\"1.*pi\"/>
 &matrices${opt_T};
 </define>
-&materials${opt_T}; 
+&materials; 
 &solids${opt_T};\n
 <structure>\n";
 
