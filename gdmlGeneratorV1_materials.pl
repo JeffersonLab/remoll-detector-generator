@@ -77,7 +77,7 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
             ((index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 3, 2) == "28") ||
             ((index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 3, 2) == "04") || 
-            (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "03"))) 
+            (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "3"))) 
 		{	
 		}
 		else
@@ -184,7 +184,7 @@ $o=$o+1
 close $data;
 close $uvs;
 close $mylar;
-##--------------------Hard Coded matrices----------------------------------------##
+##--------------------Hard Coded atrices----------------------------------------##
 
 my @Scnt_PP = ("2.*eV", "6*eV");
 my @Scnt_FAST = (0.5, 0.5);
@@ -227,25 +227,25 @@ my @CO2_1atm_AbsLen = (
 
 open(def, ">", "matrices${opt_T}.xml") or die "cannot open > matrices${opt_T}.xml: $!";
 print def "<matrix name=\"Quartz_RINDEX\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $RefractiveIndex1[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == o)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Quartz_ABSLENGTH\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $Absorption1[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"Air_RINDEX\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $RefractiveIndex2[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
@@ -267,17 +267,17 @@ for $o (0 .. $#Scnt_PP) {
 }
 
 print def "<matrix name=\"AR_RINDEX\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $RefractiveIndexAR[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 
 print def "<matrix name=\"CO2_RINDEX\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $RefractiveIndexCO2[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
@@ -291,9 +291,9 @@ for $o (0 .. $#PhotonEC) {
 }
 
 print def "<matrix name=\"N2_RINDEX\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $RefractiveIndexN2[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
@@ -329,37 +329,37 @@ for $o (0 .. $#Ephoton) {
       print def "\n"; 
 }
 print def "<matrix name=\"Aluminium_Surf_Reflectivity\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $Reflectivity3[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 print def "<matrix name=\"Mylar_Surf_Reflectivity\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $Reflect_LG[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 print def "<matrix name=\"Cathode_Surf_Reflectivity\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $Reflectivity4[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 print def "<matrix name=\"Cathode_Surf_Efficiency\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o = $#PhotonEnergy; $o >= 0; $o-=1) {
       print def "$PhotonEnergy[$o] $Efficiency4[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
 print def "<matrix name=\"Mylar_Surf_Reflectivity_Alt\" coldim=\"2\" values=\"";
-for $o (0 .. $#PhotonEnergy) {
+for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
       print def "$PhotonEnergy[$o] $MylarReflectivity[$o]";
-      if ($o == $#PhotonEnergy)         
+      if ($o == 0)         
 	    {print def "\"/>";}
       print def "\n"; 
 }
