@@ -669,7 +669,8 @@ print def "<volume name=\"pmtCathodeVol_$index[$j]\">
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
 	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
-</volume>\n";
+   <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/>
+   </volume>\n";
 
 
 print def "<skinsurface name=\"pmtCathodeVol_$index[$j]_skin\" surfaceproperty=\"Cathode\" >
