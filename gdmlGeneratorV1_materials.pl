@@ -612,7 +612,7 @@ print def "<volume name=\"refVolSkin_$index[$j]\">
 	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
-print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
     <volumeref ref=\"refVolSkin_$index[$j]\"/>
   </skinsurface>\n";
 
@@ -622,7 +622,7 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
 </volume>\n";
 
-print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
     <volumeref ref=\"reflectorVol_$index[$j]\"/>
   </skinsurface>\n ";
 
@@ -643,7 +643,7 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
     <volumeref ref=\"lgVolSkin_$index[$j]\"/>
   </skinsurface>\n ";
 
