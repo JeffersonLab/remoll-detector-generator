@@ -458,15 +458,16 @@ print def "<union name=\"quartzLogicSol1_$index[$j]\">
 print def "<union name=\"quartzLogicSol2_$index[$j]\">
     <first ref=\"quartzLogicSol1_$index[$j]\"/>
     <second ref=\"lgLogicSol_$index[$j]\"/>
-   <position name=\"lgLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzLgExtra[$j])*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+1*$dzLgExtra[$j])*0.5*cos($lgTiltAngle[$j]),"\"/>
+    <position name=\"lgLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzLgExtra[$j])*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+1*$dzLgExtra[$j])*0.5*cos($lgTiltAngle[$j]),"\"/>
     <rotation name=\"lgLogicSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"",$lgTiltAngle[$j]*(-1),"\" z=\"0\"/> 
 </union>\n";
+
 
 print def "<union name=\"quartzLogicSol_$index[$j]\">
     <first ref=\"quartzLogicSol2_$index[$j]\"/>
     <second ref=\"pmtLogicSol_$index[$j]\"/>
-   <position name=\"pmtLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzPmt[$j]*0.5)*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+$dzPmt[$j]*0.5)*cos($lgTiltAngle[$j]),"\"/>
-    <rotation name=\"pmtLogicSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"",$lgTiltAngle[$j]*(-1),"\" z=\"0\"/> 
+    <position name=\"pmtLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzPmt[$j]*0.5)*sin($lgTiltAngle[$j])+cos($lgTiltAngle[$j])*0.5*$dzPmt[$j]*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-sin($lgTiltAngle[$j])*0.5*$dzPmt[$j]*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+$dzPmt[$j]*0.5)*cos($lgTiltAngle[$j])+sin($lgTiltAngle[$j])*0.5*$dzPmt[$j]*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-cos($lgTiltAngle[$j])*0.5*$dzPmt[$j]*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\"/>
+    <rotation name=\"pmtLogicSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"",1*$ry[$j],"\" z=\"0\"/>
 </union>\n";
 
 
@@ -553,11 +554,13 @@ print def "<subtraction name =\"pmtSkinSol_$index[$j]\">
 
 print def "<cone name = \"pmtCathodeSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"",$dzPmt[$j]/100.0,"\"
 startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
+print def "<cone name = \"pmtCathodeSol_sub_$index[$j]\" rmin1=\"0\" rmax1=\"1.01*$drPmt[$j]\" rmin2=\"0\" rmax2=\"1.01*$drPmt[$j]\" z=\"",1.01*$dzPmt[$j]/100.0,"\"
+startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
 print def "<subtraction name =\"pmtSol_$index[$j]\">
 	<first ref=\"pmtFullSol_$index[$j]\"/> 
-	<second ref=\"pmtCathodeSol_$index[$j]\"/> 
-	<position unit=\"mm\" name=\"pmtCathodeSolPos_$index[$j]\" x=\"0\" y=\"0\" z=\"",-1.0*($drPmt[$j]/2.0)+($drPmt[$j]/200.0),"\"/>
-        <rotation unit=\"rad\" name=\"pmtCathodeSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
+	<second ref=\"pmtCathodeSol_sub_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"pmtCathodeSolPos_$index[$j]\" x=\"0\" y=\"0\" z=\"",-1.0*($dzPmt[$j]/2.0)+($dzPmt[$j]/200.0),"\"/>
+    <rotation unit=\"rad\" name=\"pmtCathodeSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
 </subtraction>\n\n";
 }
 
@@ -779,18 +782,18 @@ print def "<volume name=\"quartzVol_$index[$j]\">
 
       <physvol name=\"pmt_$index[$j]\">
 			<volumeref ref=\"pmtVol_$index[$j]\"/>
-			<position name=\"pmtPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*($dzPmt[$j]+$dzPmt[$j]/50))*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*($dzPmt[$j]+$dzPmt[$j]/50))*cos($lgTiltAngle[$j]),"\"/>
-			<rotation name=\"pmtRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+			<position name=\"pmtPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*($dzPmt[$j]+1*$dzPmt[$j]/100))*sin($lgTiltAngle[$j])+cos($lgTiltAngle[$j])*0.5*($dzPmt[$j]+1*$dzPmt[$j]/100)*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-sin($lgTiltAngle[$j])*0.5*($dzPmt[$j]+1*$dzPmt[$j]/100)*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*($dzPmt[$j]+1*$dzPmt[$j]/100))*cos($lgTiltAngle[$j])+sin($lgTiltAngle[$j])*0.5*($dzPmt[$j]+1*$dzPmt[$j]/100)*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-cos($lgTiltAngle[$j])*0.5*($dzPmt[$j]+1*$dzPmt[$j]/100)*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\"/>
+			<rotation name=\"pmtRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",-1*$ry[$j],"\" z=\"",0,"\"/>
 </physvol> \n
       <physvol name=\"pmtCathode_$index[$j]\">
 			<volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
-			<position name=\"pmtCathodePos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*cos($lgTiltAngle[$j]),"\"/>
-			<rotation name=\"pmtCathodeRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+			<position name=\"pmtCathodePos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*sin($lgTiltAngle[$j])+cos($lgTiltAngle[$j])*0.5*$dzPmt[$j]/100.0*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-sin($lgTiltAngle[$j])*0.5*($dzPmt[$j]/100.0)*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j]/100.0)*cos($lgTiltAngle[$j])+sin($lgTiltAngle[$j])*0.5*$dzPmt[$j]/100.0*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-cos($lgTiltAngle[$j])*0.5*($dzPmt[$j]/100.0)*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\"/>
+			<rotation name=\"pmtCathodeRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",-1*$ry[$j],"\" z=\"",0,"\"/>
 </physvol> \n
       <physvol name=\"pmtSkin_$index[$j]\">
 			<volumeref ref=\"pmtSkinVol_$index[$j]\"/>
-			<position name=\"pmtSkinPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j])*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j])*cos($lgTiltAngle[$j]),"\"/>
-			<rotation name=\"pmtSkinRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+			<position name=\"pmtSkinPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+0.5*$dzPmt[$j])*sin($lgTiltAngle[$j])+cos($lgTiltAngle[$j])*0.5*$dzPmt[$j]*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-sin($lgTiltAngle[$j])*0.5*$dzPmt[$j]*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+0.5*$dzPmt[$j])*cos($lgTiltAngle[$j])+sin($lgTiltAngle[$j])*0.5*$dzPmt[$j]*sin(1*$lgTiltAngle[$j]+1*$ry[$j])-cos($lgTiltAngle[$j])*0.5*$dzPmt[$j]*(1-cos(1*$lgTiltAngle[$j]+1*$ry[$j])),"\"/>
+			<rotation name=\"pmtSkinRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",-1*$ry[$j],"\" z=\"",0,"\"/>
 </physvol> \n  
 
 
