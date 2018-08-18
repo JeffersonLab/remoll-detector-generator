@@ -631,8 +631,12 @@ print def "<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"refSol1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
+         <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
+$k=$index[$j]+200;
 
 print def "<volume name=\"refVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -647,7 +651,7 @@ print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"My
          <volumeref ref=\"refVolSkin_$index[$j]\"/>
 </skinsurface>\n";
 
-$k=$index[$j]+200;
+$k=$index[$j]+300;
 
 print def "<volume name=\"reflectorVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -662,13 +666,18 @@ print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
 
-$k=$index[$j]+300;
+$k=$index[$j]+400;
  
 print def "<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"lgSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
+         <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
+
+$k=$index[$j]+500;
 
 print def "<volume name=\"lgVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -685,7 +694,7 @@ print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Myl
 </skinsurface>\n ";
 
 
-$k=$index[$j]+400;
+$k=$index[$j]+600;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
@@ -700,7 +709,7 @@ print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Alumin
          <volumeref ref=\"pmtVol_$index[$j]\"/>
 </skinsurface>\n ";
 
-$k=$index[$j]+500;
+$k=$index[$j]+700;
 print def "<volume name=\"pmtCathodeVol_$index[$j]\">
          <materialref ref=\"Photocathode\"/>
          <solidref ref=\"pmtCathodeSol_$index[$j]\"/> 
