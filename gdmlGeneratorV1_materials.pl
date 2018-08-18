@@ -13,7 +13,7 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw($opt_L $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @extraPMTholderWidth @extraPMTholderDepth @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
+use vars qw($opt_L $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags and set defaults---------------------------##
@@ -107,10 +107,9 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 	$dyPmt[$i]= trim($fields[18]);
 	$dzPmt[$i]= trim($fields[19]);
 	$drPmt[$i]= trim($fields[20]);
-	#$extraPMTholderWidth[$i]= trim($fields[21]);
-	#$extraPMTholderDepth[$i]= trim($fields[22]);
 	$dtWall[$i]= trim($fields[21]); 
 	$dtReflector[$i]= trim($fields[22]); 
+    $dzLgExtra[$i]=(0.55*$dxPmt[$i])*sin($lgTiltAngle[$i]+$ry[$i]);
 	$i=$i+1;
 }
 }
@@ -420,7 +419,22 @@ print def "<union name=\"quartzSol_$index[$j]\">
 
 $angle1= atan(abs($dxLg[$j]-$dxPmt[$j])/$dzLg[$j]);
 $angle2= atan(abs($dyLg[$j]-$dyPmt[$j])/$dzLg[$j]);
-print def "<trd name = \"lgLogicSol_$index[$j]\" z=\"$dzLg[$j]\" y1=\"",$dyLg[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x1=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" y2=\"",$dyPmt[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x2=\"",$dxPmt[$j]+2*$dtWall[$j]/(cos($angle1)),"\" lunit= \"mm\"/>\n";
+#print def "<trd name = \"lgLogicSolOld_$index[$j]\" z=\"$dzLg[$j]\" y1=\"",$dyLg[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x1=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" y2=\"",$dyPmt[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x2=\"",$dxPmt[$j]+2*$dtWall[$j]/(cos($angle1)),"\" lunit= \"mm\"/>\n";
+print def "<trap name = \"lgLogicSol1_$index[$j]\" z=\"",$dzLg[$j]+1*$dzLgExtra[$j],"\" theta=\"0.0\" phi=\"0.0\" y1=\"",$dyLg[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x1=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" x2=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" y2=\"",$dyPmt[$j]+2*$dtWall[$j]/(cos($angle2)),"\" x3=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" x4=\"",$dxLg[$j]+2*$dtWall[$j]/(cos($angle1)),"\" alpha1=\"0.0\" alpha2=\"0*(",$lgTiltAngle[$j]+$ry[$j],")\" aunit=\"rad\" lunit=\"mm\"/>\n";
+print def "<box name = \"lgLogicSol_sub1_$index[$j]\" z=\"",4*$dzLgExtra[$j],"\" y=\"",1.5*($dyPmt[$j]+2*$dtWall[$j]/(cos($angle2))),"\" x=\"",1.5*($dxLg[$j]+2*$dtWall[$j]/(cos($angle1))),"\"/>\n";
+print def "<box name = \"lgLogicSol_sub2_$index[$j]\" z=\"",2*$dzLgExtra[$j],"\" y=\"",1.5*($dyPmt[$j]+2*$dtWall[$j]/(cos($angle2))),"\" x=\"",1.5*($dxLg[$j]+2*$dtWall[$j]/(cos($angle1))),"\"/>\n";
+print def "<subtraction name =\"lgLogicSol_sub_$index[$j]\">
+	<first ref=\"lgLogicSol_sub1_$index[$j]\"/> 
+	<second ref=\"lgLogicSol_sub2_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"lgSolPos_sub1_$index[$j]\" x=\"0\" y=\"0\" z=\"",-1.0*$dzLgExtra[$j],"\"\/>
+    <rotation unit=\"rad\" name=\"lgSolRot_sub1_$index[$j]\" z=\"0\" y=\"0\" x=\"0\"/>
+</subtraction>\n\n";
+print def "<subtraction name =\"lgLogicSol_$index[$j]\">
+	<first ref=\"lgLogicSol1_$index[$j]\"/> 
+	<second ref=\"lgLogicSol_sub_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"lgSolPos_sub_$index[$j]\" x=\"0\" y=\"0\" z=\"",0.5*($dzLg[$j]-1.0*$dzLgExtra[$j]),"\"\/>
+    <rotation unit=\"rad\" name=\"lgSolRot_sub_$index[$j]\" z=\"0\" y=\"",$lgTiltAngle[$j]+$ry[$j],"\" x=\"0\"/>
+</subtraction>\n\n";
 
 print def "<xtru name = \"refLogicSol_$index[$j]\" lunit= \"mm\" >
  <twoDimVertex x=\"",$dx[$j]*(0.5)+$dzRef[$j]*tan($refTopOpeningAngle[$j])+(($dtWall[$j]+$dtReflector[$j])/cos($lgTiltAngle[$j]+$refTopOpeningAngle[$j]))*cos($lgTiltAngle[$j]),"\" y=\"",$dzRef[$j]*0.5+(($dtWall[$j]+$dtReflector[$j])/cos($lgTiltAngle[$j]+$refTopOpeningAngle[$j]))*sin($lgTiltAngle[$j]),"\" />
@@ -444,7 +458,7 @@ print def "<union name=\"quartzLogicSol1_$index[$j]\">
 print def "<union name=\"quartzLogicSol2_$index[$j]\">
     <first ref=\"quartzLogicSol1_$index[$j]\"/>
     <second ref=\"lgLogicSol_$index[$j]\"/>
-   <position name=\"lgLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-$dzLg[$j]*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+$dzLg[$j]*0.5*cos($lgTiltAngle[$j]),"\"/>
+   <position name=\"lgLogicSolPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzLgExtra[$j])*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+1*$dzLgExtra[$j])*0.5*cos($lgTiltAngle[$j]),"\"/>
     <rotation name=\"lgLogicSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"",$lgTiltAngle[$j]*(-1),"\" z=\"0\"/> 
 </union>\n";
 
@@ -456,13 +470,28 @@ print def "<union name=\"quartzLogicSol_$index[$j]\">
 </union>\n";
 
 
-print def "<trd name = \"lgSol_$index[$j]\" z=\"$dzLg[$j]\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x2=\"$dxPmt[$j]\" lunit= \"mm\"/>\n";
+#print def "<trd name = \"lgSolOld_$index[$j]\" z=\"$dzLg[$j]\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x2=\"$dxPmt[$j]\" lunit= \"mm\"/>\n";
+print def "<trap name = \"lgSol1_$index[$j]\" z=\"",$dzLg[$j]+1*$dzLgExtra[$j],"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" x2=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x3=\"$dxLg[$j]\" x4=\"$dxLg[$j]\" alpha1=\"0.0\" alpha2=\"0*(",$lgTiltAngle[$j]+$ry[$j],")\" aunit=\"rad\" lunit=\"mm\"/>\n";
+print def "<box name = \"lgSol_sub1_$index[$j]\" z=\"",4*$dzLgExtra[$j],"\" y=\"",1.5*($dyPmt[$j]),"\" x=\"",1.5*($dxLg[$j]),"\"/>\n";
+print def "<box name = \"lgSol_sub2_$index[$j]\" z=\"",2*$dzLgExtra[$j],"\" y=\"",1.5*($dyPmt[$j]),"\" x=\"",1.5*($dxLg[$j]),"\"/>\n";
+print def "<subtraction name =\"lgSol_sub_$index[$j]\">
+	<first ref=\"lgSol_sub1_$index[$j]\"/> 
+	<second ref=\"lgSol_sub2_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"lgPos_sub1_$index[$j]\" x=\"0\" y=\"0\" z=\"",-1.0*$dzLgExtra[$j],"\"\/>
+    <rotation unit=\"rad\" name=\"lgRot_sub1_$index[$j]\" z=\"0\" y=\"0\" x=\"0\"/>
+</subtraction>\n\n";
+print def "<subtraction name =\"lgSol_$index[$j]\">
+	<first ref=\"lgSol1_$index[$j]\"/> 
+	<second ref=\"lgSol_sub_$index[$j]\"/> 
+	<position unit=\"mm\" name=\"lgPos_sub_$index[$j]\" x=\"0\" y=\"0\" z=\"",0.5*($dzLg[$j]-1.0*$dzLgExtra[$j]),"\"\/>
+    <rotation unit=\"rad\" name=\"lgRot_sub_$index[$j]\" z=\"0\" y=\"",$lgTiltAngle[$j]+$ry[$j],"\" x=\"0\"/>
+</subtraction>\n\n";
 
 print def "<subtraction name =\"lgSolSkin_$index[$j]\">
 	<first ref=\"lgLogicSol_$index[$j]\"/> 
 	<second ref=\"lgSol_$index[$j]\"/> 
 	<position unit=\"mm\" name=\"lgSolPos_$index[$j]\" x=\"0\" y=\"0\" z=\"",0,"\"\/>
-        <rotation unit=\"rad\" name=\"lgSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
+    <rotation unit=\"rad\" name=\"lgSolRot_$index[$j]\" x=\"0\" y=\"0\" z=\"0\"/>
 </subtraction>\n\n";
 
 
@@ -587,13 +616,14 @@ print def "<volume name=\"quartzRecVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"quartzSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+         <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 print def "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
-    <volumeref ref=\"quartzRecVol_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"quartzRecVol_$index[$j]\"/>
+</skinsurface>\n ";
 
 $k=$index[$j]+100;
 
@@ -608,25 +638,31 @@ print def "<volume name=\"refVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"refSolSkin1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+         <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
-    <volumeref ref=\"refVolSkin_$index[$j]\"/>
-  </skinsurface>\n";
+         <volumeref ref=\"refVolSkin_$index[$j]\"/>
+</skinsurface>\n";
+
+$k=$index[$j]+200;
 
 print def "<volume name=\"reflectorVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"reflectorSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
+ 	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
-    <volumeref ref=\"reflectorVol_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"reflectorVol_$index[$j]\"/>
+</skinsurface>\n ";
 
-$k=$index[$j]+200;
+$k=$index[$j]+300;
  
 print def "<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Air\"/>
@@ -638,44 +674,46 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"lgSolSkin_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+ 	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 
 print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
-    <volumeref ref=\"lgVolSkin_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"lgVolSkin_$index[$j]\"/>
+</skinsurface>\n ";
 
 
-$k=$index[$j]+300;
+$k=$index[$j]+400;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+ 	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"lowenergyneutral\"/> 
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
 
 print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
-    <volumeref ref=\"pmtVol_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"pmtVol_$index[$j]\"/>
+</skinsurface>\n ";
 
-$k=$index[$j]+400;
+$k=$index[$j]+500;
 print def "<volume name=\"pmtCathodeVol_$index[$j]\">
          <materialref ref=\"Photocathode\"/>
          <solidref ref=\"pmtCathodeSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
- 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
-   <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/>
-   </volume>\n";
+         <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+         <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/>
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+</volume>\n";
 
 
 print def "<skinsurface name=\"pmtCathodeVol_$index[$j]_skin\" surfaceproperty=\"Cathode\" >
-    <volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
+</skinsurface>\n ";
 
 
 print def "<volume name=\"pmtSkinVol_$index[$j]\">
@@ -686,8 +724,8 @@ print def "<volume name=\"pmtSkinVol_$index[$j]\">
 
 
 print def "<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
-    <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
-  </skinsurface>\n ";
+         <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
+</skinsurface>\n ";
 
 
 
@@ -697,37 +735,37 @@ print def "<volume name=\"quartzVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"quartzLogicSol_$index[$j]\"/> 
          <physvol name=\"quartzRec_$index[$j]\">
-			<volumeref ref=\"quartzRecVol_$index[$j]\"/>
-			<position name=\"quartzRecPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"0\"/>
-			<rotation name=\"quartzRecRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"0\" z=\"0\"/>
+		 <volumeref ref=\"quartzRecVol_$index[$j]\"/>
+		 <position name=\"quartzRecPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"0\"/>
+		 <rotation name=\"quartzRecRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"0\" z=\"0\"/>
 </physvol> \n
 
 <physvol name=\"ref_$index[$j]\">
-			<volumeref ref=\"refVol_$index[$j]\"/>
-			<position name=\"refPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
-			<rotation name=\"refRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+		 <volumeref ref=\"refVol_$index[$j]\"/>
+		 <position name=\"refPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
+		 <rotation name=\"refRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
 </physvol> \n
-        <physvol name=\"refSkin_$index[$j]\">
-			<volumeref ref=\"refVolSkin_$index[$j]\"/>
-			<position name=\"refSkinPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
-			<rotation name=\"refSkinRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+         <physvol name=\"refSkin_$index[$j]\">
+		 <volumeref ref=\"refVolSkin_$index[$j]\"/>
+		 <position name=\"refSkinPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
+		 <rotation name=\"refSkinRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
 </physvol> \n
-      <physvol name=\"reflector_$index[$j]\">
-			<volumeref ref=\"reflectorVol_$index[$j]\"/>
-			<position name=\"reflectorPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
-			<rotation name=\"reflectorRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+         <physvol name=\"reflector_$index[$j]\">
+		 <volumeref ref=\"reflectorVol_$index[$j]\"/>
+		 <position name=\"reflectorPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]*(0.5),"\"/>
+		 <rotation name=\"reflectorRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
 </physvol> \n
 
 
         <physvol name=\"lg_$index[$j]\">
-			<volumeref ref=\"lgVol_$index[$j]\"/>
-			<position name=\"lgPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-$dzLg[$j]*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+$dzLg[$j]*0.5*cos($lgTiltAngle[$j]),"\"/>
-			<rotation name=\"lgRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+	 	<volumeref ref=\"lgVol_$index[$j]\"/>
+	 	<position name=\"lgPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzLgExtra[$j])*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+$dzLgExtra[$j])*0.5*cos($lgTiltAngle[$j]),"\"/>
+		<rotation name=\"lgRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
 </physvol> \n
-      <physvol name=\"lgSkin_$index[$j]\">
-			<volumeref ref=\"lgVolSkin_$index[$j]\"/>
-			<position name=\"lgSkinPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-$dzLg[$j]*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+$dzLg[$j]*0.5*cos($lgTiltAngle[$j]),"\"/>
-			<rotation name=\"lgSkinRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
+        <physvol name=\"lgSkin_$index[$j]\">
+	 	<volumeref ref=\"lgVolSkin_$index[$j]\"/>
+		<position name=\"lgSkinPos_$index[$j]\" unit=\"mm\" x=\"",0.5*$dx[$j]+$dzRef[$j]*tan($refTopOpeningAngle[$j])-0.5*$dxLg[$j]*cos($lgTiltAngle[$j])-($dzLg[$j]+$dzLgExtra[$j])*0.5*sin($lgTiltAngle[$j]),"\" y=\"0\" z=\"",$dz[$j]*(0.5)+$dzRef[$j]-0.5*$dxLg[$j]*sin($lgTiltAngle[$j])+($dzLg[$j]+$dzLgExtra[$j])*0.5*cos($lgTiltAngle[$j]),"\"/>
+		<rotation name=\"lgSkinRot_$index[$j]\" unit=\"rad\" x=\"",0,"\" y=\"",$lgTiltAngle[$j],"\" z=\"",0,"\"/>
 </physvol> \n
 
       <physvol name=\"pmt_$index[$j]\">
