@@ -20,11 +20,11 @@ use vars qw($opt_L $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inre
 
 $opt_M = "detectorMotherP.csv"; #Mother Volume csv
 $opt_D = "parameter.csv";		#Detector Volume csv
-$opt_T = "";					    #Changes suffix 
+$opt_T = "";					#Changes suffix 
 $opt_P = "qe.txt";				#Photon energy vs property file
 $opt_U = "UVS_45total.txt";		#Wavelength vs reflectivity file
 $opt_R = "MylarRef.txt";		#Mylar Wavelength vs reflectivity file
-$opt_L = "";				#If nonempty draw single detector of specified ring 
+$opt_L = "";				    #If nonempty draw single detector of specified ring 
 getopts('M:D:T:P:U:R:L:');
 
 if ($#ARGV > -1){
@@ -68,16 +68,16 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
         if (index($opt_L, "5") >= 0 && (index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 0, 5) == "50002") 
 		{
 		}
-		elsif (index($opt_L, "5") >= 0 && index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51002")
+		elsif (index($opt_L, "5") >= 0 && index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51005")
 		{	
 		}
 		elsif (index($opt_L, "5") >= 0 && index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 0, 5) == "52002")
 		{
 		}
 		elsif (index($opt_L, substr(trim($fields[0]), 0, 1 )) >= 0 && substr(trim($fields[0]), 0, 1) != "5" &&
-            ((index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 3, 2) == "28") ||
-            ((index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 3, 2) == "04") || 
-            (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "3"))) 
+            ((index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 3, 2) == "01") ||
+            ((index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 3, 2) == "03") || 
+            (index($opt_L, "closed") >= 0 && substr(trim($fields[0]), 3, 2) == "2"))) 
 		{	
 		}
 		else
