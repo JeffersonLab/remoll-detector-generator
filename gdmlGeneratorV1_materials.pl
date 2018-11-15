@@ -226,8 +226,7 @@ my @CO2_1atm_AbsLen = (
 
 
 open(def, ">", "mollerMother${opt_T}.gdml") or die "cannot open > mollerMother${opt_T}.gdml: $!";
-print def "
-<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
+print def "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
 
 <gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">
 
