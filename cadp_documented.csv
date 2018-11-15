@@ -1,4 +1,21 @@
-# ring number (1-6), radial position of the center of the piece of quartz (710-1150, length of quartz (40-140), overlap (0-1, should be 1), thickness of quartz (lets say 10mm, may be thicker for some rings to maximize yield), quartz tilt angle (should be between 0.3 degrees and 1.2 degrees, probably just 0.4 for all), roll angle (90 always), reflector length, reflector top opening angle (from simulation determinations), light guide opening angle (depends on reflector angle), PMT starting radius (mm), length of PMT placeholder (in), diameter of PMT (in), wall thickness (3mm), pmt holder additional width, pmt holder additional depth, z position of quartz central point, z pos for staggered one.
+# 1 - ring number (1-6, 5 is primary moller peak and is further segmented in each open, transition and closed segment into 3 sub-tiles)
+# 2 - radial position of the center of the piece of quartz (710-1150, determined by Yuxiang/Ciprian's optimization simulations)
+# 3 - length of quartz (40-140 mm, determined by Yuxiang/Ciprian's optimization simulations)
+# 4 - overlap (0-1, should be 1 for maximum overlap)
+# 5 - thickness of quartz (lets say 10mm, may be thicker for some rings to maximize yield)
+# 6 - quartz tilt angle (should be between 0.0 degrees and 3.0 degrees, probably just 3.0 for all)
+# 7 - roll angle (90 degrees always)
+# 8 - reflector length (variable, mm, from simulation)
+# 9 - reflector top opening angle (variable, degrees, from simulation)
+# 10 - light guide opening angle (variable, degrees, depends on reflector angle, maxes at 6 in new Syracuse support design)
+# 11 - PMT starting radius (3 in default)
+# 12 - length of PMT placeholder (6 in default)
+# 13 - diameter of PMT (3 in default)
+# 14 - wall thickness (3mm default)
+# 15 - pmt holder additional width
+# 16 - pmt holder additional depth
+# 17 - z position of quartz central point
+# 18 - z pos for staggered one.
 1,710,40,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,650,700
 2,755,50,1,10,0.4,90,80,11,5,6,1350,3,6,3,17.33,17.33,480,530
 3,817.5,75,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,300,350

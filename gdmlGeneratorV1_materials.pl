@@ -65,7 +65,7 @@ if ($line =~ /^\s*$/) {    		# Check for empty lines.
 	@fields = split(",", $line);            # Split the line into fields.
 	if ($opt_L != "")
 	{
-        if (index($opt_L, "5") >= 0 && (index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 0, 5) == "50002") 
+        if (index($opt_L, "5") >= 0 && (index($opt_L, "open") >= 0 || (index($opt_L, "closed") < 0 && index($opt_L, "trans") < 0)) && substr(trim($fields[0]), 0, 5) == "50001") 
 		{
 		}
 		elsif (index($opt_L, "5") >= 0 && index($opt_L, "trans") >= 0 && substr(trim($fields[0]), 0, 5) == "51005")
@@ -220,6 +220,57 @@ my @CO2_1atm_AbsLen = (
 	"962.586*m", "846.065*m", "643.562*m", "520.072*m",
 	"133.014*m"
 	);
+
+
+##--------------------Write to mollerMother.gdml file----------------------------------------##
+
+
+open(def, ">", "mollerMother${opt_T}.gdml") or die "cannot open > mollerMother${opt_T}.gdml: $!";
+print def "
+<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
+
+<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">
+
+<define> 
+  <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"120.0 + 0.0*28500.\"/>
+  <rotation name=\"identity\"/>
+  <rotation name=\"rot\" unit=\"deg\" x=\"0\" y=\"90\" z=\"0\"/>
+</define>
+
+<materials>
+     <material Z=\"1\" name=\"Vacuum\" state=\"gas\">
+       <T unit=\"K\" value=\"2.73\"/>
+       <P unit=\"pascal\" value=\"3e-18\"/>
+       <D unit=\"g/cm3\" value=\"1e-25\"/>
+       <atom unit=\"g/mole\" value=\"1.01\"/>
+     </material>
+</materials>
+
+<solids>
+     <box lunit=\"mm\" name=\"boxMother\" x=\"200000\" y=\"200000\" z=\"200000\"/>
+</solids>
+
+  <structure>
+
+    <volume name=\"logicMother\">
+      <materialref ref=\"Vacuum\"/>
+      <solidref ref=\"boxMother\"/>
+
+      <physvol>
+      <file name=\"detector_5open.gdml\"/>
+      <positionref ref=\"detectorCenter\"/>
+      <rotationref ref=\"rot\"/>
+      </physvol>
+
+    </volume>
+  </structure>
+
+  <setup name=\"Default\" version=\"1.0\">
+    <world ref=\"logicMother\"/>
+  </setup>
+ 
+</gdml>";
+close(def) or warn "close failed: $!";
 
 
 ##--------------------Write to matrices.xml file----------------------------------------##
