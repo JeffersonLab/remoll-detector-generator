@@ -66,8 +66,8 @@
 </material>
 
 <material Z="19" name="Photocathode" state="solid">
-    <property name="EFFICIENCY" ref="Cathode_Surf_Efficiency"/>
-    <MEE unit="eV" value="190"/>
+      <property name="EFFICIENCY" ref="Cathode_Surf_Efficiency"/>
+      <MEE unit="eV" value="190"/>
       <D unit="g/cm3" value="5"/>
       <atom unit="g/mole" value="39.0983"/>
 </material>
