@@ -1,9 +1,9 @@
-# ring number (1-6), radial position of the center of the piece of quartz (710-1150, length of quartz (40-140), overlap (0-1, should be 1), thickness of quartz (lets say 10mm, may be thicker for some rings to maximize yield), quartz tilt angle (should be between 0.3 degrees and 1.2 degrees, probably just 0.4 for all), roll angle (90 always), reflector length, reflector top opening angle (from simulation determinations), light guide opening angle (depends on reflector angle), light guide thickness=width (75 arbitrarily, this should change as a function of ring widths and PMT radii), light guide length (75 to 525), length of PMT placeholder, diameter of PMT, wall thickness (3mm), pmt holder additional width, pmt holder additional depth, z position of quartz central point, z pos for staggered one.
-1,710,40,1,10,0.4,90,100,15,20,75,525,3,6,3,17.33,17.33,650,700
-2,755,50,1,10,0.4,90,100,15,20,75,475,3,6,3,17.33,17.33,480,530
-3,817.5,75,1,10,0.4,90,100,15,20,75,400,3,6,3,17.33,17.33,300,350
-4,892.5,75,1,10,0.4,90,100,15,20,75,312.5,3,6,3,17.33,17.33,150,190
-5.0,1017.5,115,1,10,0.4,90,100,15,20,75,150,2,6,3,17.33,17.33,-35,35
-5.1,987.5,105,1,10,0.4,90,100,15,20,75,200,2,6,3,17.33,17.33,-35,35
-5.2,1030,140,1,10,0.4,90,100,15,20,75,125,2,6,3,17.33,17.33,-20,20
-6,1150,100,1,10,0.4,90,50,15,20,75,75,3,6,3,17.33,17.33,-190,-150
+# ring number (1-6), radial position of the center of the piece of quartz (710-1150, length of quartz (40-140), overlap (0-1, should be 1), thickness of quartz (lets say 10mm, may be thicker for some rings to maximize yield), quartz tilt angle (should be between 0.3 degrees and 1.2 degrees, probably just 0.4 for all), roll angle (90 always), reflector length, reflector top opening angle (from simulation determinations), light guide opening angle (depends on reflector angle), PMT starting radius (mm), length of PMT placeholder (in), diameter of PMT (in), wall thickness (3mm), pmt holder additional width, pmt holder additional depth, z position of quartz central point, z pos for staggered one.
+1,710,40,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,650,700
+2,755,50,1,10,0.4,90,80,11,5,6,1350,3,6,3,17.33,17.33,480,530
+3,817.5,75,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,300,350
+4,892.5,75,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,150,190
+5.0,1017.5,115,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-35,35
+5.1,987.5,105,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-35,35
+5.2,1030,140,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-20,20
+6,1150,100,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,-190,-150
