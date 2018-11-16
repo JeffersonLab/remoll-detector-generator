@@ -226,13 +226,12 @@ my @CO2_1atm_AbsLen = (
 
 
 open(def, ">", "mollerMother${opt_T}.gdml") or die "cannot open > mollerMother${opt_T}.gdml: $!";
-print def "
-<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
+print def "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
 
 <gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">
 
 <define> 
-  <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"120.0 + 0.0*28500.\"/>
+  <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"125.0 + 0.0*28500.\"/>
   <rotation name=\"identity\"/>
   <rotation name=\"rot\" unit=\"deg\" x=\"0\" y=\"90\" z=\"0\"/>
 </define>
@@ -257,7 +256,7 @@ print def "
       <solidref ref=\"boxMother\"/>
 
       <physvol>
-      <file name=\"detector_5open.gdml\"/>
+      <file name=\"detector${opt_T}.gdml\"/>
       <positionref ref=\"detectorCenter\"/>
       <rotationref ref=\"rot\"/>
       </physvol>
