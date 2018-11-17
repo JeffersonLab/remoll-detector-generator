@@ -231,7 +231,7 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
 <gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">
 
 <define> 
-  <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"120.0 + 0.0*28500.\"/>
+  <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"125.0 + 0.0*28500.\"/>
   <rotation name=\"identity\"/>
   <rotation name=\"rot\" unit=\"deg\" x=\"0\" y=\"90\" z=\"0\"/>
 </define>
@@ -256,7 +256,7 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
       <solidref ref=\"boxMother\"/>
 
       <physvol>
-      <file name=\"detector_5open.gdml\"/>
+      <file name=\"detector${opt_T}.gdml\"/>
       <positionref ref=\"detectorCenter\"/>
       <rotationref ref=\"rot\"/>
       </physvol>
@@ -414,15 +414,23 @@ for ($o=$#PhotonEnergy; $o >= 0; $o -= 1) {
 }
 
 ##--------------------1x1 matrix properties--------------------------------------##
-print def "<matrix name=\"Air_Const_Scint\" coldim=\"1\" values=\"25./MeV\"/>";
-print def "<matrix name=\"Ar_Const_Scint\" coldim=\"1\" values=\"510./MeV\"/>";
-print def "<matrix name=\"C02_Const_Scint\" coldim=\"1\" values=\"5./MeV\"/>";
-print def "<matrix name=\"N2_Const_Scint\" coldim=\"1\" values=\"140./MeV\"/>";
+print def "
+<matrix name=\"Air_Const_Scint\" coldim=\"1\" values=\"25./MeV\"/>";
+print def "
+<matrix name=\"Ar_Const_Scint\" coldim=\"1\" values=\"510./MeV\"/>";
+print def "
+<matrix name=\"C02_Const_Scint\" coldim=\"1\" values=\"5./MeV\"/>";
+print def "
+<matrix name=\"N2_Const_Scint\" coldim=\"1\" values=\"140./MeV\"/>";
 
-print def "<matrix name=\"General_Const_RESOLUTION\" coldim=\"1\" values=\"2.0\"/>";
-print def "<matrix name=\"General_Const_FAST\" coldim=\"1\" values=\"1.*ns\"/>";
-print def "<matrix name=\"General_Const_SLOW\" coldim=\"1\" values=\"10.*ns\"/>";
-print def "<matrix name=\"General_Const_YIELDRATIO\" coldim=\"1\" values=\"1.0\"/>";
+print def "
+<matrix name=\"General_Const_RESOLUTION\" coldim=\"1\" values=\"2.0\"/>";
+print def "
+<matrix name=\"General_Const_FAST\" coldim=\"1\" values=\"1.*ns\"/>";
+print def "
+<matrix name=\"General_Const_SLOW\" coldim=\"1\" values=\"10.*ns\"/>";
+print def "
+<matrix name=\"General_Const_YIELDRATIO\" coldim=\"1\" values=\"1.0\"/>";
 
 close(def) or warn "close failed: $!";
 
@@ -615,23 +623,27 @@ print def "<subtraction name =\"pmtSol_$index[$j]\">
 }
 
 #-----------------------------------------------FIXME Placeholders from Brad's code-----------------------------------------------------------------------------------#
-print def "<opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\">
+print def "
+        <opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\">
 			<property name=\"RINDEX\" ref=\"Quartz_Surf_RINDEX\"/>
 			<property name=\"SPECULARLOBECONSTANT\" ref=\"Quartz_Surf_SPECLOBE\"/>
 			<property name=\"SPECULARSPIKECONSTANT\" ref=\"Quartz_Surf_SPECSPIKE\"/> 
 			<property name=\"BACKSCATTERCONSTANT\" ref=\"Quartz_Surf_BACKSCATTER\"/> 
 		</opticalsurface>";
 	
-print def "<opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
-			<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
-</opticalsurface>";
-print def "<opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+print def "
+        <opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+	    	<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
+        </opticalsurface>";
+print def "
+        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
 			<property name=\"REFLECTIVITY\" ref=\"Mylar_Surf_Reflectivity\"/>
-</opticalsurface>";
-print def "<opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        </opticalsurface>";
+print def "
+        <opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
 			<property name=\"REFLECTIVITY\" ref=\"Cathode_Surf_Reflectivity\"/>
 			<property name=\"EFFICIENCY\" ref=\"Cathode_Surf_Efficiency\"/>
-</opticalsurface>";
+        </opticalsurface>";
 
 
 #----------------------------------------------------------------------------------------------------------------------------------#
@@ -665,7 +677,8 @@ for $j(0..$i-1){
 
 $k=$index[$j]+0;
 
-print def "<volume name=\"quartzRecVol_$index[$j]\">
+print def "
+<volume name=\"quartzRecVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"quartzSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
@@ -680,7 +693,8 @@ print def "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"
 
 $k=$index[$j]+100;
 
-print def "<volume name=\"refVol_$index[$j]\">
+print def "
+<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"refSol1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
@@ -691,7 +705,8 @@ print def "<volume name=\"refVol_$index[$j]\">
 
 $k=$index[$j]+200;
 
-print def "<volume name=\"refVolSkin_$index[$j]\">
+print def "
+<volume name=\"refVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"refSolSkin1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
@@ -700,13 +715,15 @@ print def "<volume name=\"refVolSkin_$index[$j]\">
          <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
-print def "<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
+print def "
+<skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
          <volumeref ref=\"refVolSkin_$index[$j]\"/>
 </skinsurface>\n";
 
 $k=$index[$j]+300;
 
-print def "<volume name=\"reflectorVol_$index[$j]\">
+print def "
+<volume name=\"reflectorVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"reflectorSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
@@ -715,13 +732,15 @@ print def "<volume name=\"reflectorVol_$index[$j]\">
 	     <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
 </volume>\n";
 
-print def "<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
+print def "
+<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
 
 $k=$index[$j]+400;
  
-print def "<volume name=\"lgVol_$index[$j]\">
+print def "
+<volume name=\"lgVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"lgSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
@@ -732,7 +751,8 @@ print def "<volume name=\"lgVol_$index[$j]\">
 
 $k=$index[$j]+500;
 
-print def "<volume name=\"lgVolSkin_$index[$j]\">
+print def "
+<volume name=\"lgVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"lgSolSkin_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
@@ -742,13 +762,15 @@ print def "<volume name=\"lgVolSkin_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
+print def "
+<skinsurface name=\"lgVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
          <volumeref ref=\"lgVolSkin_$index[$j]\"/>
 </skinsurface>\n ";
 
 
 $k=$index[$j]+600;
-print def "<volume name=\"pmtVol_$index[$j]\">
+print def "
+<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
@@ -758,12 +780,14 @@ print def "<volume name=\"pmtVol_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+print def "
+<skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
          <volumeref ref=\"pmtVol_$index[$j]\"/>
 </skinsurface>\n ";
 
 $k=$index[$j]+700;
-print def "<volume name=\"pmtCathodeVol_$index[$j]\">
+print def "
+<volume name=\"pmtCathodeVol_$index[$j]\">
          <materialref ref=\"Photocathode\"/>
          <solidref ref=\"pmtCathodeSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
@@ -773,19 +797,22 @@ print def "<volume name=\"pmtCathodeVol_$index[$j]\">
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtCathodeVol_$index[$j]_skin\" surfaceproperty=\"Cathode\" >
+print def "
+<skinsurface name=\"pmtCathodeVol_$index[$j]_skin\" surfaceproperty=\"Cathode\" >
          <volumeref ref=\"pmtCathodeVol_$index[$j]\"/>
 </skinsurface>\n ";
 
 
-print def "<volume name=\"pmtSkinVol_$index[$j]\">
+print def "
+<volume name=\"pmtSkinVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSkinSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"grey\"/> 
 </volume>\n";
 
 
-print def "<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+print def "
+<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
          <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
 </skinsurface>\n ";
 
@@ -793,8 +820,9 @@ print def "<skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Al
 
 
 
-print def "<volume name=\"quartzVol_$index[$j]\">
-         <materialref ref=\"Air\"/>
+print def "
+<volume name=\"quartzVol_$index[$j]\">
+         <materialref ref=\"Quartz\"/>
          <solidref ref=\"quartzLogicSol_$index[$j]\"/> 
          <physvol name=\"quartzRec_$index[$j]\">
 		 <volumeref ref=\"quartzRecVol_$index[$j]\"/>
@@ -860,24 +888,29 @@ print def "<volume name=\"quartzVol_$index[$j]\">
 #    }
 #}
 
-print def "<volume name=\"logicMotherVol${opt_T}\"> 
+print def "
+<volume name=\"logicMotherVol${opt_T}\"> 
 	<materialref ref=\"Air\"/>
 	<solidref ref=\"logicMotherSol${opt_T}\"/>\n";
 for $j(0..$i-1){
-print def "<physvol name=\"detector_$index[$j]\">
+print def "
+        <physvol name=\"detector_$index[$j]\">
 			<volumeref ref=\"quartzVol_$index[$j]\"/>
 			<position name=\"detectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"$z[$j]\"/>
 			<rotation name=\"detectorRot_$index[$j]\" unit=\"rad\" x=\"",$rx[$j],"\" y=\"$ry[$j]\" z=\"$rz[$j]\"/>
-</physvol> \n";
+        </physvol> \n";
 }
-print def "</volume>";
+print def "
+</volume>";
 
 
-print def "\n</structure>\n\n";
+print def "
+\n</structure>\n\n";
 
 
 ##-----------------------------------------End structure.--------------------------------------------------------------------------##
-print def "<setup name=\"logicMother${opt_T}\" version=\"1.0\">
+print def "
+<setup name=\"logicMother${opt_T}\" version=\"1.0\">
 	<world ref=\"logicMotherVol${opt_T}\"/>
 </setup>\n
 </gdml>";
