@@ -65,7 +65,7 @@ my $rad = pi/180;                                                 # Radians for 
 $dxLg[$i]=(25.4*$ddPmt[$i]+$extraPMTholderWidth[$i])*cos($rad*($tilt[$i]+$lgTiltAngle[$i])); 
                                                                   # Width of reflector opening/lightguide segment
 $dzLg[$i]=($height[$i]-$r[$i]-0.5*($dz[$i]*cos($rad*$tilt[$i])+$dx[$i]*sin($rad*$tilt[$i]))-1*$dzRef[$i]*cos($rad*$refTopOpeningAngle[$i])+0.5*$dxLg[$i]*sin($rad*$lgTiltAngle[$i]))/cos($rad*$lgTiltAngle[$i]);
-                                                                  # Length of Light Guide
+                                                                  # Length of Light Guide - the dzRef length computation also needs a dxRef*angle component (in this nomenclature it would be addition) so that the PMT placement in CAD solidworks will work out.
 $i=$i+1;
 
 }
