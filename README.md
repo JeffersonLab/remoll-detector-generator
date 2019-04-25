@@ -12,6 +12,7 @@ Detailed instructions are given below.
 perl cadGeneratorV1.pl -F cadp.csv 
 (produces equations.txt file and parameter.csv file corresponding to detector placed at 28.5 m downstream of origin.
 Use cadp_shortened.csv to get detector placed at 27 m for a special case of target center at 0.575m. The cadp file needs to be tuned as upstream geometry changes.)
+See cadp_documented.csv for description of parameters.
 
 # GDML generator With No Optical Physics
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
@@ -47,12 +48,32 @@ or use gdmlview (https://github.com/JeffersonLab/gdmlview)
 solids.xml, materialsNew.xml and detector.gdml file needs to be copied over to remoll geometry folder. The following lines needs to be added to mollerMother.gdml
  ```
  <physvol>
-  <file name="/home/rahmans/projects/def-jmammei/rahmans/geometry/geometry_optics_beam/detector.gdml"/>
+  <file name="<Remoll Geometry Folder>/detector.gdml"/>
   <positionref ref="detectorCenter"/>
   <rotation name="detectorRot" x="0" y="pi/2" z="0"/>
  </physvol>
  ```
 
+# Example Macro for remoll
+
+/remoll/setgeofile /home/rahmans/projects/def-jmammei/rahmans/geometry/geometry_optics_beam/mollerMother_merged1.gdml
+/remoll/physlist/register QGSP_BERT
+/remoll/physlist/parallel/enable
+/remoll/parallel/setfile /home/rahmans/projects/def-jmammei/rahmans/geometry/geometry_optics_beam/mollerParallel.gdml
+/run/numberOfThreads 5
+/run/initialize
+/remoll/addfield /home/rahmans/projects/def-jmammei/rahmans/map/default/text/blockyHybrid_rm_3.0.txt
+/remoll/addfield /home/rahmans/projects/def-jmammei/rahmans/map/default/text/blockyUpstream_rm_1.1.txt
+/remoll/evgen/set moller
+/remoll/beamene 11 GeV
+/remoll/beamcurr 70 microampere
+/remoll/SD/enable_range 9000 80000
+/remoll/SD/enable 32
+/remoll/SD/detect boundaryhits 32
+/remoll/kryptonite/set true
+/remoll/filename /scratch/rahmans/scratch/backgroundStudy/beamUpstreamR0.0/moller/moller_1.root
+/run/beamOn 50000
+                 
 
 
 
