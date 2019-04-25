@@ -78,7 +78,7 @@ solids.xml, materialsNew.xml and detector.gdml file needs to be copied over to r
 
 # Current Detector Nomenclature: Interpreting the Output 
 Detector IDs are assigned with the following convention
-
+```
 Different Rings:
 5XXXX
 
@@ -91,7 +91,7 @@ Different Parts:
 quartz:   XX0XX  
 reflector: XX1XX 
 lg: XX2XX
-
+```
 The last two digits are increments within a ring.
 
 For other rings, i don't have a sector label. So, for example 60001 is an open sector detector, 60002 is a transition sector detector and 60003 is a closed sector detector and the pattern repeats itself until detector number reaches 28.
