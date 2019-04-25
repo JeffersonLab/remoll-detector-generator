@@ -55,7 +55,7 @@ solids.xml, materialsNew.xml and detector.gdml file needs to be copied over to r
  ```
 
 # Example Macro for remoll
-
+```
 /remoll/setgeofile /home/rahmans/projects/def-jmammei/rahmans/geometry/geometry_optics_beam/mollerMother_merged1.gdml
 /remoll/physlist/register QGSP_BERT
 /remoll/physlist/parallel/enable
@@ -73,7 +73,7 @@ solids.xml, materialsNew.xml and detector.gdml file needs to be copied over to r
 /remoll/kryptonite/set true
 /remoll/filename /scratch/rahmans/scratch/backgroundStudy/beamUpstreamR0.0/moller/moller_1.root
 /run/beamOn 50000
-                 
+```               
 
 
 
