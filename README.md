@@ -88,9 +88,9 @@ Transition: X1XXX
 Closed: X2XXX
 
 Different Parts:
-quartz-    XX0XX  
-reflector- XX1XX 
-lg- XX2XX
+quartz:   XX0XX  
+reflector: XX1XX 
+lg: XX2XX
 
 The last two digits are increments within a ring.
 
