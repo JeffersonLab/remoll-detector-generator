@@ -1,25 +1,31 @@
 # General Usage
 
-cadGeneratorV1.pl and gdmlGeneratorV1_materials.pl execute the suggested commands without any flags using the indicated files as default settings. 
+The cadGeneratorV1.pl script uses the input file cadp.csv to produce equations.txt (for CAD), parameter.csv (for gdml generator) and detectorMotherP.csv (for gdml generator).
 
-Important: To utilize optical properties in Geant4 you need to use version 4.10.04.p02 (which has a bugfix for material properties courtesy of Wouter).
+The gdmlGeneratorV1.pl script uses the parameter.csv (parameters for individual detectors in detector array) and detectorMotherP.csv (parameters for detector array mother volume) file to produce detector.gdml and solids.xml. These two files along with materialsNew.xml needs to copied to the remoll geometry folder for using in simulation.
 
-"-T suff" gives a suffix to all outputs.
-"-L '12345opentransclosed6'" will give all rings with the number supplied, assuming the open section is desired, unless trans or closed is given, and open will always be given (can be fixed later if a problem)
+Detailed instructions are given below.
 
-# Generate CAD and GDML input parameter file
+
+# First execute the cad generator script
 
 perl cadGeneratorV1.pl -F cadp.csv 
 (produces equations.txt file and parameter.csv file corresponding to detector placed at 28.5 m downstream of origin.
 Use cadp_shortened.csv to get detector placed at 27 m for a special case of target center at 0.575m. The cadp file needs to be tuned as upstream geometry changes.)
 
-# With No Optical Physics
+# GDML generator With No Optical Physics
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
 (produces detector.gdml file)
 
-# With Optical Physics
+# GDML generator With Optical Physics (Requires GEANT>=4.10.04.p02)
 perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS_45total.txt -R MylarRef.txt
 (produces detector.gdml file)
+Warning: Cannot use parallel world in remoll if optical physics is enabled.
+
+# Additional Flags
+"-T suff" gives a suffix to all outputs.
+"-L '12345opentransclosed6'" will give all rings with the number supplied, assuming the open section is desired, unless trans or closed is given, and open will always be given (can be fixed later if a problem)
+
 
 # Viewing the Geometry
 
@@ -33,7 +39,10 @@ perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.
 /control/execute vis/Qt.mac
 ```
 
-Placing the geometry in remoll:
+or use gdmlview (https://github.com/JeffersonLab/gdmlview)
+
+
+# Placing the geometry in remoll
 
 
 
