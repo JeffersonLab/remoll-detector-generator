@@ -87,6 +87,9 @@ Open: X0XXX
 Transition: X1XXX
 Closed: X2XXX
 
+N.B. Currently sector labels only exist for ring 5. For all other rings, rely on repeating pattern to identify sector. For example in ring 6,  60001 is an open sector detector, 60002 is a transition sector detector and 60003 is a closed sector detector and the pattern repeats itself until detector number reaches 28.
+
+
 Different Parts:
 quartz:   XX0XX  
 reflector: XX1XX 
@@ -94,7 +97,4 @@ lg: XX2XX
 ```
 The last two digits are increments within a ring.
 
-For other rings, i don't have a sector label. So, for example 60001 is an open sector detector, 60002 is a transition sector detector and 60003 is a closed sector detector and the pattern repeats itself until detector number reaches 28.
-
-Since ring 5 is segmented, there are 21 open sector detectors, 42 transition sector detectors and 21 closed sector detectors.
 
