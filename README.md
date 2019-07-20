@@ -9,18 +9,24 @@ Detailed instructions are given below.
 
 # First execute the cad generator script
 
+```
 perl cadGeneratorV1.pl -F cadp.csv 
+```
 (produces equations.txt file and parameter.csv file corresponding to detector placed at 28.5 m downstream of origin.
 Use cadp_shortened.csv to get detector placed at 27 m for a special case of target center at 0.575m. The cadp file needs to be tuned as upstream geometry changes.)
 See cadp_documented.csv for description of parameters.
 
 # GDML generator With No Optical Physics
+```
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
+```
 (produces solids.xml and detector.gdml)
 
 
 # GDML generator With Optical Physics (Requires GEANT>=4.10.04.p02)
+```
 perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS_45total.txt -R MylarRef.txt
+```
 Warning: Cannot use parallel world in remoll if optical physics is enabled.
 
 # Additional Flags
