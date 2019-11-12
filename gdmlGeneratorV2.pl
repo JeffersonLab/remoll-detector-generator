@@ -13,7 +13,7 @@ use Getopt::Std;
 
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
-use vars qw($opt_M $opt_D $opt_T $data $line @fields $dxM $dyM $dzM $drMinM @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
+use vars qw($opt_M $opt_D $opt_T $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $angle1 $angle2);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags.------------------------------------------##
@@ -38,6 +38,7 @@ $dxM=trim($fields[0]);                  # Get rid of initial and trailing white 
 $dyM=trim($fields[1]);
 $dzM=trim($fields[2]);
 $drMinM=trim($fields[3]);
+$dxMext=trim($fields[4]);
 $i=$i+1;
 }
 }
@@ -89,13 +90,22 @@ close $data;
 open(def, ">", "solids${opt_T}.xml") or die "cannot open > solids${opt_T}.xml: $!";
 print def "<solids>\n\n";
 
-
-
-
 #---------------------Defining solid of mother volume.-------------------------------------------------------------------------------------# 
-print def "<box lunit=\"mm\" name=\"boxMotherSol${opt_T}\" x=\"$dxM\" y=\"$dyM\" z=\"$dzM\"/>\n";
+{ my $dxMabs; my $dxM2abs; my $dxMshift;
+$dxMabs = abs($dxMext);
+$dxM2abs = $dxM+2*$dxMabs;
+$dxMshift = ($dxMext<=>0)*($dxM+$dxMext)/2;
 
-print def "<cone aunit=\"rad\" deltaphi=\"2*PI\" lunit=\"mm\" name=\"coneMotherSol${opt_T}\" rmax1=\"$drMinM\" rmax2=\"$drMinM\" rmin1=\"0\" rmin2=\"0\" startphi=\"0\" z=\"$dxM\"/>\n";
+print def "<box lunit=\"mm\" name=\"boxMotherSolBase${opt_T}\" x=\"$dxM\" y=\"$dyM\" z=\"$dzM\"/>\n";
+print def "<box lunit=\"mm\" name=\"boxMotherSolExt${opt_T}\" x=\"$dxMabs\" y=\"$dyM\" z=\"$dzM\"/>\n";
+
+print def "<union name =\"boxMotherSol${opt_T}\">
+	<first ref=\"boxMotherSolBase${opt_T}\"/> 
+	<second ref=\"boxMotherSolExt${opt_T}\"/> 
+	<position unit=\"mm\" name=\"boxMotherPos${opt_T}\" x=\"$dxMshift\" y=\"0\" z=\"0\"\/>
+</union>\n\n";
+
+print def "<cone aunit=\"rad\" deltaphi=\"2*PI\" lunit=\"mm\" name=\"coneMotherSol${opt_T}\" rmax1=\"$drMinM\" rmax2=\"$drMinM\" rmin1=\"0\" rmin2=\"0\" startphi=\"0\" z=\"$dxM2abs\"/>\n";
 
 print def "<subtraction name =\"logicMotherSol${opt_T}\">
 	<first ref=\"boxMotherSol${opt_T}\"/> 
@@ -103,6 +113,7 @@ print def "<subtraction name =\"logicMotherSol${opt_T}\">
 	<position unit=\"mm\" name=\"coneMotherPos${opt_T}\" x=\"0\" y=\"0\" z=\"0\"\/>
         <rotation unit=\"rad\" name=\"coneMotherRot${opt_T}\" x=\"0\" y=\"PI/2\" z=\"0\"/>
 </subtraction>\n\n";
+}
 #------------------------------------------------------------------------------------------------------------------------------------------#
 
 
