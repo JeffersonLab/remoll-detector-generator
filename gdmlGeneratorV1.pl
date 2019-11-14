@@ -52,7 +52,8 @@ $i=0;
 while($line= <$data>){                  # Read each line till the end of the file.
 if ($line =~ /^\s*$/) {    		# Check for empty lines.
     print "String contains 0 or more white-space character and nothing else.\n";
-} else {
+} else
+{
 chomp $line;
 @fields = split(",", $line);            # Split the line into fields.
 $index[$i]=trim($fields[0]);            # Get rid of initial and trailing white spaces.
