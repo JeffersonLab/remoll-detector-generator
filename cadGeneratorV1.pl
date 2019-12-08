@@ -28,7 +28,7 @@ if ($#ARGV > -1){
 ##-----------------------Start reading CSV file containing parameter values.---------------------------------##
 open($data, '<', $opt_F);                                         # Open csv file.
 
-@numDet=(28,28,28,28,21,42,21,28);                                # Unelegant but needed placeholder for now.
+@numDet=(0,0,0,0,1,0,0,0);                                # Unelegant but needed placeholder for now.
 $i=0;
 
 while($line= <$data>){                                            # Read each line till the end of the file.
