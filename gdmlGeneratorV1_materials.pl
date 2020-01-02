@@ -229,7 +229,7 @@ my @CO2_1atm_AbsLen = (
 open(def, ">", "mollerMother${opt_T}.gdml") or die "cannot open > mollerMother${opt_T}.gdml: $!";
 print def "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>
 
-<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">
+<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\">
 
 <define> 
   <position name=\"detectorCenter\" x=\"0\" y=\"0\" z=\"125.0 + 0.0*28500.\"/>
@@ -676,7 +676,7 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 	<!ENTITY solids${opt_T} SYSTEM \"solids${opt_T}.xml\"> 
 	<!ENTITY matrices${opt_T} SYSTEM \"matrices${opt_T}.xml\">
 ]> \n
-<gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"schema/gdml.xsd\">\n
+<gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\">\n
 
 <define>
 <constant name=\"PI\" value=\"1.*pi\"/>
