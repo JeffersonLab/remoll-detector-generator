@@ -170,6 +170,9 @@ for ( my $j = 0 ; $j < $i ; $j++ ) {
         my $thisphi = 1;
         if ($thisring == 5) {
             $thissect = 2 - $thisfrac;
+            if ($thissect == 1 && $det - ($thissept - 1) * ($numDet[$j] / 7) >= ($numDet[$j] / 14)) {
+                $thissect = 3;
+            }
             $thisphi = $det % 3;
         }
         my $detno = $thisring*100000+$thissept*10000+$thiscoil*1000+$thissect*100+$thisphi*10;
