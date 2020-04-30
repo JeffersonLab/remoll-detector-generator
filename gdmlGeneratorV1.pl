@@ -285,65 +285,64 @@ print def "<volume name=\"quartzRecVol_$index[$j]\">
          <solidref ref=\"quartzSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j],"\"/>  
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+1,"\"/>  
 </volume>\n";
-
-$k=$index[$j]+50;
 
 print def "<volume name=\"refVol_$index[$j]\">
          <materialref ref=\"Air\"/>
          <solidref ref=\"refSol1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+2,"\"/>  
 </volume>\n";
-
 
 print def "<volume name=\"refVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"refSolSkin1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+3,"\"/>  
 </volume>\n";
 
 print def "<volume name=\"reflectorVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"reflectorSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
-</volume>\n";
-
-$k=$index[$j]+50;
- 
-print def "<volume name=\"lgVol_$index[$j]\">
-         <materialref ref=\"Air\"/>
-         <solidref ref=\"lgSol_$index[$j]\"/> 
-         <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+4,"\"/>  
 </volume>\n";
 
 print def "<volume name=\"lgVolSkin_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"lgSolSkin_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+5,"\"/>  
 </volume>\n";
 
+print def "<volume name=\"lgVol_$index[$j]\">
+         <materialref ref=\"Air\"/>
+         <solidref ref=\"lgSol_$index[$j]\"/> 
+         <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+6,"\"/>  
+</volume>\n";
 
-$k=$index[$j]+50;
 print def "<volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
          <solidref ref=\"pmtSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
-	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$k,"\"/>  
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+0,"\"/>  
 </volume>\n";
 
 print def "<volume name=\"pmtSkinVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
          <solidref ref=\"pmtSkinSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"grey\"/> 
+ 	 <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+	 <auxiliary auxtype=\"DetNo\" auxvalue=\"",$index[$j]+7,"\"/>  
 </volume>\n";
-
-
 
 
 
