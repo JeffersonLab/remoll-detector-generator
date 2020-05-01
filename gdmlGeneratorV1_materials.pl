@@ -847,7 +847,6 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 
 for $j ( 0 .. $i - 1 ) {
 
-    $k = $index[$j] + 0;
 
     print def "
 <volume name=\"quartzRecVol_$index[$j]\">
@@ -856,15 +855,13 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 1, "\"/>  
 </volume>\n";
 
     print def
 "<skinsurface name=\"quartzRecVol_$index[$j]_skin\" surfaceproperty=\"Quartz\" >
          <volumeref ref=\"quartzRecVol_$index[$j]\"/>
 </skinsurface>\n ";
-
-    $k = $index[$j] + 100;
 
     print def "
 <volume name=\"refVol_$index[$j]\">
@@ -873,10 +870,8 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 2, "\"/>  
 </volume>\n";
-
-    $k = $index[$j] + 200;
 
     print def "
 <volume name=\"refVolSkin_$index[$j]\">
@@ -885,15 +880,13 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 3, "\"/>  
 </volume>\n";
 
     print def "
 <skinsurface name=\"refVolSkin_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
          <volumeref ref=\"refVolSkin_$index[$j]\"/>
 </skinsurface>\n";
-
-    $k = $index[$j] + 300;
 
     print def "
 <volume name=\"reflectorVol_$index[$j]\">
@@ -902,15 +895,13 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
-	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 4, "\"/>  
 </volume>\n";
 
     print def "
 <skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
-
-    $k = $index[$j] + 400;
 
     print def "
 <volume name=\"lgVol_$index[$j]\">
@@ -919,10 +910,8 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"boundaryhits\"/> 
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 6, "\"/>  
 </volume>\n";
-
-    $k = $index[$j] + 500;
 
     print def "
 <volume name=\"lgVolSkin_$index[$j]\">
@@ -931,7 +920,7 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
  	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/> 
-	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 5, "\"/>  
 </volume>\n";
 
     print def "
@@ -939,7 +928,6 @@ for $j ( 0 .. $i - 1 ) {
          <volumeref ref=\"lgVolSkin_$index[$j]\"/>
 </skinsurface>\n ";
 
-    $k = $index[$j] + 600;
     print def "
 <volume name=\"pmtVol_$index[$j]\">
          <materialref ref=\"Aluminium\"/>
@@ -947,7 +935,7 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"lowenergyneutral\"/> 
-	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+	     <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 7, "\"/>  
 </volume>\n";
 
     print def "
@@ -955,7 +943,6 @@ for $j ( 0 .. $i - 1 ) {
          <volumeref ref=\"pmtVol_$index[$j]\"/>
 </skinsurface>\n ";
 
-    $k = $index[$j] + 700;
     print def "
 <volume name=\"pmtCathodeVol_$index[$j]\">
          <materialref ref=\"Photocathode\"/>
@@ -963,7 +950,7 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/>
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $k, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", index[$j] + 0, "\"/>  
 </volume>\n";
 
     print def "
