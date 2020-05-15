@@ -846,7 +846,6 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 
 for $j ( 0 .. $i - 1 ) {
 
-
     print def "
 <volume name=\"quartzRecVol_$index[$j]\">
          <materialref ref=\"Quartz\"/>
