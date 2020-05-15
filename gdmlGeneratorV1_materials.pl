@@ -502,13 +502,13 @@ print def "<solids>\n\n";
 </union>\n\n";
 
     print def
-"<cone aunit=\"rad\" deltaphi=\"2*PI\" lunit=\"mm\" name=\"coneMotherSol${opt_T}\" rmax1=\"$drMinM\" rmax2=\"$drMinM\" rmin1=\"0\" rmin2=\"0\" startphi=\"0\" z=\"$dxM2abs\"/>\n";
+"<cone aunit=\"rad\" deltaphi=\"2*pi\" lunit=\"mm\" name=\"coneMotherSol${opt_T}\" rmax1=\"$drMinM\" rmax2=\"$drMinM\" rmin1=\"0\" rmin2=\"0\" startphi=\"0\" z=\"$dxM2abs\"/>\n";
 
     print def "<subtraction name =\"logicMotherSol${opt_T}\">
 	<first ref=\"boxMotherSol${opt_T}\"/> 
 	<second ref=\"coneMotherSol${opt_T}\"/> 
 	<position unit=\"mm\" name=\"coneMotherPos${opt_T}\" x=\"0\" y=\"0\" z=\"0\"\/>
-        <rotation unit=\"rad\" name=\"coneMotherRot${opt_T}\" x=\"0\" y=\"PI/2\" z=\"0\"/>
+        <rotation unit=\"rad\" name=\"coneMotherRot${opt_T}\" x=\"0\" y=\"pi/2\" z=\"0\"/>
 </subtraction>\n\n";
 }
 
@@ -538,7 +538,7 @@ for $j ( 0 .. $i - 1 ) {
     <position name=\"quartzCutSolPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
       $dx[$j] * ( 0.5 * tan( abs( $quartzCutAngle[$j] ) ) ) + $dz[$j] * (0.5),
       "\"/>
-    <rotation name=\"quartzCutSolRot_$index[$j]\" unit=\"rad\" x=\"PI/2\" y=\"0\" z=\"PI\"/> 
+    <rotation name=\"quartzCutSolRot_$index[$j]\" unit=\"rad\" x=\"pi/2\" y=\"0\" z=\"pi\"/> 
 </union>\n";
 
     $angle1 = atan( abs( $dxLg[$j] - $dxPmt[$j] ) / $dzLg[$j] );
@@ -618,7 +618,7 @@ for $j ( 0 .. $i - 1 ) {
     <second ref=\"refLogicSol_$index[$j]\"/>
     <position name=\"refLogicSolPos_$index[$j]\" unit=\"mm\" x=\"", 0,
       "\" y=\"0\" z=\"", 0.5 * $dz[$j] + 0.5 * $dzRef[$j], "\"/>
-    <rotation name=\"refLogicSolRot_$index[$j]\" unit=\"rad\" x=\"PI/2\" y=\"",
+    <rotation name=\"refLogicSolRot_$index[$j]\" unit=\"rad\" x=\"pi/2\" y=\"",
       0, "\" z=\"0\"/> 
 </union>\n";
 
@@ -736,7 +736,7 @@ for $j ( 0 .. $i - 1 ) {
 	<second ref=\"quartzCutSol_$index[$j]\"/> 
 	<position unit=\"mm\" name=\"quartzCutPos_$index[$j]\" x=\"0\" y=\"$dzRef[$j]*(-0.5)+$dx[$j]*(0.5*tan(abs($quartzCutAngle[$j])))\" z=\"",
       0, "\"\/>
-        <rotation unit=\"rad\" name=\"quartzCutRot_$index[$j]\" x=\"0\" y=\"PI\" z=\"0\"/>
+        <rotation unit=\"rad\" name=\"quartzCutRot_$index[$j]\" x=\"0\" y=\"pi\" z=\"0\"/>
 </subtraction>\n\n";
 
     print def "<xtru name = \"reflectorSol_$index[$j]\" lunit= \"mm\" >
@@ -771,7 +771,7 @@ for $j ( 0 .. $i - 1 ) {
 
     print def
 "<cone name = \"pmtFullSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"$dzPmt[$j]\"
-startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
+startphi=\"0\" deltaphi=\"2*pi\" aunit=\"rad\" lunit= \"mm\" />\n";
     print def "<subtraction name =\"pmtSkinSol_$index[$j]\">
 	<first ref=\"pmtLogicSol_$index[$j]\"/> 
 	<second ref=\"pmtFullSol_$index[$j]\"/> 
@@ -783,11 +783,11 @@ startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
     print def
 "<cone name = \"pmtCathodeSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"",
       $dzPmt[$j] / 100.0, "\"
-startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
+startphi=\"0\" deltaphi=\"2*pi\" aunit=\"rad\" lunit= \"mm\" />\n";
     print def
 "<cone name = \"pmtCathodeSol_sub_$index[$j]\" rmin1=\"0\" rmax1=\"1.01*$drPmt[$j]\" rmin2=\"0\" rmax2=\"1.01*$drPmt[$j]\" z=\"",
       1.01 * $dzPmt[$j] / 100.0, "\"
-startphi=\"0\" deltaphi=\"2*PI\" aunit=\"rad\" lunit= \"mm\" />\n";
+startphi=\"0\" deltaphi=\"2*pi\" aunit=\"rad\" lunit= \"mm\" />\n";
     print def "<subtraction name =\"pmtSol_$index[$j]\">
 	<first ref=\"pmtFullSol_$index[$j]\"/> 
 	<second ref=\"pmtCathodeSol_sub_$index[$j]\"/> 
@@ -838,7 +838,6 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\">\n
 
 <define>
-<constant name=\"PI\" value=\"1.*pi\"/>
 &matrices${opt_T};
 </define>
 &materials; 
@@ -985,19 +984,19 @@ for $j ( 0 .. $i - 1 ) {
 		 <volumeref ref=\"refVol_$index[$j]\"/>
 		 <position name=\"refPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
       $dz[$j] * (0.5) + $dzRef[$j] * (0.5), "\"/>
-		 <rotation name=\"refRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+		 <rotation name=\"refRot_$index[$j]\" unit=\"rad\" x=\"-pi/2\" y=\"0\" z=\"0\"/>
     </physvol> \n
          <physvol name=\"refSkin_$index[$j]\">
 		 <volumeref ref=\"refVolSkin_$index[$j]\"/>
 		 <position name=\"refSkinPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
       $dz[$j] * (0.5) + $dzRef[$j] * (0.5), "\"/>
-		 <rotation name=\"refSkinRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+		 <rotation name=\"refSkinRot_$index[$j]\" unit=\"rad\" x=\"-pi/2\" y=\"0\" z=\"0\"/>
     </physvol> \n
          <physvol name=\"reflector_$index[$j]\">
 		 <volumeref ref=\"reflectorVol_$index[$j]\"/>
 		 <position name=\"reflectorPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
       $dz[$j] * (0.5) + $dzRef[$j] * (0.5), "\"/>
-		 <rotation name=\"reflectorRot_$index[$j]\" unit=\"rad\" x=\"-PI/2\" y=\"0\" z=\"0\"/>
+		 <rotation name=\"reflectorRot_$index[$j]\" unit=\"rad\" x=\"-pi/2\" y=\"0\" z=\"0\"/>
     </physvol> \n
 
 
