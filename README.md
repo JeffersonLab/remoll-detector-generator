@@ -115,6 +115,8 @@ lg: XXXXX3
 # Quick Notes
 "-T suff" gives a suffix to all outputs. "-L '12345opentransclosed6'" will give all rings with the number supplied, assuming the open section is desired, unless trans or closed is given, and open will always be given (can be fixed later if a problem)
 
+"-I suff" will place the PMTs inline with the light guides.
+
 perl cadGeneratorV1.pl -F cadp.csv (produces equations.txt file and parameter.csv file)
 
 perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv (produces detector.gdml file)
