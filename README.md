@@ -27,7 +27,7 @@ perl gdmlGeneratorV1.pl -M detectorMotherP.csv -D parameter.csv
 ```
 perl gdmlGeneratorV1_materials.pl -M detectorMotherP.csv -D parameter.csv -P qe.txt -U UVS_45total.txt -R MylarRef.txt
 ```
-Warning: Cannot use parallel world in remoll if optical physics is enabled.
+Warning: With Geant < 4.10.06.p01 you cannot use parallel world in remoll if optical physics is enabled.
 
 # Additional Flags
 "-T suff" gives a suffix to all outputs.
@@ -86,22 +86,31 @@ solids.xml, materialsNew.xml and detector.gdml file needs to be copied over to r
 Detector IDs are assigned with the following convention
 ```
 Different Rings:
-5XXXX
+5XXXXX
+
+Different Septants and Coils:
+Septant: XN0XXX for septant N (1-7)
+Coils: X0NXXX for coil N (1-7)
 
 Different Sectors:
-Open: X0XXX
-Transition: X1XXX
-Closed: X2XXX
+Closed: XXX0XX
+Transition-: XXX1XX
+Open: XXX2XX
+Transition+: XXX3XX
+
+Different Segments for ring 5:
+Phi-: XXXX0X
+Phi0: XXXX1X
+Phi+: XXXX2X
 
 N.B. Currently sector labels only exist for ring 5. For all other rings, rely on repeating pattern to identify sector. For example in ring 6,  60001 is an open sector detector, 60002 is a transition sector detector and 60003 is a closed sector detector and the pattern repeats itself until detector number reaches 28.
 
-
 Different Parts:
-quartz:   XX0XX  
-reflector: XX1XX 
-lg: XX2XX
+pmt:   XXXXX0
+quartz:   XXXXX1
+reflector: XXXXX2
+lg: XXXXX3
 ```
-The last two digits are increments within a ring.
 
 # Quick Notes
 "-T suff" gives a suffix to all outputs. "-L '12345opentransclosed6'" will give all rings with the number supplied, assuming the open section is desired, unless trans or closed is given, and open will always be given (can be fixed later if a problem)
