@@ -950,7 +950,7 @@ for $j ( 0 .. $i - 1 ) {
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
          <auxiliary auxtype=\"DetType\" auxvalue=\"opticalphoton\"/>
-         <auxiliary auxtype=\"DetNo\" auxvalue=\"", index[$j] + 0, "\"/>  
+         <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 0, "\"/>
 </volume>\n";
 
     print def "
