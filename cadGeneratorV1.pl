@@ -8,7 +8,7 @@ use File::Find ();
 use File::Basename;
 use Math::Trig;
 use Getopt::Std;
-use POSIX qw(modf fmod round);
+use POSIX qw(modf fmod);
 
 ##-------------------------------Declare variables explicitly so "my" not needed.------------------------------------##
 use strict 'vars';
@@ -117,7 +117,9 @@ for ( my $j = 0 ; $j < $i ; $j++ ) {
 
         # Determine this ring (and segment if ring 5)
         my ( $thisfrac, $thisring ) = POSIX::modf( $ring[$j] );
-        $thisfrac = int( POSIX::round(10 * $thisfrac) );
+        if ( $thisfrac != 0) {
+          $thisfrac = int((10 * $thisfrac) + (10 * $thisfrac) / abs((10 * $thisfrac) * 2));
+        }
         my $thissect = 1;
 
         # Modify theta for ring 5
