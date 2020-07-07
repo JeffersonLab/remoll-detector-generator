@@ -77,18 +77,18 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                     || (   index( $opt_L, "closed" ) < 0
                         && index( $opt_L, "trans" ) < 0 )
                 )
-                && substr( trim( $fields[0] ), 0, 5 ) == "50001"
+                && substr( trim( $fields[0] ), 0, 6 ) == "510210"
               )
             {
             }
             elsif (index( $opt_L, "5" ) >= 0
                 && index( $opt_L, "trans" ) >= 0
-                && substr( trim( $fields[0] ), 0, 5 ) == "51005" )
+                && substr( trim( $fields[0] ), 0, 6 ) == "510110" )
             {
             }
             elsif (index( $opt_L, "5" ) >= 0
                 && index( $opt_L, "closed" ) >= 0
-                && substr( trim( $fields[0] ), 0, 5 ) == "52002" )
+                && substr( trim( $fields[0] ), 0, 6 ) == "510010" )
             {
             }
             elsif (
@@ -97,7 +97,7 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                 && (
                     (
                         index( $opt_L, "trans" ) >= 0
-                        && substr( trim( $fields[0] ), 3, 2 ) == "01"
+                        && substr( trim( $fields[0] ), 1, 3 ) == "101"
                     )
                     || (
                         (
@@ -105,10 +105,10 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                             || (   index( $opt_L, "closed" ) < 0
                                 && index( $opt_L, "trans" ) < 0 )
                         )
-                        && substr( trim( $fields[0] ), 3, 2 ) == "03"
+                        && substr( trim( $fields[0] ), 1, 3 ) == "102"
                     )
                     || ( index( $opt_L, "closed" ) >= 0
-                        && substr( trim( $fields[0] ), 3, 2 ) == "2" )
+                        && substr( trim( $fields[0] ), 1, 3 ) == "010" )
                 )
               )
             {
@@ -180,8 +180,10 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
         if ( $Absorption1[$o] > 25 ) { $Absorption1[$o] = 25; }
         my $wavelength = 1.2398 / $PhotonEnergy[$o];
         my $wav        = $wavelength**-2;
+        # Air refractive index, important to get Cherenkov production right
         $RefractiveIndex2[$o] = 1 + ( .05792105 / ( 238.0185 - $wav ) ) +
           ( .00167917 / ( 57.362 - $wav ) );
+        # FIXME the PMT properties may be important later - details included in qsim code/people have numbers
         $RefractiveIndex3[$o] = 0;
         $Reflectivity4[$o]    = 0;
         $RefractiveIndexAR[$o] =
@@ -197,6 +199,7 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
           ( 5.21306 * ( 10.**-5 ) / ( 46.0196 - $wav ) ) +
           ( 1.46847 * ( 10.**-6 ) / ( .0584738 - $wav ) );
 
+          # FIXME this will be a tuned parameter eventually. 0.9 is optimistically high
         $Reflect_LG[$o] = .9;
 ##-----------------Read from the UVS file----------------------------------------##
 
@@ -459,7 +462,7 @@ print def "
 print def "
 <matrix name=\"Ar_Const_Scint\" coldim=\"1\" values=\"510./MeV\"/>";
 print def "
-<matrix name=\"C02_Const_Scint\" coldim=\"1\" values=\"5./MeV\"/>";
+<matrix name=\"CO2_Const_Scint\" coldim=\"1\" values=\"5./MeV\"/>";
 print def "
 <matrix name=\"N2_Const_Scint\" coldim=\"1\" values=\"140./MeV\"/>";
 
@@ -830,7 +833,7 @@ print def "
 	    	<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
-        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
 			<property name=\"REFLECTIVITY\" ref=\"Mylar_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
@@ -882,7 +885,7 @@ for $j ( 0 .. $i - 1 ) {
 
     print def "
 <volume name=\"refVol_$index[$j]\">
-         <materialref ref=\"Air\"/>
+         <materialref ref=\"QsimAir\"/>
          <solidref ref=\"refSol1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"green\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -892,7 +895,7 @@ for $j ( 0 .. $i - 1 ) {
 
     print def "
 <volume name=\"refVolSkin_$index[$j]\">
-         <materialref ref=\"Aluminium\"/>
+         <materialref ref=\"AlMylar\"/>
          <solidref ref=\"refSolSkin1_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -907,7 +910,7 @@ for $j ( 0 .. $i - 1 ) {
 
     print def "
 <volume name=\"reflectorVol_$index[$j]\">
-         <materialref ref=\"Aluminium\"/>
+         <materialref ref=\"AlMylar\"/>
          <solidref ref=\"reflectorSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"red\"/> 
  	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -916,13 +919,13 @@ for $j ( 0 .. $i - 1 ) {
 </volume>\n";
 
     print def "
-<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" >
+<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
 
     print def "
 <volume name=\"lgVol_$index[$j]\">
-         <materialref ref=\"Air\"/>
+         <materialref ref=\"QsimAir\"/>
          <solidref ref=\"lgSol_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"blue\"/> 
          <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -932,7 +935,7 @@ for $j ( 0 .. $i - 1 ) {
 
     print def "
 <volume name=\"lgVolSkin_$index[$j]\">
-         <materialref ref=\"Aluminium\"/>
+         <materialref ref=\"AlMylar\"/>
          <solidref ref=\"lgSolSkin_$index[$j]\"/> 
          <auxiliary auxtype=\"Color\" auxvalue=\"brown\"/> 
  	     <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
@@ -956,9 +959,11 @@ for $j ( 0 .. $i - 1 ) {
 </volume>\n";
 
     print def "
+<!--
 <skinsurface name=\"pmtVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
          <volumeref ref=\"pmtVol_$index[$j]\"/>
-</skinsurface>\n ";
+</skinsurface>
+-->\n ";
 
     print def "
 <volume name=\"pmtCathodeVol_$index[$j]\">
@@ -983,13 +988,15 @@ for $j ( 0 .. $i - 1 ) {
 </volume>\n";
 
     print def "
+<!--
 <skinsurface name=\"pmtSkinVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
          <volumeref ref=\"pmtSkinVol_$index[$j]\"/>
-</skinsurface>\n ";
+</skinsurface>
+-->\n ";
 
     print def "
 <volume name=\"TotalDetectorVol_$index[$j]\">
-    <materialref ref=\"Air\"/>
+    <materialref ref=\"QsimAir\"/>
     <solidref ref=\"TotalDetectorLogicSol_$index[$j]\"/> 
     <physvol name=\"quartzRec_$index[$j]\">
          <volumeref ref=\"quartzRecVol_$index[$j]\"/>
@@ -998,12 +1005,14 @@ for $j ( 0 .. $i - 1 ) {
       "\" y=\"0\" z=\"0\"/>
     </physvol> \n
 
+    <!--
     <physvol name=\"ref_$index[$j]\">
 		 <volumeref ref=\"refVol_$index[$j]\"/>
 		 <position name=\"refPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
       $dz[$j] * (0.5) + $dzRef[$j] * (0.5), "\"/>
 		 <rotation name=\"refRot_$index[$j]\" unit=\"rad\" x=\"-pi/2\" y=\"0\" z=\"0\"/>
-    </physvol> \n
+    </physvol>
+    --> \n
          <physvol name=\"refSkin_$index[$j]\">
 		 <volumeref ref=\"refVolSkin_$index[$j]\"/>
 		 <position name=\"refSkinPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
@@ -1017,7 +1026,7 @@ for $j ( 0 .. $i - 1 ) {
 		 <rotation name=\"reflectorRot_$index[$j]\" unit=\"rad\" x=\"-pi/2\" y=\"0\" z=\"0\"/>
     </physvol> \n
 
-
+    <!--
     <physvol name=\"lg_$index[$j]\">
 	 	<volumeref ref=\"lgVol_$index[$j]\"/>
 	 	<position name=\"lgPos_$index[$j]\" unit=\"mm\" x=\"",
@@ -1032,7 +1041,8 @@ for $j ( 0 .. $i - 1 ) {
       ( $dzLg[$j] + $dzLgExtra[$j] ) * 0.5 * cos( $lgTiltAngle[$j] ), "\"/>
 		<rotation name=\"lgRot_$index[$j]\" unit=\"rad\" x=\"", 0, "\" y=\"",
       $lgTiltAngle[$j], "\" z=\"", 0, "\"/>
-    </physvol> \n
+    </physvol>
+    --> \n
     <physvol name=\"lgSkin_$index[$j]\">
 	 	<volumeref ref=\"lgVolSkin_$index[$j]\"/>
 		<position name=\"lgSkinPos_$index[$j]\" unit=\"mm\" x=\"",
@@ -1220,12 +1230,16 @@ for $j ( 0 .. $i - 1 ) {
 
 print def "
 <volume name=\"logicMotherVol${opt_T}\"> 
-	<materialref ref=\"Air\"/>
+	<materialref ref=\"QsimAir\"/>
 	<solidref ref=\"logicMotherSol${opt_T}\"/>\n";
 for $j ( 0 .. $i - 1 ) {
     print def "
     <physvol name=\"detector_$index[$j]\">
 	    <volumeref ref=\"TotalDetectorVol_$index[$j]\"/>
+      <!-- Easy origin, just uncomment these to put the quartz center at the origin
+      <position name=\"detectorPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"0\"/>
+      <rotation name=\"detectorRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"0\" z=\"0\"/>
+      -->
 	    <position name=\"detectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"$z[$j]\"/>
     	<rotation name=\"detectorRot_$index[$j]\" unit=\"rad\" x=\"", $rx[$j],
       "\" y=\"$ry[$j]\" z=\"$rz[$j]\"/>
