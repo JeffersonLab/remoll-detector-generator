@@ -77,18 +77,18 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                     || (   index( $opt_L, "closed" ) < 0
                         && index( $opt_L, "trans" ) < 0 )
                 )
-                && substr( trim( $fields[0] ), 0, 6 ) == "510210"
+                && substr( trim( $fields[0] ), 0, 6 ) == "540210"
               )
             {
             }
             elsif (index( $opt_L, "5" ) >= 0
                 && index( $opt_L, "trans" ) >= 0
-                && substr( trim( $fields[0] ), 0, 6 ) == "510110" )
+                && substr( trim( $fields[0] ), 0, 6 ) == "540110" )
             {
             }
             elsif (index( $opt_L, "5" ) >= 0
                 && index( $opt_L, "closed" ) >= 0
-                && substr( trim( $fields[0] ), 0, 6 ) == "510010" )
+                && substr( trim( $fields[0] ), 0, 6 ) == "504010" )
             {
             }
             elsif (
@@ -97,7 +97,7 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                 && (
                     (
                         index( $opt_L, "trans" ) >= 0
-                        && substr( trim( $fields[0] ), 1, 3 ) == "101"
+                        && substr( trim( $fields[0] ), 1, 3 ) == "401"
                     )
                     || (
                         (
@@ -105,10 +105,10 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                             || (   index( $opt_L, "closed" ) < 0
                                 && index( $opt_L, "trans" ) < 0 )
                         )
-                        && substr( trim( $fields[0] ), 1, 3 ) == "102"
+                        && substr( trim( $fields[0] ), 1, 3 ) == "402"
                     )
                     || ( index( $opt_L, "closed" ) >= 0
-                        && substr( trim( $fields[0] ), 1, 3 ) == "010" )
+                        && substr( trim( $fields[0] ), 1, 3 ) == "040" )
                 )
               )
             {
