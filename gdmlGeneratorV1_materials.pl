@@ -1283,7 +1283,7 @@ for $j ( 0 .. $i - 1 ) {
     print def "
     <box name = \"quartzLogicParallel_$index[$j]\" x=\"$parallelQuartzRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
     <box name = \"refLogicParallel_$index[$j]\" x=\"$parallelReflectorRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
-    <trap name = \"lgLogicParallel_$index[$j]\" z=\"$parallelDetPlaneThickness\" theta=\"0.0\" phi=\"0.0\" y1=\"$dy[$j]\" x1=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" x2=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" y2=\"",(2.0*$drPmt[$j]),"\" x3=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" x4=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" alpha1=\"0.0\" alpha2=\"0.0\" aunit=\"rad\" lunit=\"mm\"/>
+    <trap name = \"lgLogicParallel_$index[$j]\" z=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dy[$j]\" x1=\"$parallelDetPlaneThickness\" x2=\"$parallelDetPlaneThickness\" y2=\"",(2.0*$drPmt[$j]),"\" x3=\"$parallelDetPlaneThickness\" x4=\"$parallelDetPlaneThickness\" alpha1=\"0.0\" alpha2=\"0.0\" aunit=\"rad\" lunit=\"mm\"/>
     <box name = \"pmtLogicParallel_$index[$j]\" x=\"$dzPmt[$j]\" y=\"",(2.0*$drPmt[$j]),"\" z=\"$parallelDetPlaneThickness\"/>\n";
 }
 print def "
@@ -1344,25 +1344,25 @@ for $j ( 0 .. $i - 1 ) {
     <physvol name=\"quartzVolParallel_phys_$index[$j]\">
       <volumeref ref=\"quartzVolParallel_$index[$j]\"/>
       <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",$parallelQuartzRCenter[$j]*sin($rx[$j]),"\" z=\"",$parallelQuartzRCenter[$j]*cos($rx[$j]),"\"/>
-      <rotation name=\"quartzVolParallelRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0\" z=\"$rz[$j]\"/>
+      <rotation name=\"quartzVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"reflectorVolParallel_phys_$index[$j]\">
       <volumeref ref=\"reflectorVolParallel_$index[$j]\"/>
       <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*sin($rx[$j]),"\" z=\"",($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*cos($rx[$j]),"\"/>
-      <rotation name=\"reflectorVolParallelRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0\" z=\"$rz[$j]\"/>
+      <rotation name=\"reflectorVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"lgVolSkinParallel_phys_$index[$j]\">
       <volumeref ref=\"lgVolSkinParallel_$index[$j]\"/>
       <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*sin($rx[$j])),"\" z=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*cos($rx[$j])),"\"/>
-      <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0\" z=\"$rz[$j]\"/>
+      <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"-1.0*pi\" y=\"0.0\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"pmtSkinVolParallel_phys_$index[$j]\">
       <volumeref ref=\"pmtSkinVolParallel_$index[$j]\"/>
-      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])+0.5*$dzPmt[$j])*sin($rx[$j]),"\" z=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])+0.5*$dzPmt[$j])*cos($rx[$j]),"\"/>
-      <rotation name=\"pmtSkinVolParallelRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0\" z=\"$rz[$j]\"/>
+      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",($parallelPmtRStart[$j]+1.0*$dzPmt[$j])*sin($rx[$j]),"\" z=\"",($parallelPmtRStart[$j]+0.5*$dzPmt[$j])*cos($rx[$j]),"\"/>
+      <rotation name=\"pmtSkinVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
 }
     print def"
