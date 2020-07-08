@@ -1289,7 +1289,8 @@ for $j ( 0 .. $i - 1 ) {
 print def "
 <!-- Box to hold the detector array inside of -->
 
-<box lunit=\"mm\" name=\"flat_parallel_solid\" x=\"4000\" y=\"4000\" z=\"3000\"/>
+<box lunit=\"mm\" name=\"flat_parallel_solid\" x=\"1000\" y=\"1000\" z=\"1000\"/>
+<box lunit=\"mm\" name=\"flat_parallel_solid2\" x=\"4010\" y=\"4010\" z=\"4010\"/>
 
 </solids>
 
@@ -1332,45 +1333,61 @@ for $j ( 0 .. $i - 1 ) {
 
 }
 
-    print def "
-  <volume name=\"Flat_Segmented_ParallelWorld_logical\">
-    <materialref ref=\"G4_Galactic\"/>
-    <solidref ref=\"flat_parallel_solid\"/>
-      ";
 
 
 for $j ( 0 .. $i - 1 ) {
     print def "
+  <volume name=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"flat_parallel_solid\"/>
+      ";
+    print def "
     <physvol name=\"quartzVolParallel_phys_$index[$j]\">
       <volumeref ref=\"quartzVolParallel_$index[$j]\"/>
-      <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",$parallelQuartzRCenter[$j]*sin($rx[$j]),"\" z=\"",$parallelQuartzRCenter[$j]*cos($rx[$j]),"\"/>
+      <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",0.0*$parallelQuartzRCenter[$j]*sin(0.0*$rx[$j]),"\" z=\"",0.0*$parallelQuartzRCenter[$j]*cos(0.0*$rx[$j]),"\"/>
       <rotation name=\"quartzVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"reflectorVolParallel_phys_$index[$j]\">
       <volumeref ref=\"reflectorVolParallel_$index[$j]\"/>
-      <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*sin($rx[$j]),"\" z=\"",($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*cos($rx[$j]),"\"/>
+      <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*sin(0.0*$rx[$j]),"\" z=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*cos(0.0*$rx[$j]),"\"/>
       <rotation name=\"reflectorVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"lgVolSkinParallel_phys_$index[$j]\">
       <volumeref ref=\"lgVolSkinParallel_$index[$j]\"/>
-      <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*sin($rx[$j])),"\" z=\"",(0.5*($parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*cos($rx[$j])),"\"/>
-      <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"-1.0*pi\" y=\"0.0\" z=\"$rz[$j]\"/>
+      <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*sin(0.0*$rx[$j])),"\" z=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*cos(0.0*$rx[$j])),"\"/>
+      <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"0.0\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"pmtSkinVolParallel_phys_$index[$j]\">
       <volumeref ref=\"pmtSkinVolParallel_$index[$j]\"/>
-      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",($parallelPmtRStart[$j]+1.0*$dzPmt[$j])*sin($rx[$j]),"\" z=\"",($parallelPmtRStart[$j]+0.5*$dzPmt[$j])*cos($rx[$j]),"\"/>
+      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+1.0*$dzPmt[$j])*sin(0.0*$rx[$j]),"\" z=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+0.5*$dzPmt[$j])*cos(0.0*$rx[$j]),"\"/>
       <rotation name=\"pmtSkinVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
 }
     print def"
   </volume>
+  <volume name=\"Flat_Segmented_ParallelWorld_physical\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"flat_parallel_solid2\"/>
+    ";
+for $j ( 0 .. $i - 1 ) {
+    print def"
+    <physvol name=\"Flat_Segmented_ParallelWorld_physical_$index[$j]\">
+      <volumeref ref=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\"/>
+	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"$z[$j]\"/>
+    	<rotation name=\"Flat_DetectorRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0*$ry[$j]\" z=\"$rz[$j]\"/>
+    </physvol>
+    ";
+  }
+    print def"
+  </volume>
+    
 </structure>
 
 <setup name=\"Default\" version=\"1.0\">
-  <world ref=\"Flat_Segmented_ParallelWorld_logical\"/>
+  <world ref=\"Flat_Segmented_ParallelWorld_physical\"/>
 </setup>
 
 </gdml>";

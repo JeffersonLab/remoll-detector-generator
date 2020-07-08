@@ -136,6 +136,7 @@ for ( my $j = 0 ; $j < $i ; $j++ ) {
         else {
             $thetaDet[$det] = 2 * pi * $det / 28;
         }
+        $thetaDet[$det] = $thetaDet[$det] - pi; # Remove 1 pi, now that +x axis is defined as theta=0, isntead of -x axis as it had been before.
 
         if ( $thisring == 5 ) {
             if ( $det % 3 == 1 )
