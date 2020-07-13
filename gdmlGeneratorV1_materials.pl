@@ -14,7 +14,7 @@ use Getopt::Std;
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
 use vars
-  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2 @parallelQuartzRCenter @parallelQuartzRExtent @parallelReflectorRExtent @parallelPmtRStart $parallelDetPlaneThickness);
+  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2 @parallelQuartzRCenter @parallelQuartzRExtent @parallelReflectorRExtent @parallelPmtRStart $parallelDetPlaneThickness @fullLength);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags and set defaults---------------------------##
@@ -69,7 +69,7 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
     else {
         chomp $line;
         @fields = split( ",", $line );    # Split the line into fields.
-        if ( $opt_L != "" ) {
+        if ( $opt_L ne "" ) {
             if (
                 index( $opt_L, "5" ) >= 0
                 && (
@@ -92,9 +92,9 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
             {
             }
             elsif (
-                   index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0
-                && substr( trim( $fields[0] ), 0, 1 ) != "5"
-                && (
+                #   index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0
+                #&& substr( trim( $fields[0] ), 0, 1 ) != "5"
+                #&& (
                     (
                         index( $opt_L, "trans" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "401"
@@ -102,15 +102,15 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                     || (
                         (
                             index( $opt_L, "open" ) >= 0
-                            || (   index( $opt_L, "closed" ) < 0
-                                && index( $opt_L, "trans" ) < 0 )
+                            #    || (   index( $opt_L, "closed" ) < 0
+                            #    && index( $opt_L, "trans" ) < 0 )
                         )
                         && substr( trim( $fields[0] ), 1, 3 ) == "402"
                     )
                     || ( index( $opt_L, "closed" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "040" )
                 )
-              )
+                #)
             {
             }
             else {
@@ -1278,19 +1278,20 @@ print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <solids>
 ";
 
-$parallelDetPlaneThickness = "1.0";
+$parallelDetPlaneThickness=1.0;
 for $j ( 0 .. $i - 1 ) {
+    $fullLength[$j]=$parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$dzPmt[$j];
     print def "
     <box name = \"quartzLogicParallel_$index[$j]\" x=\"$parallelQuartzRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
     <box name = \"refLogicParallel_$index[$j]\" x=\"$parallelReflectorRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
     <trap name = \"lgLogicParallel_$index[$j]\" z=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dy[$j]\" x1=\"$parallelDetPlaneThickness\" x2=\"$parallelDetPlaneThickness\" y2=\"",(2.0*$drPmt[$j]),"\" x3=\"$parallelDetPlaneThickness\" x4=\"$parallelDetPlaneThickness\" alpha1=\"0.0\" alpha2=\"0.0\" aunit=\"rad\" lunit=\"mm\"/>
-    <box name = \"pmtLogicParallel_$index[$j]\" x=\"$dzPmt[$j]\" y=\"",(2.0*$drPmt[$j]),"\" z=\"$parallelDetPlaneThickness\"/>\n";
+    <box name = \"pmtLogicParallel_$index[$j]\" x=\"$dzPmt[$j]\" y=\"",(2.0*$drPmt[$j]),"\" z=\"$parallelDetPlaneThickness\"/>
+    <box lunit=\"mm\" name=\"flat_parallel_solid_$index[$j]\" z=\"",$fullLength[$j]+0.1,"\" y=\"",$dy[$j]+2*$dtWall[$j]+0.1,"\" x=\"",$parallelDetPlaneThickness+0.1,"\"/>\n";
 }
 print def "
 <!-- Box to hold the detector array inside of -->
 
-<box lunit=\"mm\" name=\"flat_parallel_solid\" x=\"1000\" y=\"1000\" z=\"1000\"/>
-<box lunit=\"mm\" name=\"flat_parallel_solid2\" x=\"4010\" y=\"4010\" z=\"4010\"/>
+<box lunit=\"mm\" name=\"flat_parallel_solid2\" x=\"2010\" y=\"3010\" z=\"3010\"/>
 
 </solids>
 
@@ -1339,35 +1340,35 @@ for $j ( 0 .. $i - 1 ) {
     print def "
   <volume name=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\">
     <materialref ref=\"G4_Galactic\"/>
-    <solidref ref=\"flat_parallel_solid\"/>
+    <solidref ref=\"flat_parallel_solid_$index[$j]\"/>
       ";
     print def "
     <physvol name=\"quartzVolParallel_phys_$index[$j]\">
       <volumeref ref=\"quartzVolParallel_$index[$j]\"/>
-      <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",0.0*$parallelQuartzRCenter[$j]*sin(0.0*$rx[$j]),"\" z=\"",0.0*$parallelQuartzRCenter[$j]*cos(0.0*$rx[$j]),"\"/>
+      <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",0.0*$parallelQuartzRCenter[$j]+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
       <rotation name=\"quartzVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"reflectorVolParallel_phys_$index[$j]\">
       <volumeref ref=\"reflectorVolParallel_$index[$j]\"/>
-      <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*sin(0.0*$rx[$j]),"\" z=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])*cos(0.0*$rx[$j]),"\"/>
+      <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
       <rotation name=\"reflectorVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"lgVolSkinParallel_phys_$index[$j]\">
       <volumeref ref=\"lgVolSkinParallel_$index[$j]\"/>
-      <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*sin(0.0*$rx[$j])),"\" z=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j])*cos(0.0*$rx[$j])),"\"/>
+      <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j]))+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
       <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"0.0\" z=\"$rz[$j]\"/>
     </physvol> \n";
     print def "
     <physvol name=\"pmtSkinVolParallel_phys_$index[$j]\">
       <volumeref ref=\"pmtSkinVolParallel_$index[$j]\"/>
-      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",$x[$j],"\" y=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+1.0*$dzPmt[$j])*sin(0.0*$rx[$j]),"\" z=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+0.5*$dzPmt[$j])*cos(0.0*$rx[$j]),"\"/>
+      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+0.5*$dzPmt[$j])+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
       <rotation name=\"pmtSkinVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
-    </physvol> \n";
+    </physvol>
+  </volume>\n";
 }
     print def"
-  </volume>
   <volume name=\"Flat_Segmented_ParallelWorld_physical\">
     <materialref ref=\"G4_Galactic\"/>
     <solidref ref=\"flat_parallel_solid2\"/>
@@ -1376,7 +1377,7 @@ for $j ( 0 .. $i - 1 ) {
     print def"
     <physvol name=\"Flat_Segmented_ParallelWorld_physical_$index[$j]\">
       <volumeref ref=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\"/>
-	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"$z[$j]\"/>
+	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"",$z[$j]+$fullLength[$j]/2,"\"/>
     	<rotation name=\"Flat_DetectorRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0*$ry[$j]\" z=\"$rz[$j]\"/>
     </physvol>
     ";
