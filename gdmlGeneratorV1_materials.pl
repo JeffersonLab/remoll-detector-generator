@@ -95,21 +95,23 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
                 #   index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0
                 #&& substr( trim( $fields[0] ), 0, 1 ) != "5"
                 #&& (
-                    (
+                    ( ( $opt_L == "" || index( $opt_L, "5") < 0 ) && ( # Check if it has no specific ring number or is not ring 5
+                        (
                         index( $opt_L, "trans" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "401"
                     )
                     || (
                         (
-                            index( $opt_L, "open" ) >= 0
-                            #    || (   index( $opt_L, "closed" ) < 0
-                            #    && index( $opt_L, "trans" ) < 0 )
+                            index( $opt_L, "open" ) >= 0 
+                             || (   index( $opt_L, "closed" ) < 0
+                                 && index( $opt_L, "trans" ) < 0 
+                                 && index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0 )
                         )
                         && substr( trim( $fields[0] ), 1, 3 ) == "402"
                     )
                     || ( index( $opt_L, "closed" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "040" )
-                )
+                )))
                 #)
             {
             }
@@ -205,7 +207,7 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
           ( 1.46847 * ( 10.**-6 ) / ( .0584738 - $wav ) );
 
           # FIXME this will be a tuned parameter eventually. 0.9 is optimistically high
-        $Reflect_LG[$o] = .9;
+        $Reflect_LG[$o] = .7;
 ##-----------------Read from the UVS file----------------------------------------##
 
         do {
@@ -1377,7 +1379,7 @@ for $j ( 0 .. $i - 1 ) {
     print def"
     <physvol name=\"Flat_Segmented_ParallelWorld_physical_$index[$j]\">
       <volumeref ref=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\"/>
-	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"",$z[$j]+$fullLength[$j]/2,"\"/>
+	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"",$z[$j]+$fullLength[$j]/2-$parallelQuartzRExtent[$j]/2,"\"/>
     	<rotation name=\"Flat_DetectorRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0*$ry[$j]\" z=\"$rz[$j]\"/>
     </physvol>
     ";
