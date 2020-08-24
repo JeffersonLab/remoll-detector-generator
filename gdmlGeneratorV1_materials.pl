@@ -235,6 +235,7 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
             else {
                 @fields = split( " ", $line );
                 my $inwav = trim( $fields[0] );
+                # field 1 = 90 degrees, 2 = 60 degrees, 3 = 45 degrees
                 $inref = trim( $fields[3] );
             }
         } while ( inwav < ( 1000 * wavelength ) );
@@ -828,7 +829,7 @@ startphi=\"0\" deltaphi=\"2*pi\" aunit=\"rad\" lunit= \"mm\" />\n";
 
 #-----------------------------------------------FIXME Placeholders from Brad's code-----------------------------------------------------------------------------------#
 print def "
-        <opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\">
+        <opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".98\">
 			<property name=\"RINDEX\" ref=\"Quartz_Surf_RINDEX\"/>
 			<property name=\"SPECULARLOBECONSTANT\" ref=\"Quartz_Surf_SPECLOBE\"/>
 			<property name=\"SPECULARSPIKECONSTANT\" ref=\"Quartz_Surf_SPECSPIKE\"/> 
@@ -836,15 +837,15 @@ print def "
 		</opticalsurface>";
 
 print def "
-        <opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polished\" type=\"dielectric_metal\" value=\"1.0\">
 	    	<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
-        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polished\" type=\"dielectric_metal\" value=\"1.0\">
 			<property name=\"REFLECTIVITY\" ref=\"Mylar_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
-        <opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"ground\" type=\"dielectric_metal\" value=\"0.97\">
 			<property name=\"REFLECTIVITY\" ref=\"Cathode_Surf_Reflectivity\"/>
 			<property name=\"EFFICIENCY\" ref=\"Cathode_Surf_Efficiency\"/>
         </opticalsurface>";
@@ -926,7 +927,7 @@ for $j ( 0 .. $i - 1 ) {
 </volume>\n";
 
     print def "
-<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" > <!-- Aluminium -->
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
 
