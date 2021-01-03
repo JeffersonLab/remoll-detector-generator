@@ -14,7 +14,7 @@ use Getopt::Std;
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
 use vars
-  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2 @parallelQuartzRCenter @parallelQuartzRExtent @parallelReflectorRExtent @parallelPmtRStart $parallelDetPlaneThickness @fullLength);
+  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $opt_i $opt_j $opt_t $opt_p $i $j $k $o $angle1 $angle2 @parallelQuartzRCenter @parallelQuartzRExtent @parallelReflectorRExtent @parallelPmtRStart $parallelDetPlaneThickness @fullLength $subsegment);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags and set defaults---------------------------##
@@ -25,9 +25,19 @@ $opt_T = "";                       #Changes suffix
 $opt_P = "qe.txt";                 #Photon energy vs property file
 $opt_U = "UVS_45total.txt";        #Wavelength vs reflectivity file
 $opt_R = "MylarRef.txt";           #Mylar Wavelength vs reflectivity file
-$opt_L = "";    #If nonempty draw single detector of specified ring
-$opt_I = "";    #If nonempty use inline PMT option
-getopts('M:D:T:P:U:R:L:I:');
+$opt_L = "";  # If nonempty draw single detector of specified ring
+$opt_I = "";  # If nonempty use inline PMT option
+$opt_i = ""; # Which reflector length square (from 0 to 10)
+$opt_j = ""; # Which reflector width square (from 0 to 10) 
+$opt_t = ""; # Angle in degrees to rotate normal towards quartz bevel
+$opt_p = ""; # Angle in degrees to rotate normal perpendicular to theta
+getopts('M:D:T:P:U:R:L:I:i:j:t:p:');
+
+$subsegment=0; # Default assume subsegmentation is not active, turn on if all 4 subsegmenting options are passed as arguments
+if ( ( $opt_i ne "" ) && ( $opt_j ne "" ) && ( $opt_t ne "" ) && ( $opt_p ne "" ) ) {
+    $subsegment = 1;
+    print "Doing sub-segmented analysis\n";
+}
 
 if ( $#ARGV > -1 ) {
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
@@ -769,6 +779,77 @@ for $j ( 0 .. $i - 1 ) {
         <rotation unit=\"rad\" name=\"quartzCutRot_$index[$j]\" x=\"0\" y=\"pi\" z=\"0\"/>
 </subtraction>\n\n";
 
+    if ( $subsegment == 1 ) {
+    print def "<xtru name = \"reflectorSol_$index[$j]\" lunit= \"mm\" >
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) -
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      + ($opt_i+1.0)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.4+0.1*$opt_i)*$dzRef[$j] +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * sin( $lgTiltAngle[$j] ), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) -
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      + ($opt_i+1.0)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) -
+      0.0*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.4+0.1*$opt_i)*$dzRef[$j], "\" />
+ <twoDimVertex x=\"", 
+      $dx[$j] * (0.5) + 
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      +($opt_i)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) -
+      0.0*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.5+0.1*$opt_i)*$dzRef[$j], "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + 
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      +($opt_i)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.5+0.1*$opt_i)*$dzRef[$j], "\" />
+ <section zOrder=\"1\" zPosition=\"", (-0.5+0.1*$opt_j)*$dyLg[$j],
+      "\" xOffset=\"", -0.05*sin($opt_p*pi/180.0)*$dyLg[$j],
+      "\" yOffset=\"0\" scalingFactor=\"1\" />
+ <section zOrder=\"2\" zPosition=\"", (-0.4+0.1*$opt_j)*$dyLg[$j],
+      "\" xOffset=\"", 0.05*sin($opt_p*pi/180.0)*$dyLg[$j],
+      "\" yOffset=\"0\" scalingFactor=\"", 1, "\"/>
+</xtru>\n";
+
+    print def "<xtru name = \"reflectorSolXtru_$index[$j]\" lunit= \"mm\" >
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) +
+      $dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      ( 20*$dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      $dzRef[$j] * 0.5 +
+      ( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * sin( $lgTiltAngle[$j] ), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + $dzRef[$j] * tan( $refTopOpeningAngle[$j] ), "\" y=\"",
+      $dzRef[$j] * (0.5), "\" />
+ <twoDimVertex x=\"", $dx[$j] * (0.5), "\" y=\"", $dzRef[$j] * (-0.5), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + 20*$dtReflector[$j] / cos( $refTopOpeningAngle[$j] ),
+      "\" y=\"", $dzRef[$j] * (-0.5), "\" />
+ <section zOrder=\"1\" zPosition=\"", $dyLg[$j] * (-0.5),
+      "\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1\" />
+ <section zOrder=\"2\" zPosition=\"", $dyLg[$j] * (0.5), "\" xOffset=\"", 0,
+      "\" yOffset=\"0\" scalingFactor=\"", 1, "\"/>
+</xtru>\n";
+
+    print def "<subtraction name =\"refSolSkin1_$index[$j]\">
+	<first ref=\"refSolSkin_$index[$j]\"/> 
+	<second ref=\"reflectorSolXtru_$index[$j]\"/> 
+	<position name=\"reflectorSolPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
+      0, "\"/>
+	<rotation name=\"reflectorSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"0\" z=\"0\"/>
+</subtraction>\n\n";
+    }
+    else {
     print def "<xtru name = \"reflectorSol_$index[$j]\" lunit= \"mm\" >
  <twoDimVertex x=\"",
       $dx[$j] * (0.5) +
@@ -798,6 +879,7 @@ for $j ( 0 .. $i - 1 ) {
       0, "\"/>
 	<rotation name=\"reflectorSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"0\" z=\"0\"/>
 </subtraction>\n\n";
+    }
 
     print def
 "<cone name = \"pmtFullSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"$dzPmt[$j]\"
