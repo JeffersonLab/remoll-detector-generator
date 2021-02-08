@@ -93,9 +93,6 @@
     <fraction n="0.231781" ref="G4_O"/>
     <fraction n="0.012827" ref="G4_Ar"/>
     <fraction n="0.000124" ref="G4_C"/>
-    <fraction n="0.231781" ref="Oxygen"/>
-    <fraction n="0.012827" ref="Argon"/>
-    <fraction n="0.000124" ref="Carbon"/>-->
 </material>
 
 <material name="AlMylar" state="solid">

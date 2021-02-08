@@ -14,7 +14,7 @@ use Getopt::Std;
 ##------------------Declare variables explicitly so "my" not needed.----------------##
 use strict 'vars';
 use vars
-  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $i $j $k $o $angle1 $angle2);
+  qw($opt_L $opt_I $mylar @MylarReflectivity $uvs @Efficiency4 @Reflect_LG $inref @Reflectivity3 @Reflectivity4 @PhotonEnergy @RefractiveIndex1 @RefractiveIndex2 @RefractiveIndex3 @RefractiveIndexAR @RefractiveIndexN2 @RefractiveIndexCO2 @Absorption1 $opt_M $opt_D $opt_T $opt_P $opt_U $opt_R $opt_MYLAR $data $line @fields $dxM $dyM $dzM $drMinM $dxMext @index @x @y @z @dx @dy @dz @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @dzLg @dzLgExtra @lgTiltAngle @dxPmt @dyPmt @dzPmt @drPmt @dtWall @dtReflector $opt_i $opt_j $opt_t $opt_p $i $j $k $o $angle1 $angle2 @parallelQuartzRCenter @parallelQuartzRExtent @parallelReflectorRExtent @parallelPmtRStart $parallelDetPlaneThickness @fullLength $subsegment);
 ##----------------------------------------------------------------------------------##
 
 ##------------------Get the option flags and set defaults---------------------------##
@@ -25,9 +25,19 @@ $opt_T = "";                       #Changes suffix
 $opt_P = "qe.txt";                 #Photon energy vs property file
 $opt_U = "UVS_45total.txt";        #Wavelength vs reflectivity file
 $opt_R = "MylarRef.txt";           #Mylar Wavelength vs reflectivity file
-$opt_L = "";    #If nonempty draw single detector of specified ring
-$opt_I = "";    #If nonempty use inline PMT option
-getopts('M:D:T:P:U:R:L:I:');
+$opt_L = "";  # If nonempty draw single detector of specified ring
+$opt_I = "";  # If nonempty use inline PMT option
+$opt_i = ""; # Which reflector length square (from 0 to 10)
+$opt_j = ""; # Which reflector width square (from 0 to 10) 
+$opt_t = ""; # Angle in degrees to rotate normal towards quartz bevel
+$opt_p = ""; # Angle in degrees to rotate normal perpendicular to theta
+getopts('M:D:T:P:U:R:L:I:i:j:t:p:');
+
+$subsegment=0; # Default assume subsegmentation is not active, turn on if all 4 subsegmenting options are passed as arguments
+if ( ( $opt_i ne "" ) && ( $opt_j ne "" ) && ( $opt_t ne "" ) && ( $opt_p ne "" ) ) {
+    $subsegment = 1;
+    print "Doing sub-segmented analysis\n";
+}
 
 if ( $#ARGV > -1 ) {
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
@@ -69,7 +79,7 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
     else {
         chomp $line;
         @fields = split( ",", $line );    # Split the line into fields.
-        if ( $opt_L != "" ) {
+        if ( $opt_L ne "" ) {
             if (
                 index( $opt_L, "5" ) >= 0
                 && (
@@ -92,25 +102,27 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
             {
             }
             elsif (
-                   index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0
-                && substr( trim( $fields[0] ), 0, 1 ) != "5"
-                && (
-                    (
+                #   index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0
+                #&& substr( trim( $fields[0] ), 0, 1 ) != "5"
+                #&& (
+                    ( ( $opt_L == "" || index( $opt_L, "5") < 0 ) && ( # Check if it has no specific ring number or is not ring 5
+                        (
                         index( $opt_L, "trans" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "401"
                     )
                     || (
                         (
-                            index( $opt_L, "open" ) >= 0
-                            || (   index( $opt_L, "closed" ) < 0
-                                && index( $opt_L, "trans" ) < 0 )
+                            index( $opt_L, "open" ) >= 0 
+                             || (   index( $opt_L, "closed" ) < 0
+                                 && index( $opt_L, "trans" ) < 0 
+                                 && index( $opt_L, substr( trim( $fields[0] ), 0, 1 ) ) >= 0 )
                         )
                         && substr( trim( $fields[0] ), 1, 3 ) == "402"
                     )
                     || ( index( $opt_L, "closed" ) >= 0
                         && substr( trim( $fields[0] ), 1, 3 ) == "040" )
-                )
-              )
+                )))
+                #)
             {
             }
             else {
@@ -123,14 +135,14 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
         $x[$i]                  = trim( $fields[1] );
         $y[$i]                  = trim( $fields[2] );
         $z[$i]                  = trim( $fields[3] );
-        $dx[$i]                 = trim( $fields[4] );
-        $dy[$i]                 = trim( $fields[5] );
-        $dz[$i]                 = trim( $fields[6] );
-        $rx[$i]                 = trim( $fields[7] );
-        $ry[$i]                 = trim( $fields[8] );
-        $rz[$i]                 = trim( $fields[9] );
+        $dx[$i]                 = trim( $fields[4] ); 
+        $dy[$i]                 = trim( $fields[5] ); 
+        $dz[$i]                 = trim( $fields[6] ); 
+        $rx[$i]                 = trim( $fields[7] );  # Theta
+        $ry[$i]                 = trim( $fields[8] );  # Tilt
+        $rz[$i]                 = trim( $fields[9] );  # Roll
         $quartzCutAngle[$i]     = trim( $fields[10] );
-        $refTopOpeningAngle[$i] = trim( $fields[11] );
+        $refTopOpeningAngle[$i] = trim( $fields[11] ); # Reflector top opening angle
         $dzRef[$i]              = trim( $fields[12] );
         $dxLg[$i]               = trim( $fields[13] );
         $dyLg[$i]               = trim( $fields[14] );
@@ -138,10 +150,15 @@ while ( $line = <$data> ) {      # Read each line till the end of the file.
         $lgTiltAngle[$i]        = trim( $fields[16] );
         $dxPmt[$i]              = trim( $fields[17] );
         $dyPmt[$i]              = trim( $fields[18] );
-        $dzPmt[$i]              = trim( $fields[19] );
-        $drPmt[$i]              = trim( $fields[20] );
-        $dtWall[$i]             = trim( $fields[21] );
-        $dtReflector[$i]        = trim( $fields[22] );
+        $dzPmt[$i]              = trim( $fields[19] ); # PMT length
+        $drPmt[$i]              = trim( $fields[20] ); # PMT radius
+        $dtWall[$i]             = trim( $fields[21] ); # lg, ref wall thickness
+        $dtReflector[$i]        = trim( $fields[22] ); # reflector thickness = 1/5 x dtWall (default)
+        #4 new numbers, r, quartz radial extent (projected onto xy plane), reflector radial extent (projected onto xy plane), height in xy plane at which PMT resides
+        $parallelQuartzRCenter[$i]    = trim( $fields[23] );
+        $parallelQuartzRExtent[$i]    = trim( $fields[24] );
+        $parallelReflectorRExtent[$i] = trim( $fields[25] );
+        $parallelPmtRStart[$i]        = trim( $fields[26] );
         $dzLgExtra[$i] =
           ( 0.55 * $dxPmt[$i] ) * sin( $lgTiltAngle[$i] + $ry[$i] );
         $i = $i + 1;
@@ -200,7 +217,7 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
           ( 1.46847 * ( 10.**-6 ) / ( .0584738 - $wav ) );
 
           # FIXME this will be a tuned parameter eventually. 0.9 is optimistically high
-        $Reflect_LG[$o] = .9;
+        $Reflect_LG[$o] = .7;
 ##-----------------Read from the UVS file----------------------------------------##
 
         do {
@@ -228,6 +245,7 @@ while ( $line = <$data> ) {     # Read each line till the end of the file.
             else {
                 @fields = split( " ", $line );
                 my $inwav = trim( $fields[0] );
+                # field 1 = 90 degrees, 2 = 60 degrees, 3 = 45 degrees
                 $inref = trim( $fields[3] );
             }
         } while ( inwav < ( 1000 * wavelength ) );
@@ -761,6 +779,77 @@ for $j ( 0 .. $i - 1 ) {
         <rotation unit=\"rad\" name=\"quartzCutRot_$index[$j]\" x=\"0\" y=\"pi\" z=\"0\"/>
 </subtraction>\n\n";
 
+    if ( $subsegment == 1 ) {
+    print def "<xtru name = \"reflectorSol_$index[$j]\" lunit= \"mm\" >
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) -
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      + ($opt_i+1.0)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.4+0.1*$opt_i)*$dzRef[$j] +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * sin( $lgTiltAngle[$j] ), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) -
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      + ($opt_i+1.0)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) -
+      0.0*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.4+0.1*$opt_i)*$dzRef[$j], "\" />
+ <twoDimVertex x=\"", 
+      $dx[$j] * (0.5) + 
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      +($opt_i)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) -
+      0.0*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.5+0.1*$opt_i)*$dzRef[$j], "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + 
+      0.05*$dzRef[$j]*sin($opt_t*pi/180.0)
+      +($opt_i)*0.1*$dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      0.1*( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      (-0.5+0.1*$opt_i)*$dzRef[$j], "\" />
+ <section zOrder=\"1\" zPosition=\"", (-0.5+0.1*$opt_j)*$dyLg[$j],
+      "\" xOffset=\"", -0.05*sin($opt_p*pi/180.0)*$dyLg[$j],
+      "\" yOffset=\"0\" scalingFactor=\"1\" />
+ <section zOrder=\"2\" zPosition=\"", (-0.4+0.1*$opt_j)*$dyLg[$j],
+      "\" xOffset=\"", 0.05*sin($opt_p*pi/180.0)*$dyLg[$j],
+      "\" yOffset=\"0\" scalingFactor=\"", 1, "\"/>
+</xtru>\n";
+
+    print def "<xtru name = \"reflectorSolXtru_$index[$j]\" lunit= \"mm\" >
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) +
+      $dzRef[$j] * tan( $refTopOpeningAngle[$j] ) +
+      ( 20*$dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * cos( $lgTiltAngle[$j] ), "\" y=\"",
+      $dzRef[$j] * 0.5 +
+      ( $dtReflector[$j] / cos( $lgTiltAngle[$j] + $refTopOpeningAngle[$j] ) )
+      * sin( $lgTiltAngle[$j] ), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + $dzRef[$j] * tan( $refTopOpeningAngle[$j] ), "\" y=\"",
+      $dzRef[$j] * (0.5), "\" />
+ <twoDimVertex x=\"", $dx[$j] * (0.5), "\" y=\"", $dzRef[$j] * (-0.5), "\" />
+ <twoDimVertex x=\"",
+      $dx[$j] * (0.5) + 20*$dtReflector[$j] / cos( $refTopOpeningAngle[$j] ),
+      "\" y=\"", $dzRef[$j] * (-0.5), "\" />
+ <section zOrder=\"1\" zPosition=\"", $dyLg[$j] * (-0.5),
+      "\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1\" />
+ <section zOrder=\"2\" zPosition=\"", $dyLg[$j] * (0.5), "\" xOffset=\"", 0,
+      "\" yOffset=\"0\" scalingFactor=\"", 1, "\"/>
+</xtru>\n";
+
+    print def "<subtraction name =\"refSolSkin1_$index[$j]\">
+	<first ref=\"refSolSkin_$index[$j]\"/> 
+	<second ref=\"reflectorSolXtru_$index[$j]\"/> 
+	<position name=\"reflectorSolPos_$index[$j]\" unit=\"mm\" x=\"0\" y=\"0\" z=\"",
+      0, "\"/>
+	<rotation name=\"reflectorSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"0\" z=\"0\"/>
+</subtraction>\n\n";
+    }
+    else {
     print def "<xtru name = \"reflectorSol_$index[$j]\" lunit= \"mm\" >
  <twoDimVertex x=\"",
       $dx[$j] * (0.5) +
@@ -790,6 +879,7 @@ for $j ( 0 .. $i - 1 ) {
       0, "\"/>
 	<rotation name=\"reflectorSolRot_$index[$j]\" unit=\"rad\" x=\"0\" y=\"0\" z=\"0\"/>
 </subtraction>\n\n";
+    }
 
     print def
 "<cone name = \"pmtFullSol_$index[$j]\" rmin1=\"0\" rmax1=\"$drPmt[$j]\" rmin2=\"0\" rmax2=\"$drPmt[$j]\" z=\"$dzPmt[$j]\"
@@ -821,7 +911,7 @@ startphi=\"0\" deltaphi=\"2*pi\" aunit=\"rad\" lunit= \"mm\" />\n";
 
 #-----------------------------------------------FIXME Placeholders from Brad's code-----------------------------------------------------------------------------------#
 print def "
-        <opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".97\">
+        <opticalsurface name=\"Quartz\" model=\"glisur\" finish=\"ground\" type=\"dielectric_dielectric\" value=\".98\">
 			<property name=\"RINDEX\" ref=\"Quartz_Surf_RINDEX\"/>
 			<property name=\"SPECULARLOBECONSTANT\" ref=\"Quartz_Surf_SPECLOBE\"/>
 			<property name=\"SPECULARSPIKECONSTANT\" ref=\"Quartz_Surf_SPECSPIKE\"/> 
@@ -829,15 +919,15 @@ print def "
 		</opticalsurface>";
 
 print def "
-        <opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Aluminium\" model=\"glisur\" finish=\"polished\" type=\"dielectric_metal\" value=\"1.0\">
 	    	<property name=\"REFLECTIVITY\" ref=\"Aluminium_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
-        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Mylar\" model=\"glisur\" finish=\"polished\" type=\"dielectric_metal\" value=\"1.0\">
 			<property name=\"REFLECTIVITY\" ref=\"Mylar_Surf_Reflectivity\"/>
         </opticalsurface>";
 print def "
-        <opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"polishedlumirrorair\" type=\"dielectric_metal\" value=\"1.0\">
+        <opticalsurface name=\"Cathode\" model=\"glisur\" finish=\"ground\" type=\"dielectric_metal\" value=\"0.97\">
 			<property name=\"REFLECTIVITY\" ref=\"Cathode_Surf_Reflectivity\"/>
 			<property name=\"EFFICIENCY\" ref=\"Cathode_Surf_Efficiency\"/>
         </opticalsurface>";
@@ -919,7 +1009,7 @@ for $j ( 0 .. $i - 1 ) {
 </volume>\n";
 
     print def "
-<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Aluminium\" >
+<skinsurface name=\"reflectorVol_$index[$j]_skin\" surfaceproperty=\"Mylar\" > <!-- Aluminium -->
          <volumeref ref=\"reflectorVol_$index[$j]\"/>
 </skinsurface>\n ";
 
@@ -1259,6 +1349,139 @@ print def "
 </gdml>";
 
 close(def) or warn "close failed: $!";
+
+
+##-------------------------------------------------------------------------------##
+
+##--------------------Parallel sub-volume for flat-main detecto------------------##
+
+open( def, ">", "flat_segmented_detector${opt_T}.gdml" )
+  or die "cannot open > flat_segmented_detector${opt_T}.gdml: $!";
+print def "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
+<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" 
+      xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\">\n
+<solids>
+";
+
+$parallelDetPlaneThickness=1.0;
+for $j ( 0 .. $i - 1 ) {
+    $fullLength[$j]=$parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$dzPmt[$j];
+    print def "
+    <box name = \"quartzLogicParallel_$index[$j]\" x=\"$parallelQuartzRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
+    <box name = \"refLogicParallel_$index[$j]\" x=\"$parallelReflectorRExtent[$j]\" y=\"$dy[$j]\" z=\"$parallelDetPlaneThickness\"/>
+    <trap name = \"lgLogicParallel_$index[$j]\" z=\"",($parallelPmtRStart[$j]-$parallelQuartzRCenter[$j]-0.5*$parallelQuartzRExtent[$j]-$parallelReflectorRExtent[$j]),"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dy[$j]\" x1=\"$parallelDetPlaneThickness\" x2=\"$parallelDetPlaneThickness\" y2=\"",(2.0*$drPmt[$j]),"\" x3=\"$parallelDetPlaneThickness\" x4=\"$parallelDetPlaneThickness\" alpha1=\"0.0\" alpha2=\"0.0\" aunit=\"rad\" lunit=\"mm\"/>
+    <box name = \"pmtLogicParallel_$index[$j]\" x=\"$dzPmt[$j]\" y=\"",(2.0*$drPmt[$j]),"\" z=\"$parallelDetPlaneThickness\"/>
+    <box lunit=\"mm\" name=\"flat_parallel_solid_$index[$j]\" z=\"",$fullLength[$j]+0.1,"\" y=\"",$dy[$j]+2*$dtWall[$j]+0.1,"\" x=\"",$parallelDetPlaneThickness+0.1,"\"/>\n";
+}
+print def "
+<!-- Box to hold the detector array inside of -->
+
+<box lunit=\"mm\" name=\"flat_parallel_solid2\" x=\"2010\" y=\"3010\" z=\"3010\"/>
+
+</solids>
+
+<structure>
+
+";
+
+for $j ( 0 .. $i - 1 ) {
+
+    print def "
+  <volume name=\"quartzVolParallel_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"quartzLogicParallel_$index[$j]\"/> 
+    <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+    <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 1, "\"/>  
+  </volume>\n";
+
+  print def "
+  <volume name=\"reflectorVolParallel_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"refLogicParallel_$index[$j]\"/> 
+    <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+    <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 4, "\"/>  
+  </volume>\n";
+
+  print def "
+  <volume name=\"lgVolSkinParallel_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"lgLogicParallel_$index[$j]\"/> 
+    <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+    <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 5, "\"/>  
+  </volume>\n";
+  print def "
+  <volume name=\"pmtSkinVolParallel_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"pmtLogicParallel_$index[$j]\"/> 
+    <auxiliary auxtype=\"SensDet\" auxvalue=\"planeDet\"/> 
+    <auxiliary auxtype=\"DetNo\" auxvalue=\"", $index[$j] + 7, "\"/>
+  </volume>\n";
+
+}
+
+
+
+for $j ( 0 .. $i - 1 ) {
+    print def "
+  <volume name=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"flat_parallel_solid_$index[$j]\"/>
+      ";
+    print def "
+    <physvol name=\"quartzVolParallel_phys_$index[$j]\">
+      <volumeref ref=\"quartzVolParallel_$index[$j]\"/>
+      <position name=\"quartzVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",0.0*$parallelQuartzRCenter[$j]+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
+      <rotation name=\"quartzVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
+    </physvol> \n";
+    print def "
+    <physvol name=\"reflectorVolParallel_phys_$index[$j]\">
+      <volumeref ref=\"reflectorVolParallel_$index[$j]\"/>
+      <position name=\"reflectorVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(0.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+0.5*$parallelReflectorRExtent[$j])+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
+      <rotation name=\"reflectorVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
+    </physvol> \n";
+    print def "
+    <physvol name=\"lgVolSkinParallel_phys_$index[$j]\">
+      <volumeref ref=\"lgVolSkinParallel_$index[$j]\"/>
+      <position name=\"lgVolSkinParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(0.5*(-1.0*$parallelQuartzRCenter[$j]+0.5*$parallelQuartzRExtent[$j]+$parallelReflectorRExtent[$j]+$parallelPmtRStart[$j]))+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
+      <rotation name=\"lgVolSkinParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"0.0\" z=\"$rz[$j]\"/>
+    </physvol> \n";
+    print def "
+    <physvol name=\"pmtSkinVolParallel_phys_$index[$j]\">
+      <volumeref ref=\"pmtSkinVolParallel_$index[$j]\"/>
+      <position name=\"pmtSkinVolParallelPos_$index[$j]\" unit=\"mm\" x=\"",0.0*$x[$j],"\" y=\"0\" z=\"",(-1.0*$parallelQuartzRCenter[$j]+$parallelPmtRStart[$j]+0.5*$dzPmt[$j])+$parallelQuartzRExtent[$j]/2-$fullLength[$j]/2,"\"/>
+      <rotation name=\"pmtSkinVolParallelRot_$index[$j]\" unit=\"rad\" x=\"0.0\" y=\"pi/2\" z=\"$rz[$j]\"/>
+    </physvol>
+  </volume>\n";
+}
+    print def"
+  <volume name=\"Flat_Segmented_ParallelWorld_physical\">
+    <materialref ref=\"G4_Galactic\"/>
+    <solidref ref=\"flat_parallel_solid2\"/>
+    ";
+for $j ( 0 .. $i - 1 ) {
+    print def"
+    <physvol name=\"Flat_Segmented_ParallelWorld_physical_$index[$j]\">
+      <volumeref ref=\"Flat_Segmented_ParallelWorld_logical_$index[$j]\"/>
+	    <position name=\"Flat_DetectorPos_$index[$j]\" unit=\"mm\" x=\"$x[$j]\" y=\"$y[$j]\" z=\"",$z[$j]+$fullLength[$j]/2-$parallelQuartzRExtent[$j]/2,"\"/>
+    	<rotation name=\"Flat_DetectorRot_$index[$j]\" unit=\"rad\" x=\"$rx[$j]\" y=\"0.0*$ry[$j]\" z=\"$rz[$j]\"/>
+    </physvol>
+    ";
+  }
+    print def"
+  </volume>
+    
+</structure>
+
+<setup name=\"Default\" version=\"1.0\">
+  <world ref=\"Flat_Segmented_ParallelWorld_physical\"/>
+</setup>
+
+</gdml>";
+
+
+close(def) or warn "close failed: $!";
+
+
 
 sub ltrim { my $s = shift; $s =~ s/^\s+//;       return $s }
 sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s }

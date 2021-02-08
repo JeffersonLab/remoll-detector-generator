@@ -136,6 +136,7 @@ for ( my $j = 0 ; $j < $i ; $j++ ) {
         else {
             $thetaDet[$det] = 2 * pi * $det / 28;
         }
+        $thetaDet[$det] = $thetaDet[$det] - pi; # Remove 1 pi, now that +x axis is defined as theta=0, isntead of -x axis as it had been before.
 
         if ( $thisring == 5 ) {
             if ( $det % 3 == 1 )
@@ -183,7 +184,9 @@ for ( my $j = 0 ; $j < $i ; $j++ ) {
         my $thetadeg = $thetaDet[$det] * 180/pi;
         my $thetaseptdeg = POSIX::fmod($thetaDet[$det], 2*pi/7) * 180/pi;
         print "$detno at ", sprintf("%.2f",$thetadeg), " ( = ", sprintf("%.2f",$thetabase), " + ", sprintf("%.2f",$thetaseptdeg), " ) deg\n";
-        print def "$detno, $zDet[$det], ${r[$j]*sin($thetaDet[$det])}, ${r[$j]*cos($thetaDet[$det])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$det], ${tilt[$j]*pi/180}, ${rollDet[$det]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5} \n";
+        #print def "$detno, $zDet[$det], ${r[$j]*sin($thetaDet[$det])}, ${r[$j]*cos($thetaDet[$det])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$det], ${tilt[$j]*pi/180}, ${rollDet[$det]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5} \n";
+        print def "$detno, $zDet[$det], ${r[$j]*sin($thetaDet[$det])}, ${r[$j]*cos($thetaDet[$det])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$det], ${tilt[$j]*pi/180}, ${rollDet[$det]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}, $r[$j], ${dz[$j]*cos($tilt[$j]*pi/180)}, ${dzRef[$j]*cos((pi/180)*($refTopOpeningAngle[$j]+$tilt[$j]))}, $height[$j] \n";
+        #print "$detno at ", sprintf("%.2f",$thetaDet[$det]), " deg, Quartz radial coordinates center = ", sprintf("%.2f",$r[$j])," mm, Quartz azimuthal width = ", sprintf("%.2f",$dx[$j])," mm, Quartz radial length = ", sprintf("%.2f",${dz[$j]*cos($tilt[$j]*pi/180)})," mm, Reflector Segment radial extent from quartz edge = ", sprintf("%.2f",${dzRef[$j]*cos((pi/180)*($refTopOpeningAngle[$j]+$tilt[$j]))})," mm, PMT azimuthal width = ", sprintf("%.2f",$dxPmt)," mm, PMT radial position = ", sprintf("%.2f",$height[$j])," mm, Z position = ", sprintf("%.2f",$zDet[$det])," mm w.r.t origin\n";
 
     }
 }
