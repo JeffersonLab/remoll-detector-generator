@@ -1,6 +1,6 @@
 : # feed this into perl *-*-perl-*-*
-    eval 'exec perl -S $0 "$@"'
-    if $running_under_some_shell;
+eval 'exec perl -S $0 "$@"'
+  if $running_under_some_shell;
 
 use Cwd;
 use Cwd 'abs_path';
@@ -8,126 +8,195 @@ use File::Find ();
 use File::Basename;
 use Math::Trig;
 use Getopt::Std;
+use POSIX qw(modf fmod);
 
 ##-------------------------------Declare variables explicitly so "my" not needed.------------------------------------##
 use strict 'vars';
-use vars qw($opt_F $data $line @fields @index @z @zstagger @zDet @r @thetaDet @overlap @dx @dy @dz @tilt @roll @rollDet @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @height @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @ddPmt @dtWall @extraPMTholderWidth @extraPMTholderDepth @dtReflector @numDet $i $j $k );
+use vars
+  qw($opt_F $data $line @fields @ring @z @zstagger @zDet @r @thetaDet @overlap @dx @dy @dz @tilt @roll @rollDet @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @height @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @ddPmt @dtWall @extraPMTholderWidth @extraPMTholderDepth @dtReflector @numDet $i $thisring );
 ##-------------------------------------------------------------------------------------------------------------------##
 
 ##-------------------------------Get the option flags.------------------------------------------------------------------##
 $opt_F = "cadp.csv";
 getopts('F:');
 
-
-if ($#ARGV > -1){
+if ( $#ARGV > -1 ) {
     print STDERR "Unknown arguments specified: @ARGV\nExiting.\n";
     exit;
 }
 ##----------------------------------------------------------------------------------------------------------------------##
 
 ##-----------------------Start reading CSV file containing parameter values.---------------------------------##
-open($data, '<', $opt_F);                                         # Open csv file.
+open( $data, '<', $opt_F );    # Open csv file.
 
-@numDet=(28,28,28,28,21,42,21,28);                                # Unelegant but needed placeholder for now.
-$i=0;
+@numDet = ( 28, 28, 28, 28, 21, 42, 21, 28 )
+  ;                            # Unelegant but needed placeholder for now.
+$i = 0;
 
-while($line= <$data>){                                            # Read each line till the end of the file.
-if ($line =~ /^\s*$/) {                                           # Check for empty lines.
-    print "String contains 0 or more white-space character and nothing else.\n";
-} else {
-chomp $line;
-@fields = split(",", $line);                                      # Split the line into fields. 
-$index[$i]=trim($fields[0]);                                      # Get rid of initial and trailing white spaces.
-$r[$i]=trim($fields[1]);                                          # Radial position of center of quartz.
-$dz[$i]=trim($fields[2]);                                         # Length.
-$overlap[$i]=trim($fields[3]);                                    # 0=minimum overlap, 1=maximum overlap.
-$dx[$i]=trim($fields[4]);                                         # Thickness along beam direction.
-if($index[$i]>=5.0 && $index[$i]<6.0){
-$dy[$i]=  2*pi*($r[$i]-($dz[$i]*(0.5-$overlap[$i])))/(4*7*3)      # Calculating azimuthal width of detectors in moller ring.
-}else{
-$dy[$i]=  2*pi*($r[$i]-($dz[$i]*(0.5-$overlap[$i])))/(4*7)        # Calculating azimuthal width of detectors in all other rings. 
-}
-$tilt[$i]=trim($fields[5]);                                       # Tilt of quartz along beam direction.
-$roll[$i]=trim($fields[6]);                                       # Roll about axis perpendicular to beam axis. 
-$dzRef[$i]=trim($fields[7]);                                      # Length of reflector section.
-$refTopOpeningAngle[$i]=trim($fields[8]);                         # Opening angle of reflector.
-$lgTiltAngle[$i]=trim($fields[9]);                                # Tilt of light guide wrt to quartz. 
-$height[$i]=trim($fields[10]);                                    # Starting radial position of PMTs (cathode)
-$ddPmt[$i]=trim($fields[11]);                                     # Diameter of PMT in inches
-$dzPmt[$i]= trim($fields[12]);                                    # Length of PMT
-$dtWall[$i]= trim($fields[13]);                                   # Thickness of Wall
-$extraPMTholderWidth[$i]= trim($fields[14]);                      # Extra width of PMT holder (in addition to PMT diameter)
-$extraPMTholderDepth[$i]= trim($fields[15]);                      # Extra depth of PMT holder (in addition to PMT diameter)
-$z[$i]=trim($fields[16]);                                         # Z-position  
-$zstagger[$i]=trim($fields[17]);                                  # Staggered Z-position
-my $rad = pi/180;                                                 # Radians for sin and cos
-                                                                  # dxLg was field 10 (deleted), dzLg was previously parameter 11
-$dxLg[$i]=(25.4*$ddPmt[$i]+$extraPMTholderWidth[$i])*cos($rad*($tilt[$i]+$lgTiltAngle[$i])); 
-                                                                  # Width of reflector opening/lightguide segment
-$dzLg[$i]=($height[$i]-$r[$i]-0.5*($dz[$i]*cos($rad*$tilt[$i])+$dx[$i]*sin($rad*$tilt[$i]))-1*$dzRef[$i]*cos($rad*$refTopOpeningAngle[$i])+0.5*$dxLg[$i]*sin($rad*$lgTiltAngle[$i]))/cos($rad*$lgTiltAngle[$i]);
-                                                                  # Length of Light Guide - the dzRef length computation also needs a dxRef*angle component (in this nomenclature it would be addition) so that the PMT placement in CAD solidworks will work out.
-$i=$i+1;
+while ( $line = <$data> ) {    # Read each line till the end of the file.
+    if ( $line =~ /^\s*$/ ) {    # Check for empty lines.
+        print
+          "String contains 0 or more white-space character and nothing else.\n";
+    }
+    else {
+        chomp $line;
+        @fields = split( ",", $line );    # Split the line into fields.
+        $ring[$i] =
+          trim( $fields[0] );    # Get rid of initial and trailing white spaces.
+        $r[$i]  = trim( $fields[1] );    # Radial position of center of quartz.
+        $dz[$i] = trim( $fields[2] );    # Length.
+        $overlap[$i] =
+          trim( $fields[3] );            # 0=minimum overlap, 1=maximum overlap.
+        $dx[$i] = trim( $fields[4] );    # Thickness along beam direction.
+        if ( $ring[$i] >= 5.0 && $ring[$i] < 6.0 ) {
+            $dy[$i] =
+              2 * pi *
+              ( $r[$i] - ( $dz[$i] * ( 0.5 - $overlap[$i] ) ) ) /
+              ( 4 * 7 *
+                  3 ) # Calculating azimuthal width of detectors in moller ring.
+        }
+        else {
+            $dy[$i] =
+              2 * pi *
+              ( $r[$i] - ( $dz[$i] * ( 0.5 - $overlap[$i] ) ) ) /
+              ( 4 * 7
+              )   # Calculating azimuthal width of detectors in all other rings.
+        }
+        $tilt[$i] = trim( $fields[5] );   # Tilt of quartz along beam direction.
+        $roll[$i] =
+          trim( $fields[6] );    # Roll about axis perpendicular to beam axis.
+        $dzRef[$i] = trim( $fields[7] );    # Length of reflector section.
+        $refTopOpeningAngle[$i] =
+          trim( $fields[8] );               # Opening angle of reflector.
+        $lgTiltAngle[$i] =
+          trim( $fields[9] );               # Tilt of light guide wrt to quartz.
+        $height[$i] =
+          trim( $fields[10] );    # Starting radial position of PMTs (cathode)
+        $ddPmt[$i]  = trim( $fields[11] );    # Diameter of PMT in inches
+        $dzPmt[$i]  = trim( $fields[12] );    # Length of PMT
+        $dtWall[$i] = trim( $fields[13] );    # Thickness of Wall
+        $extraPMTholderWidth[$i] = trim( $fields[14] )
+          ;    # Extra width of PMT holder (in addition to PMT diameter)
+        $extraPMTholderDepth[$i] = trim( $fields[15] )
+          ;    # Extra depth of PMT holder (in addition to PMT diameter)
+        $z[$i]        = trim( $fields[16] );    # Z-position
+        $zstagger[$i] = trim( $fields[17] );    # Staggered Z-position
+        my $rad = pi / 180;                     # Radians for sin and cos
+             # dxLg was field 10 (deleted), dzLg was previously parameter 11
+        $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) *
+          cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) );
 
-}
+        # Width of reflector opening/lightguide segment
+        $dzLg[$i] = (
+            $height[$i] -
+              $r[$i] -
+              0.5 * (
+                $dz[$i] * cos( $rad * $tilt[$i] ) +
+                  $dx[$i] * sin( $rad * $tilt[$i] )
+              ) -
+              1 * $dzRef[$i] * cos( $rad * $refTopOpeningAngle[$i] ) +
+              0.5 * $dxLg[$i] * sin( $rad * $lgTiltAngle[$i] )
+          ) /
+          cos( $rad * $lgTiltAngle[$i] );
+
+# Length of Light Guide - the dzRef length computation also needs a dxRef*angle component (in this nomenclature it would be addition) so that the PMT placement in CAD solidworks will work out.
+        $i = $i + 1;
+
+    }
 }
 
 ##----------------------------End reading CSV file containing parameter values.------------------------------------------##
 
-
 ##----------------------------Start writing parameter.csv for gdmlGenerator (Code works but lacks clarity. Need to check one to one correspondence between CAD and gdml azimuthal positioning.)----------------------------------------------##
-open(def, ">", "parameter.csv") or die "cannot open > parameter.csv: $!";
+open( def, ">", "parameter.csv" ) or die "cannot open > parameter.csv: $!";
 
-for($j=0; $j<$i; $j++){
-print "ring $index[$j]\n";
+for ( my $j = 0 ; $j < $i ; $j++ ) {
+    print "ring $ring[$j]\n";
 
-for($k=0;$k<$numDet[$j];$k++){
+    for ( my $det = 0 ; $det < $numDet[$j] ; $det++ ) {
 
-if($j==4){
-$thetaDet[$k]=2*pi*(opent($k)-3-1)/84; ## subtract 1 more to fix phi-offset in ring 5 triply segmented open-transition-closed detector bunches - 3/2/2018 Cameron
-}elsif($j==5){
-$thetaDet[$k]= 2*pi*(transt($k)-3-1)/84;
-}elsif($j==6){
-$thetaDet[$k]= 2*pi*(closedt($k)-3-1)/84;
-}else{
-$thetaDet[$k]= 2*pi*$k/28;
+        # Determine this ring (and segment if ring 5)
+        my ( $thisfrac, $thisring ) = POSIX::modf( $ring[$j] );
+        if ( $thisfrac != 0) {
+          $thisfrac = int((10 * $thisfrac) + (10 * $thisfrac) / abs((10 * $thisfrac) * 2));
+        }
+        my $thissect = 1;
+
+        # Modify theta for ring 5
+        if ( $thisring == 5 && $thisfrac == 0 ) {
+            ## subtract 1 more to fix phi-offset in ring 5 triply segmented open-transition-closed detector bunches - 3/2/2018 Cameron
+            $thetaDet[$det] = 2 * pi * ( opent($det) - 1 ) / 84;
+        }
+        elsif ( $thisring == 5 && $thisfrac == 1 ) {
+            $thetaDet[$det] = 2 * pi * ( transt($det) - 1 ) / 84;
+        }
+        elsif ( $thisring == 5 && $thisfrac == 2 ) {
+            $thetaDet[$det] = 2 * pi * ( closedt($det) - 1 ) / 84;
+        }
+        else {
+            $thetaDet[$det] = 2 * pi * $det / 28;
+        }
+        $thetaDet[$det] = $thetaDet[$det] - pi; # Remove 1 pi, now that +x axis is defined as theta=0, isntead of -x axis as it had been before.
+
+        if ( $thisring == 5 ) {
+            if ( $det % 3 == 1 )
+            { ## modifying stagger assignment so that the central detector is forward in all open-transition-closed detector triple bunches - 3/2/2018 Cameron
+                $zDet[$det] = $z[$j];
+                ## If you want to make the open, transition or closed (4,5,6) actually have the central detector backward then change the first if statement here.
+            }
+            else {
+                $zDet[$det] = $zstagger[$j];
+            }
+        }
+        else {
+            if ( $det % 2 == 0 ) {
+                $zDet[$det] = $z[$j];
+            }
+            else {
+                $zDet[$det] = $zstagger[$j];
+            }
+        }
+        $rollDet[$det] = -1 * $roll[$j] + 90;
+        my $dxPmt = $ddPmt[$j] * 25.4 + $extraPMTholderWidth[$j];
+        my $dyPmt = $ddPmt[$j] * 25.4 + $extraPMTholderDepth[$j];
+
+        my $thissept = int( $det * 7 / $numDet[$j] ) + 1;
+        my $thiscoil = 0;
+        if (($thisring != 5 && $det % ($numDet[$j] / 7) == 0) || ($thisring == 5 && $thisfrac == 2)) {
+            $thiscoil = $thissept;
+            $thissept = 0;
+        }
+        my $thissect = 0;
+        if ($thiscoil == 0) {
+            $thissect = $det % ($numDet[$j] / 7);
+        }
+        my $thisphi = 1;
+        if ($thisring == 5) {
+            $thissect = 2 - $thisfrac;
+            if ($thissect == 1 && $det - ($thissept - 1) * ($numDet[$j] / 7) >= ($numDet[$j] / 14)) {
+                $thissect = 3;
+            }
+            $thisphi = $det % 3;
+        }
+        my $detno = $thisring*100000+$thissept*10000+$thiscoil*1000+$thissect*100+$thisphi*10;
+
+        my $thetabase = ($thissept + $thiscoil - 1) * 2 * 180 / 7;
+        my $thetadeg = $thetaDet[$det] * 180/pi;
+        my $thetaseptdeg = POSIX::fmod($thetaDet[$det], 2*pi/7) * 180/pi;
+        print "$detno at ", sprintf("%.2f",$thetadeg), " ( = ", sprintf("%.2f",$thetabase), " + ", sprintf("%.2f",$thetaseptdeg), " ) deg\n";
+        #print def "$detno, $zDet[$det], ${r[$j]*sin($thetaDet[$det])}, ${r[$j]*cos($thetaDet[$det])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$det], ${tilt[$j]*pi/180}, ${rollDet[$det]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5} \n";
+        print def "$detno, $zDet[$det], ${r[$j]*sin($thetaDet[$det])}, ${r[$j]*cos($thetaDet[$det])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$det], ${tilt[$j]*pi/180}, ${rollDet[$det]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5}, $r[$j], ${dz[$j]*cos($tilt[$j]*pi/180)}, ${dzRef[$j]*cos((pi/180)*($refTopOpeningAngle[$j]+$tilt[$j]))}, $height[$j] \n";
+        #print "$detno at ", sprintf("%.2f",$thetaDet[$det]), " deg, Quartz radial coordinates center = ", sprintf("%.2f",$r[$j])," mm, Quartz azimuthal width = ", sprintf("%.2f",$dx[$j])," mm, Quartz radial length = ", sprintf("%.2f",${dz[$j]*cos($tilt[$j]*pi/180)})," mm, Reflector Segment radial extent from quartz edge = ", sprintf("%.2f",${dzRef[$j]*cos((pi/180)*($refTopOpeningAngle[$j]+$tilt[$j]))})," mm, PMT azimuthal width = ", sprintf("%.2f",$dxPmt)," mm, PMT radial position = ", sprintf("%.2f",$height[$j])," mm, Z position = ", sprintf("%.2f",$zDet[$det])," mm w.r.t origin\n";
+
+    }
 }
-
-print "$thetaDet[$k]\n";
-
-if($j == 4 || $j == 5 || $j == 6){
-  if($k%3==1){         ## modifying stagger assignment so that the central detector is forward in all open-transition-closed detector triple bunches - 3/2/2018 Cameron
-  $zDet[$k]=$z[$j];    ## If you want to make the open, transition or closed (4,5,6) actually have the central detector backward then change the first if statement here.
-  }else{
-  $zDet[$k]=$zstagger[$j];
-  }
-}
-else{
-  if($k%2==0){
-  $zDet[$k]=$z[$j];
-  }else{
-  $zDet[$k]=$zstagger[$j];
-  }
-}
-$rollDet[$k]=-1*$roll[$j]+90;
-my $dxPmt = $ddPmt[$j]*25.4+$extraPMTholderWidth[$j];
-my $dyPmt = $ddPmt[$j]*25.4+$extraPMTholderDepth[$j];
-print def "${index[$j]*10000+$k+1}, $zDet[$k], ${r[$j]*sin($thetaDet[$k])}, ${r[$j]*cos($thetaDet[$k])}, $dx[$j], $dy[$j], $dz[$j], $thetaDet[$k], ${tilt[$j]*pi/180}, ${rollDet[$k]*pi/180},  0.785398, ${refTopOpeningAngle[$j]*pi/180}, $dzRef[$j], $dxLg[$j], $dy[$j], $dzLg[$j], ${lgTiltAngle[$j]*pi/180}, $dxPmt, $dyPmt, ${dzPmt[$j]*25.4}, ${ddPmt[$j]*25.4/2}, $dtWall[$j], ${dtWall[$j]/5} \n";
-
-
-}
-}
-
-
 
 close(def) or warn "close failed: $!";
 ##-----------------------------------------------------------------------------------------------------------------------##
 
-
-
-
 ##--------------------------------------------Start writing equations.txt------------------------------------------------##
 
-open(def, ">", "equations.txt") or die "cannot open > equations.txt: $!";
+open( def, ">", "equations.txt" ) or die "cannot open > equations.txt: $!";
 print def "\"D1\"=
 \"q1L\"= $dz[0]mm
 \"q2L\"= $dz[1]mm
@@ -474,34 +543,49 @@ close(def) or warn "close failed: $!";
 
 #-----------------------------End writing equations.txt-------------------------------#
 
-sub ltrim { my $s = shift; $s =~ s/^\s+//;       return $s };
-sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s };
-sub  trim { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s };
+sub ltrim { my $s = shift; $s =~ s/^\s+//;       return $s }
+sub rtrim { my $s = shift; $s =~ s/\s+$//;       return $s }
+sub trim  { my $s = shift; $s =~ s/^\s+|\s+$//g; return $s }
 
-sub opent { 
-my $k=shift; 
-if($k%3==0){$k=$k*4+3;
-}elsif($k%3==1){$k=($k-1)*4+4;
-}else{ $k=($k-2)*4+5;
-}
-return $k;
-}
-
-sub transt { 
-my $k=shift; 
-if($k%3==0){$k=$k*2;
-}elsif($k%3==1){$k=($k-1)*2+1;
-}else{ $k=($k-2)*2+2;
-}
-return $k;
+sub opent {
+    my $det = shift;
+    if ( $det % 3 == 0 ) {
+        $det = $det * 4 + 6;
+    }
+    elsif ( $det % 3 == 1 ) {
+        $det = ( $det - 1 ) * 4 + 7;
+    }
+    else {
+        $det = ( $det - 2 ) * 4 + 8;
+    }
+    return $det;
 }
 
-sub closedt { 
-my $k=shift; 
-if($k%3==0){$k=$k*4+9;
-}elsif($k%3==1){$k=($k-1)*4+10;
-}else{ $k=($k-2)*4+11;
+sub transt {
+    my $det = shift;
+    if ( $det % 3 == 0 ) {
+        $det = $det * 2 + 3;
+    }
+    elsif ( $det % 3 == 1 ) {
+        $det = ( $det - 1 ) * 2 + 4;
+    }
+    else {
+        $det = ( $det - 2 ) * 2 + 5;
+    }
+    return $det;
 }
-return $k;
+
+sub closedt {
+    my $det = shift;
+    if ( $det % 3 == 0 ) {
+        $det = $det * 4;
+    }
+    elsif ( $det % 3 == 1 ) {
+        $det = ( $det - 1 ) * 4 + 1;
+    }
+    else {
+        $det = ( $det - 2 ) * 4 + 2;
+    }
+    return $det;
 }
 
