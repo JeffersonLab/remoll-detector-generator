@@ -54,8 +54,8 @@ while ( $line = <$data> ) {    # Read each line till the end of the file.
               ( $r[$i] - ( $dz[$i] * ( 0.5 - $overlap[$i] ) ) ) /
               ( 4 * 7 *
                   3 ) # Calculating azimuthal width of detectors in moller ring.
-        }
-        else {
+          }
+          else {
             $dy[$i] =
               2 * pi *
               ( $r[$i] - ( $dz[$i] * ( 0.5 - $overlap[$i] ) ) ) /
@@ -68,19 +68,20 @@ while ( $line = <$data> ) {    # Read each line till the end of the file.
         $dzRef[$i] = trim( $fields[7] );    # Length of reflector section.
         $refTopOpeningAngle[$i] =
           trim( $fields[8] );               # Opening angle of reflector.
+        $refDepth[$i] = trim( $fields[9] ); # Depth of reflector
         $lgTiltAngle[$i] =
-          trim( $fields[9] );               # Tilt of light guide wrt to quartz.
+          trim( $fields[10] );               # Tilt of light guide wrt to quartz.
         $height[$i] =
-          trim( $fields[10] );    # Starting radial position of PMTs (cathode)
-        $ddPmt[$i]  = trim( $fields[11] );    # Diameter of PMT in inches
-        $dzPmt[$i]  = trim( $fields[12] );    # Length of PMT
-        $dtWall[$i] = trim( $fields[13] );    # Thickness of Wall
-        $extraPMTholderWidth[$i] = trim( $fields[14] )
+          trim( $fields[11] );    # Starting radial position of PMTs (cathode)
+        $ddPmt[$i]  = trim( $fields[12] );    # Diameter of PMT in inches
+        $dzPmt[$i]  = trim( $fields[13] );    # Length of PMT
+        $dtWall[$i] = trim( $fields[14] );    # Thickness of Wall
+        $extraPMTholderWidth[$i] = trim( $fields[15] )
           ;    # Extra width of PMT holder (in addition to PMT diameter)
-        $extraPMTholderDepth[$i] = trim( $fields[15] )
+        $extraPMTholderDepth[$i] = trim( $fields[16] )
           ;    # Extra depth of PMT holder (in addition to PMT diameter)
-        $z[$i]        = trim( $fields[16] );    # Z-position
-        $zstagger[$i] = trim( $fields[17] );    # Staggered Z-position
+        $z[$i]        = trim( $fields[17] );    # Z-position
+        $zstagger[$i] = trim( $fields[18] );    # Staggered Z-position
         my $rad = pi / 180;                     # Radians for sin and cos
              # dxLg was field 10 (deleted), dzLg was previously parameter 11
         $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) *

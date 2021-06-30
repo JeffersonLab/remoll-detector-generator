@@ -7,20 +7,21 @@
 # 7 - roll angle (90 degrees always)
 # 8 - reflector length (variable, mm, from simulation)
 # 9 - reflector top opening angle (variable, degrees, from simulation)
-# 10 - light guide opening angle (variable, degrees, depends on reflector angle, maxes at 6 in new Syracuse support design)
-# 11 - PMT cathode origin hall-coordinates-radius
-# 12 - diameter of PMT (3 inches default)
-# 13 - PMT length (6 inches default)
-# 14 - wall thickness (3mm default)
-# 15 - pmt holder additional width
-# 16 - pmt holder additional depth
-# 17 - z position of quartz central point
-# 18 - z pos for staggered one.
-1,710,40,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,650,700
-2,755,50,1,10,0.4,90,80,11,5,6,1350,3,6,3,17.33,17.33,480,530
-3,817.5,75,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,300,350
-4,892.5,75,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,150,190
-5.0,1017.5,115,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-35,35
-5.1,987.5,105,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-35,35
-5.2,1030,140,1,10,0.4,90,80,11.5,6,1350,2,6,3,17.33,17.33,-20,20
-6,1150,100,1,10,0.4,90,80,11.5,6,1350,3,6,3,17.33,17.33,-190,-150
+# 10 - reflector depth (variable, mm, if == -1 then be constrained to parallelogram from PMT)
+# 11 - light guide opening angle (variable, degrees, depends on reflector angle, maxes at 6 in new Syracuse support design)
+# 12 - PMT cathode origin hall-coordinates-radius
+# 13 - diameter of PMT (3 inches default)
+# 14 - PMT length (6 inches default)
+# 15 - wall thickness (3mm default)
+# 16 - pmt holder additional width
+# 17 - pmt holder additional depth
+# 18 - z position of quartz central point
+# 19 - z pos for staggered one.
+1,710,40,1,10,0.4,90,80,11.5,-1,6,1350,3,6,3,17.33,17.33,650,700
+2,755,50,1,10,0.4,90,80,11,5,-1,6,1350,3,6,3,17.33,17.33,480,530
+3,817.5,75,1,10,0.4,90,80,11.5,-1,6,1350,3,6,3,17.33,17.33,300,350
+4,892.5,75,1,10,0.4,90,80,11.5,-1,6,1350,3,6,3,17.33,17.33,150,190
+5.0,1017.5,115,1,10,0.4,90,80,11.5,-1,6,1350,2,6,3,17.33,17.33,-35,35
+5.1,987.5,105,1,10,0.4,90,80,11.5,-1,6,1350,2,6,3,17.33,17.33,-35,35
+5.2,1030,140,1,10,0.4,90,80,11.5,-1,6,1350,2,6,3,17.33,17.33,-20,20
+6,1150,100,1,10,0.4,90,80,11.5,-1,6,1350,3,6,3,17.33,17.33,-190,-150
