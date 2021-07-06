@@ -13,7 +13,7 @@ use POSIX qw(modf fmod);
 ##-------------------------------Declare variables explicitly so "my" not needed.------------------------------------##
 use strict 'vars';
 use vars
-  qw($opt_F $data $line @fields @ring @z @zstagger @zDet @r @thetaDet @overlap @dx @dy @dz @tilt @roll @rollDet @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @height @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @ddPmt @dtWall @extraPMTholderWidth @extraPMTholderDepth @dtReflector @numDet $i $thisring );
+  qw($opt_F $data $line @fields @ring @z @zstagger @zDet @r @thetaDet @overlap @dx @dy @dz @tilt @roll @rollDet @rx @ry @rz @quartzCutAngle @refTopOpeningAngle @dzRef @dxLg @dyLg @height @dzLg  @lgTiltAngle @dxPmt @dyPmt @dzPmt @ddPmt @dtWall @extraPMTholderWidth @extraPMTholderDepth @dtReflector @numDet @refDepth $refDepth $i $thisring );
 ##-------------------------------------------------------------------------------------------------------------------##
 
 ##-------------------------------Get the option flags.------------------------------------------------------------------##
@@ -84,8 +84,16 @@ while ( $line = <$data> ) {    # Read each line till the end of the file.
         $zstagger[$i] = trim( $fields[18] );    # Staggered Z-position
         my $rad = pi / 180;                     # Radians for sin and cos
              # dxLg was field 10 (deleted), dzLg was previously parameter 11
-        $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) *
-          cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) );
+             # $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) *
+             #cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) );
+
+        if ( $refDepth == -1 ) {
+            $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) * cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) ) 
+        }
+        else {
+            $dxLg[$i] = $refDepth
+        }
+
 
         # Width of reflector opening/lightguide segment
         $dzLg[$i] = (
