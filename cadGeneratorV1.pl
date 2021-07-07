@@ -87,11 +87,11 @@ while ( $line = <$data> ) {    # Read each line till the end of the file.
              # $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) *
              #cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) );
 
-        if ( $refDepth == -1 ) {
+        if ( $refDepth[$i] == -1 ) {
             $dxLg[$i] = ( 25.4 * $ddPmt[$i] + $extraPMTholderWidth[$i] ) * cos( $rad * ( $tilt[$i] + $lgTiltAngle[$i] ) ) 
         }
         else {
-            $dxLg[$i] = $refDepth
+            $dxLg[$i] = $refDepth[$i]
         }
 
 
