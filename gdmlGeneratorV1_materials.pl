@@ -573,18 +573,18 @@ for $j ( 0 .. $i - 1 ) {
       $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ), "\" x2=\"",
       $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ), "\" y2=\"",
       $dyPmt[$j] + 2 * $dtWall[$j] / ( cos($angle2) ), "\" x3=\"",
-      $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ), "\" x4=\"",
-      $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ),
+      $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ) + 2 * $dtWall[$j] /  ( cos($angle1) ), "\" x4=\"",
+      $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ) + 2 * $dtWall[$j] /  ( cos($angle1) ),
       "\" alpha1=\"0.0\" alpha2=\"0*(", $lgTiltAngle[$j] + $ry[$j],
       ")\" aunit=\"rad\" lunit=\"mm\"/>\n";
     print def "<box name = \"lgLogicSol_sub1_$index[$j]\" z=\"",
       4 * $dzLgExtra[$j], "\" y=\"",
       1.5 * ( $dyPmt[$j] + 2 * $dtWall[$j] / ( cos($angle2) ) ), "\" x=\"",
-      1.5 * ( $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ) ), "\"/>\n";
+      1.5 * ( $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ) + 2 * $dtWall[$j] /  ( cos($angle1) ) ), "\"/>\n";
     print def "<box name = \"lgLogicSol_sub2_$index[$j]\" z=\"",
       2 * $dzLgExtra[$j], "\" y=\"",
       1.5 * ( $dyPmt[$j] + 2 * $dtWall[$j] / ( cos($angle2) ) ), "\" x=\"",
-      1.5 * ( $dxLg[$j] + 2 * $dtWall[$j] /  ( cos($angle1) ) ), "\"/>\n";
+      1.5 * ( $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ) + 2 * $dtWall[$j] /  ( cos($angle1) ) ), "\"/>\n";
     print def "<subtraction name =\"lgLogicSol_sub_$index[$j]\">
 	<first ref=\"lgLogicSol_sub1_$index[$j]\"/> 
 	<second ref=\"lgLogicSol_sub2_$index[$j]\"/> 
@@ -716,12 +716,12 @@ for $j ( 0 .. $i - 1 ) {
 #print def "<trd name = \"lgSolOld_$index[$j]\" z=\"$dzLg[$j]\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x2=\"$dxPmt[$j]\" lunit= \"mm\"/>\n";
     print def "<trap name = \"lgSol1_$index[$j]\" z=\"",
       $dzLg[$j] + 1 * $dzLgExtra[$j],
-"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" x2=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x3=\"$dxLg[$j]\" x4=\"$dxLg[$j]\" alpha1=\"0.0\" alpha2=\"0*(",
+"\" theta=\"0.0\" phi=\"0.0\" y1=\"$dyLg[$j]\" x1=\"$dxLg[$j]\" x2=\"$dxLg[$j]\" y2=\"$dyPmt[$j]\" x3=\"", $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ), "\" x4=\"", $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ), "\" alpha1=\"0.0\" alpha2=\"0*(",
       $lgTiltAngle[$j] + $ry[$j], ")\" aunit=\"rad\" lunit=\"mm\"/>\n";
     print def "<box name = \"lgSol_sub1_$index[$j]\" z=\"", 4 * $dzLgExtra[$j],
-      "\" y=\"", 1.5 * ( $dyPmt[$j] ), "\" x=\"", 1.5 * ( $dxLg[$j] ), "\"/>\n";
+      "\" y=\"", 1.5 * ( $dyPmt[$j] ), "\" x=\"", 1.5 * $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ), "\"/>\n";
     print def "<box name = \"lgSol_sub2_$index[$j]\" z=\"", 2 * $dzLgExtra[$j],
-      "\" y=\"", 1.5 * ( $dyPmt[$j] ), "\" x=\"", 1.5 * ( $dxLg[$j] ), "\"/>\n";
+      "\" y=\"", 1.5 * ( $dyPmt[$j] ), "\" x=\"", 1.5 * $dxPmt[$j] * cos( ( pi / 180 ) * ( $ry[$j] + $lgTiltAngle[$j]) ), "\"/>\n";
     print def "<subtraction name =\"lgSol_sub_$index[$j]\">
 	<first ref=\"lgSol_sub1_$index[$j]\"/> 
 	<second ref=\"lgSol_sub2_$index[$j]\"/> 
