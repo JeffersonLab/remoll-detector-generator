@@ -34,10 +34,10 @@ xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/r
 
 gdml += "<solids> \n\n"
 
-ring = [5,5,5,6,4,3,2,1]
+ring = [50,51,52,6,4,3,2,1]
 if args.generate_quartz:
   for i in range(0, len(front_quartz.index)):
-    gdml += "<xtru name=\"quartz_"+str(ring[i])+"\"> \n\
+    gdml += "<xtru name=\"quartz_"+str(ring[i])+"_F\"> \n\
   <twoDimVertex x=\""+str(front_quartz['USLCWz'].iloc[i])+"\" y=\""+str(front_quartz['USLCWy'].iloc[i])+"\"/> \n\
   <twoDimVertex x=\""+str(front_quartz['DSLCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSLCWy'].iloc[i])+"\"/> \n\
   <twoDimVertex x=\""+str(front_quartz['DSUCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSUCWy'].iloc[i])+"\"/> \n\
@@ -45,10 +45,64 @@ if args.generate_quartz:
   <section zOrder=\"0\" zPosition=\""+str(front_quartz['USLCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
   <section zOrder=\"1\" zPosition=\""+str(front_quartz['USLCCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
 </xtru> \n\n"
+    gdml += "<xtru name=\"quartz_"+str(ring[i])+"_B\"> \n\
+  <twoDimVertex x=\""+str(back_quartz['USLCWz'].iloc[i])+"\" y=\""+str(back_quartz['USLCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(back_quartz['DSLCWz'].iloc[i])+"\" y=\""+str(back_quartz['DSLCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(back_quartz['DSUCWz'].iloc[i])+"\" y=\""+str(back_quartz['DSUCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(back_quartz['USUCWz'].iloc[i])+"\" y=\""+str(back_quartz['USUCWy'].iloc[i])+"\"/> \n\
+  <section zOrder=\"0\" zPosition=\""+str(back_quartz['USLCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+  <section zOrder=\"1\" zPosition=\""+str(back_quartz['USLCCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+</xtru> \n\n"
 
 gdml += "</solids>\n\n"
 
-   
+
+gdml += "<structure> \n\n"
+if args.generate_quartz:
+  for i in range(0, len(front_quartz.index)):
+    gdml+= "<volume name=\"logical_quartz_"+str(ring[i])+"_F\"> \n\
+  <materialref ref=\"G4_SILICON_DIOXIDE\"/>                     \n\
+  <solidref ref=\"quartz_"+str(ring[i])+"_F\"/>                 \n\
+</volume>\n\n"
+    gdml+= "<volume name=\"logical_quartz_"+str(ring[i])+"_B\"> \n\
+  <materialref ref=\"G4_SILICON_DIOXIDE\"/>                     \n\
+  <solidref ref=\"quartz_"+str(ring[i])+"_B\"/>                 \n\
+</volume>\n\n" 
+    gdml+= "<assembly name=\"logical_detector_"+str(ring[i])+"_F\"> \n\
+  <physvol>                                                      \n\
+  <volumeref ref=\"logical_quartz_"+str(ring[i])+"_F\"/>         \n\
+  <rotation name=\"rot\" unit=\"deg\" x=\"0\" y=\"90\" z=\"0\"/> \n\
+  </physvol>                                                     \n\
+</assembly>\n\n"
+    gdml+= "<assembly name=\"logical_detector_"+str(ring[i])+"_B\"> \n\
+  <physvol>                                                      \n\
+  <volumeref ref=\"logical_quartz_"+str(ring[i])+"_B\"/>         \n\
+  <rotation name=\"rot\" unit=\"deg\" x=\"0\" y=\"90\" z=\"0\"/> \n\
+  </physvol>                                                     \n\
+</assembly>\n\n"
+  
+gdml+= "<assembly name=\"logical_detector_array\"> \n\"
+
+if args.generate_quartz:
+  for i in range(0, len(front_quartz.index)):
+    gdml+="<physvol>                                               \n\
+    <volumeref ref=\"logical_detector_"+str(ring[i])+"_F\"/>       \n\
+    </physvol>                                                     \n\n"
+    
+    gdml+="<physvol>                                               \n\
+    <volumeref ref=\"logical_detector_"+str(ring[i])+"_B\"/>       \n\
+    </physvol>                                                     \n\n"
+    
+gdml+= "</assembly>\n\n"
+
+
+gdml +=  "</structure> \n\n"
+
+gdml += "<setup name=\"Default\" version=\"1.0\"> \n\
+  <world ref=\"logical_detector_array\"/>         \n\
+</setup>                                          \n\n"
+
+gdml += "</gdml>
     
          
 
