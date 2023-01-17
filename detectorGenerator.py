@@ -30,24 +30,22 @@ xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/r
 <define>                                               \n\
 </define>                                              \n\n\
 <materials>                                            \n\
-</materials>                                           \n\n\
-"
+</materials>                                           \n\n"
 
 gdml += "<solids> \n\n"
 
 ring = [5,5,5,6,4,3,2,1]
 if args.generate_quartz:
   for i in range(0, len(front_quartz.index)):
-    gdml += "<xtru name=\"quartz_"+str(ring[i])+"\"> \n \
-    <twoDimVertex x=\""+str(front_quartz['USLCWz'].iloc[i])+"\" y=\""+str(front_quartz['USLCWy'].iloc[i])+"\"/> \n\
-    <twoDimVertex x=\""+str(front_quartz['DSLCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSLCWy'].iloc[i])+"\"/> \n\
-    <twoDimVertex x=\""+str(front_quartz['DSUCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSUCWy'].iloc[i])+"\"/> \n\
-    <twoDimVertex x=\""+str(front_quartz['USUCWz'].iloc[i])+"\" y=\""+str(front_quartz['USUCWy'].iloc[i])+"\"/> \n\
-    <section zOrder=\"0\" zPosition=\""+str(front_quartz['USLCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
-    <section zOrder=\"1\" zPosition=\""+str(front_quartz['USLCCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
-    </xtru> \n\n\
-    "
-
+    gdml += "<xtru name=\"quartz_"+str(ring[i])+"\"> \n\
+  <twoDimVertex x=\""+str(front_quartz['USLCWz'].iloc[i])+"\" y=\""+str(front_quartz['USLCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(front_quartz['DSLCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSLCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(front_quartz['DSUCWz'].iloc[i])+"\" y=\""+str(front_quartz['DSUCWy'].iloc[i])+"\"/> \n\
+  <twoDimVertex x=\""+str(front_quartz['USUCWz'].iloc[i])+"\" y=\""+str(front_quartz['USUCWy'].iloc[i])+"\"/> \n\
+  <section zOrder=\"0\" zPosition=\""+str(front_quartz['USLCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+  <section zOrder=\"1\" zPosition=\""+str(front_quartz['USLCCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+</xtru> \n\n\"
+    
 gdml += "</solids>\n\n"
 
    
