@@ -81,7 +81,7 @@ if args.generate_quartz:
   </physvol>                                                     \n\
 </assembly>\n\n"
   
-gdml+= "<assembly name=\"logical_detector_array\"> \n\"
+gdml+= "<assembly name=\"logical_detector_array\"> \n"
 
 if args.generate_quartz:
   for i in range(0, len(front_quartz.index)):
