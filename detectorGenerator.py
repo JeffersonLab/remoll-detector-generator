@@ -102,7 +102,7 @@ gdml += "<setup name=\"Default\" version=\"1.0\"> \n\
   <world ref=\"logical_detector_array\"/>         \n\
 </setup>                                          \n\n"
 
-gdml += "</gdml>
+gdml += "</gdml>"
     
          
 
