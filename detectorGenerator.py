@@ -24,13 +24,13 @@ back_quartz  = pd.read_csv(args.back_quartz)
 front_quartz = front_quartz[front_quartz["Part"].str.contains("Quartz:1", na=False)]
 back_quartz  = back_quartz[back_quartz["Part"].str.contains("Quartz:1", na=False)]
 
-gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>     \n\
+gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>     \n\n\
 <gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\
-xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n\
+xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n\n\
 <define>                                               \n\
-</define>                                              \n\
+</define>                                              \n\n\
 <materials>                                            \n\
-</materials>                                           \
+</materials>                                           \n\n\
 "
 
 f = open(args.out_file, "w")
