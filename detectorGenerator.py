@@ -43,8 +43,8 @@ if args.generate_quartz:
     <twoDimVertex x=\""+front_quartz['DSLCWz'][i]+"\" y=\""+front_quartz['DSLCWy'][i]+"\"/> \n\
     <twoDimVertex x=\""+front_quartz['DSUCWz'][i]+"\" y=\""+front_quartz['DSUCWy'][i]+"\"/> \n\
     <twoDimVertex x=\""+front_quartz['USUCWz'][i]+"\" y=\""+front_quartz['USUCWy'][i]+"\"/> \n\
-    <section zOrder="0" zPosition=\""+front_quartz['USLCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
-    <section zOrder="1" zPosition=\""+front_quartz['USLCCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+    <section zOrder=\"0\" zPosition=\""+front_quartz['USLCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+    <section zOrder=\"1\" zPosition=\""+front_quartz['USLCCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
     </xtru> \n\n\
     "
 
