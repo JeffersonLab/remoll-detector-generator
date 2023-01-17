@@ -33,6 +33,27 @@ xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/r
 </materials>                                           \n\n\
 "
 
+gdml += "<solids> \n\n"
+
+ring = [5,5,5,6,4,3,2,1]
+if args.generate_quartz:
+  for i in range(0, len(front_quartz.index)):
+    gdml += "<xtru name=\"quartz_"+str(ring[i])+"\"> \n \
+    <twoDimVertex x=\""+front_quartz['USLCWz'][i]+"\" y=\""+front_quartz['USLCWy'][i]+"\"/> \n\
+    <twoDimVertex x=\""+front_quartz['DSLCWz'][i]+"\" y=\""+front_quartz['DSLCWy'][i]+"\"/> \n\
+    <twoDimVertex x=\""+front_quartz['DSUCWz'][i]+"\" y=\""+front_quartz['DSUCWy'][i]+"\"/> \n\
+    <twoDimVertex x=\""+front_quartz['USUCWz'][i]+"\" y=\""+front_quartz['USUCWy'][i]+"\"/> \n\
+    <section zOrder="0" zPosition=\""+front_quartz['USLCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+    <section zOrder="1" zPosition=\""+front_quartz['USLCCWx'][i]+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
+    </xtru> \n\n\
+    "
+
+gdml += "</solids>\n\n"
+
+   
+    
+         
+
 f = open(args.out_file, "w")
 f.write(gdml)
 f.close()
