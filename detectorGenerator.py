@@ -7,6 +7,7 @@ import math
 import time
 import argparse
 import numpy as np
+import pandas as pd
 
 parser = argparse.ArgumentParser(description="Generate a detector array based on the following arguments")
 parser.add_argument("--generate-quartz", dest="generate_quartz", action="store", required=False, default=True, help="Set to true if you want to generate all the quartz pieces")
@@ -23,14 +24,14 @@ back_quartz  = pd.read_csv(args.back_quartz)
 front_quartz = front_quartz[front["Part"].str.contains("Quartz:1", na=False)]
 back_quartz  = back_quartz[back["Part"].str.contains("Quartz:1", na=False)]
 
-gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>             \n
-        <gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \
-         xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n
-        <define>                                               \n
-        </define>                                              \n
-        <materials>                                            \n
-        </materials>                                           \
-       "
+gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>     \n\ 
+<gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\
+xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n\
+<define>                                               \n\
+</define>                                              \n\
+<materials>                                            \n\
+</materials>                                           \
+"
 
 f = open(args.out_file, "w")
 f.write(gdml)
