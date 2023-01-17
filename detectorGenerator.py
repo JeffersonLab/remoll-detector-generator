@@ -44,8 +44,8 @@ if args.generate_quartz:
   <twoDimVertex x=\""+str(front_quartz['USUCWz'].iloc[i])+"\" y=\""+str(front_quartz['USUCWy'].iloc[i])+"\"/> \n\
   <section zOrder=\"0\" zPosition=\""+str(front_quartz['USLCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
   <section zOrder=\"1\" zPosition=\""+str(front_quartz['USLCCWx'].iloc[i])+"\" xOffset=\"0\" yOffset=\"0\" scalingFactor=\"1.0\"/> \n\
-</xtru> \n\n\"
-    
+</xtru> \n\n"
+
 gdml += "</solids>\n\n"
 
    
