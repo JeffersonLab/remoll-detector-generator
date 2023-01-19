@@ -34,6 +34,8 @@ xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/r
 
 gdml += "<solids> \n\n"
 
+gdml+= "<tube name=\"main_detector\" aunit=\"deg\" deltaphi=\"360\" rmin=\"640\" rmax=\"2000\" z=\"3000\"/> \n\n"
+
 ring = [50,51,52,6,4,3,2,1]
 if args.generate_quartz:
   for i in range(0, len(front_quartz.index)):
@@ -81,7 +83,9 @@ if args.generate_quartz:
   </physvol>                                                     \n\
 </assembly>\n\n"
   
-gdml+= "<assembly name=\"logical_detector_array\"> \n"
+gdml+= "<volume name=\"logical_main_detector_array\">   \n\
+<materialref ref=\"G4_AIR\"/>                           \n\
+<solidref ref=\"main_detector_array\"/>                 \n\n"
 
 if args.generate_quartz:
   for i in range(0, len(front_quartz.index)):
@@ -93,13 +97,13 @@ if args.generate_quartz:
     <volumeref ref=\"logical_detector_"+str(ring[i])+"_B\"/>       \n\
     </physvol>                                                     \n\n"
     
-gdml+= "</assembly>\n\n"
+gdml+= "</volume>\n\n"
 
 
 gdml +=  "</structure> \n\n"
 
 gdml += "<setup name=\"Default\" version=\"1.0\"> \n\
-  <world ref=\"logical_detector_array\"/>         \n\
+  <world ref=\"logical_main_detector_array\"/>    \n\
 </setup>                                          \n\n"
 
 gdml += "</gdml>"
