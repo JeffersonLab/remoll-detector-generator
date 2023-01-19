@@ -25,7 +25,7 @@ front_quartz = front_quartz[front_quartz["Part"].str.contains("Quartz:1", na=Fal
 back_quartz  = back_quartz[back_quartz["Part"].str.contains("Quartz:1", na=False)]
 
 gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>     \n\n\
-<gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\
+<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\
 xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n\n\
 <define>                                               \n\
 </define>                                              \n\n\
@@ -34,7 +34,7 @@ xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/r
 
 gdml += "<solids> \n\n"
 
-gdml+= "<tube name=\"main_detector\" aunit=\"deg\" deltaphi=\"360\" rmin=\"640\" rmax=\"2000\" z=\"3000\"/> \n\n"
+gdml+= "<tube name=\"main_detector_array\" aunit=\"deg\" deltaphi=\"360\" rmin=\"640\" rmax=\"2000\" z=\"3000\"/> \n\n"
 
 ring = [50,51,52,6,4,3,2,1]
 if args.generate_quartz:
