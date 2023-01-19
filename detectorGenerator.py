@@ -25,7 +25,8 @@ front_quartz = front_quartz[front_quartz["Part"].str.contains("Quartz:1", na=Fal
 back_quartz  = back_quartz[back_quartz["Part"].str.contains("Quartz:1", na=False)]
 
 gdml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>     \n\n\
-<gdml xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\
+<gdml xmlns:gdml=\"http://cern.ch/2001/Schemas/GDML\" \
+xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \
 xsi:noNamespaceSchemaLocation=\"http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd\"> \n\n\
 <define>                                               \n\
 </define>                                              \n\n\
